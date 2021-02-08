@@ -5,6 +5,7 @@ export default defineConfig({
   mode: 'site',
   locales: [['zh-CN', '中文']],
   outputPath: 'blog',
+  publicPath: '/blog/',
   // logo: '/xrk.jpeg',
   // more config: https://d.umijs.org/config
 });

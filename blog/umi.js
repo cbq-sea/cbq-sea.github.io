@@ -49,7 +49,7 @@
     (n.o = function(e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (n.p = '/'),
+    (n.p = '/blog/'),
     n((n.s = 0));
 })({
   '+3Ak': function(e, t, n) {
@@ -854,7 +854,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/getting-started.md',
-                updatedTime: null,
+                updatedTime: 1612776912e3,
                 nav: {
                   title: '\u5f00\u59cb\u9605\u8bfb',
                   order: 1,
@@ -871,7 +871,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/help.md',
-                updatedTime: null,
+                updatedTime: 1612776912e3,
                 nav: { title: '\u5e2e\u52a9', path: '/help' },
                 slugs: [
                   { depth: 1, value: '\u5e2e\u52a9', heading: '\u5e2e\u52a9' },
@@ -886,7 +886,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/index.md',
-                updatedTime: null,
+                updatedTime: 1612776912e3,
                 hero: {
                   title: 'welcome',
                   desc:
