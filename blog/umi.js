@@ -32526,7 +32526,7 @@
         return i;
       });
     var r = n('HFu6'),
-      o = { basename: '/' };
+      o = { basename: '/blog' };
     window.routerBase && (o.basename = window.routerBase);
     var i = Object({ NODE_ENV: 'production' }).__IS_SERVER
         ? null
