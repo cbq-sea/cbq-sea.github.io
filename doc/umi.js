@@ -15509,7 +15509,7 @@
         return a;
       });
     var r = n('HFu6'),
-      i = { basename: '/doc' };
+      i = { basename: '/' };
     window.routerBase && (i.basename = window.routerBase);
     var a = Object({ NODE_ENV: 'production' }).__IS_SERVER
         ? null
