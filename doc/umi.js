@@ -945,15 +945,15 @@
             var g = d.getLayoutRect(t, { width: l, height: u });
             (n = g.x), (r = g.y), (f = null), (h = null);
           } else if ('string' === typeof t && s) {
-            var m = C(t, p, c);
+            var m = A(t, p, c);
             (n = m[0]), (r = m[1]);
           } else {
             m = O(n, r, a, l, u, f ? null : 20, h ? null : 20);
             (n = m[0]), (r = m[1]);
           }
           if (
-            (f && (n -= A(f) ? c[0] / 2 : 'right' === f ? c[0] : 0),
-            h && (r -= A(h) ? c[1] / 2 : 'bottom' === h ? c[1] : 0),
+            (f && (n -= C(f) ? c[0] / 2 : 'right' === f ? c[0] : 0),
+            h && (r -= C(h) ? c[1] / 2 : 'bottom' === h ? c[1] : 0),
             e.get('confine'))
           ) {
             m = T(n, r, a, l, u);
@@ -1039,7 +1039,7 @@
         [e, t]
       );
     }
-    function C(e, t, n) {
+    function A(e, t, n) {
       var r = n[0],
         i = n[1],
         a = 5,
@@ -1065,7 +1065,7 @@
       }
       return [o, s];
     }
-    function A(e) {
+    function C(e) {
       return 'center' === e || 'middle' === e;
     }
     e.exports = S;
@@ -1394,7 +1394,7 @@
         layoutMode: null,
         init: function(e, t, n, r) {
           (this.seriesIndex = this.componentIndex),
-            (this.dataTask = b({ count: A, reset: M })),
+            (this.dataTask = b({ count: C, reset: M })),
             (this.dataTask.context = { model: this }),
             this.mergeDefaultAndTheme(e, n),
             w(this);
@@ -1533,12 +1533,12 @@
             O = a.seriesIndex + 'at' + p,
             T = c({ color: _, type: 'item', renderMode: r, markerId: O });
           (h[O] = _), ++p;
-          var C = v.getName(e),
-            A = this.name;
-          f.isNameSpecified(this) || (A = ''),
-            (A = A ? l(A) + (t ? ': ' : o) : '');
+          var A = v.getName(e),
+            C = this.name;
+          f.isNameSpecified(this) || (C = ''),
+            (C = C ? l(C) + (t ? ': ' : o) : '');
           var M = 'string' === typeof T ? T : T.content,
-            I = t ? M + A + k : A + M + (C ? l(C) + ': ' + k : k);
+            I = t ? M + C + k : C + M + (A ? l(A) + ': ' + k : k);
           return { html: I, markers: h };
         },
         isAnimationEnabled: function() {
@@ -1576,9 +1576,9 @@
       });
     function T(e) {
       var t = e.name;
-      f.isNameSpecified(e) || (e.name = C(e) || t);
+      f.isNameSpecified(e) || (e.name = A(e) || t);
     }
-    function C(e) {
+    function A(e) {
       var t = e.getRawData(),
         n = t.mapDimension('seriesName', !0),
         r = [];
@@ -1590,7 +1590,7 @@
         r.join(' ')
       );
     }
-    function A(e) {
+    function C(e) {
       return e.model.getRawData().count();
     }
     function M(e) {
@@ -2034,7 +2034,7 @@
         s
       );
     }
-    function C(e) {
+    function A(e) {
       var t = e.route,
         n = e.opts,
         r = e.props,
@@ -2060,7 +2060,7 @@
       }
       return i;
     }
-    function A(e) {
+    function C(e) {
       var t,
         n,
         r,
@@ -2095,7 +2095,7 @@
             O,
             h({}, l, {
               render: function(e) {
-                return C({ route: i, opts: s, props: e });
+                return A({ route: i, opts: s, props: e });
               },
             }),
           ));
@@ -2108,7 +2108,7 @@
             k,
             t,
             e.routes.map(function(t, n) {
-              return A({
+              return C({
                 route: t,
                 index: n,
                 opts: g(g({}, e), {}, { rootRoutes: e.rootRoutes || e.routes }),
@@ -2808,8 +2808,8 @@
           O.prototype[e] = T(e);
         },
       );
-    var C = O;
-    e.exports = C;
+    var A = O;
+    e.exports = A;
   },
   '/dgT': function(e, t, n) {
     var r = n('oEo5'),
@@ -3726,9 +3726,9 @@
               for (var k = h, O = i; ; O += i) {
                 var T = O <= g ? a : O >= g + o ? o : O - g;
                 if (k < T) break;
-                var C = k - T,
-                  A = i - T;
-                t.push(v(b(T + (C % A)))), (k = m(C / A));
+                var A = k - T,
+                  C = i - T;
+                t.push(v(b(T + (A % C)))), (k = m(A / C));
               }
               t.push(v(b(k))), (g = x(h, E, _ == w)), (h = 0), ++_;
             }
@@ -3821,9 +3821,9 @@
         k = R(_, e, r, i),
         O = k.baseX,
         T = k.baseY,
-        C = k.textAlign || 'left',
+        A = k.textAlign || 'left',
         M = k.textVerticalAlign;
-      A(t, r, i, O, T);
+      C(t, r, i, O, T);
       var D = c.adjustTextY(T, w, M),
         L = O,
         z = D;
@@ -3831,10 +3831,10 @@
         var B = c.getWidth(n, d),
           V = B;
         p && (V += p[1] + p[3]);
-        var H = c.adjustTextX(O, V, C);
-        s && P(e, t, r, H, D, V, w), p && ((L = F(O, C, p)), (z += p[0]));
+        var H = c.adjustTextX(O, V, A);
+        s && P(e, t, r, H, D, V, w), p && ((L = F(O, A, p)), (z += p[0]));
       }
-      (t.textAlign = C),
+      (t.textAlign = A),
         (t.textBaseline = 'middle'),
         (t.globalAlpha = r.opacity || 1);
       for (var U = 0; U < x.length; U++) {
@@ -3866,9 +3866,9 @@
       var o = e.__textCotentBlock;
       (o && !e.__dirtyText) ||
         (o = e.__textCotentBlock = c.parseRichText(n, r)),
-        C(e, t, o, r, i);
+        A(e, t, o, r, i);
     }
-    function C(e, t, n, r, i) {
+    function A(e, t, n, r, i) {
       var a = n.width,
         o = n.outerWidth,
         s = n.outerHeight,
@@ -3878,7 +3878,7 @@
         d = u.baseY,
         h = u.textAlign,
         p = u.textVerticalAlign;
-      A(t, r, i, f, d);
+      C(t, r, i, f, d);
       var g = c.adjustTextX(f, o, h),
         m = c.adjustTextY(d, s, p),
         v = g,
@@ -3893,24 +3893,24 @@
           k = E.length,
           O = S.lineHeight,
           T = S.width,
-          C = 0,
+          A = 0,
           D = v,
           L = b,
           N = k - 1;
-        while (C < k && ((w = E[C]), !w.textAlign || 'left' === w.textAlign))
-          M(e, t, w, r, O, y, D, 'left'), (T -= w.width), (D += w.width), C++;
+        while (A < k && ((w = E[A]), !w.textAlign || 'left' === w.textAlign))
+          M(e, t, w, r, O, y, D, 'left'), (T -= w.width), (D += w.width), A++;
         while (N >= 0 && ((w = E[N]), 'right' === w.textAlign))
           M(e, t, w, r, O, y, L, 'right'), (T -= w.width), (L -= w.width), N--;
         D += (a - (D - v) - (b - L) - T) / 2;
-        while (C <= N)
-          (w = E[C]),
+        while (A <= N)
+          (w = E[A]),
             M(e, t, w, r, O, y, D + w.width / 2, 'center'),
             (D += w.width),
-            C++;
+            A++;
         y += O;
       }
     }
-    function A(e, t, n, r, i) {
+    function C(e, t, n, r, i) {
       if (n && t.textRotation) {
         var a = t.textOrigin;
         'center' === a
@@ -4906,20 +4906,20 @@
                 k = y > x ? y : x,
                 O = y > x ? 1 : y / x,
                 T = y > x ? x / y : 1,
-                C = Math.abs(y - x) > 0.001,
-                A = w + _;
-              C
+                A = Math.abs(y - x) > 0.001,
+                C = w + _;
+              A
                 ? (e.translate(p, g),
                   e.rotate(S),
                   e.scale(O, T),
-                  e.arc(0, 0, k, w, A, 1 - E),
+                  e.arc(0, 0, k, w, C, 1 - E),
                   e.scale(1 / O, 1 / T),
                   e.rotate(-S),
                   e.translate(-p, -g))
-                : e.arc(p, g, k, w, A, 1 - E),
+                : e.arc(p, g, k, w, C, 1 - E),
                 1 === d && ((t = m(w) * y + p), (n = v(w) * x + g)),
-                (r = m(A) * y + p),
-                (i = v(A) * x + g);
+                (r = m(C) * y + p),
+                (i = v(C) * x + g);
               break;
             case u.R:
               (t = r = s[d]),
@@ -6233,12 +6233,12 @@
             var n = T.set(t, []);
             a(e, function(e, r) {
               o(e) && (e = f.get(e)),
-                null != e && e < x && ((n[r] = e), A(v[e], t, r));
+                null != e && e < x && ((n[r] = e), C(v[e], t, r));
             });
           }
         });
-      var C = 0;
-      function A(e, t, n) {
+      var A = 0;
+      function C(e, t, n) {
         null != y.get(t)
           ? (e.otherDims[t] = n)
           : ((e.coordDim = t), (e.coordDimIndex = n), h.set(t, !0));
@@ -6261,12 +6261,12 @@
           f = d(f);
           if (!f.length)
             for (var h = 0; h < ((r && r.length) || 1); h++) {
-              while (C < v.length && null != v[C].coordDim) C++;
-              C < v.length && f.push(C++);
+              while (A < v.length && null != v[A].coordDim) A++;
+              A < v.length && f.push(A++);
             }
           a(f, function(t, a) {
             var o = v[t];
-            if ((A(s(o, e), n, a), null == o.name && r)) {
+            if ((C(s(o, e), n, a), null == o.name && r)) {
               var l = r[a];
               !u(l) && (l = { name: l }),
                 (o.name = o.displayName = l.name),
@@ -7535,8 +7535,8 @@
       k = n('I67C'),
       O = n('n+WB'),
       T = n('liI8'),
-      C = n('0MLT'),
-      A = n('uCRN'),
+      A = n('0MLT'),
+      C = n('uCRN'),
       M = n('twJ5'),
       I = n('6Nbm'),
       P = n('kPvK'),
@@ -7551,7 +7551,7 @@
       V = u.document,
       H = u.process,
       U = c('fetch'),
-      W = C.f,
+      W = A.f,
       G = W,
       K = 'process' == b(H),
       q = !!(V && V.createEvent && u.dispatchEvent),
@@ -7648,7 +7648,7 @@
             i = se(t);
           if (
             i &&
-            ((n = A(function() {
+            ((n = C(function() {
               K ? H.emit('unhandledRejection', r, e) : ae(Y, e, r);
             })),
             (t.rejection = K || se(t) ? ee : Z),
@@ -7746,7 +7746,7 @@
           (this.resolve = ue(fe, e, t)),
           (this.reject = ue(ce, e, t));
       }),
-      (C.f = W = function(e) {
+      (A.f = W = function(e) {
         return e === F || e === a ? new i(e) : G(e);
       }),
       l ||
@@ -7801,7 +7801,7 @@
               n = W(t),
               r = n.resolve,
               i = n.reject,
-              a = A(function() {
+              a = C(function() {
                 var n = v(t.resolve),
                   a = [],
                   o = 0,
@@ -7823,7 +7823,7 @@
             var t = this,
               n = W(t),
               r = n.reject,
-              i = A(function() {
+              i = C(function() {
                 var i = v(t.resolve);
                 w(e, function(e) {
                   i.call(t, e).then(n.resolve, r);
@@ -8288,8 +8288,8 @@
       k = n('2RC6'),
       O = n('73Ew'),
       T = n('D8FR'),
-      C = n('GUTS'),
-      A = n('bShA'),
+      A = n('GUTS'),
+      C = n('bShA'),
       M = n('fbKl'),
       I = n('1agv'),
       P = n('fotI'),
@@ -8312,11 +8312,11 @@
       X = k.f,
       J = _.f,
       $ = O.f,
-      Q = A('symbols'),
-      Z = A('op-symbols'),
-      ee = A('string-to-symbol-registry'),
-      te = A('symbol-to-string-registry'),
-      ne = A('wks'),
+      Q = C('symbols'),
+      Z = C('op-symbols'),
+      ee = C('string-to-symbol-registry'),
+      te = C('symbol-to-string-registry'),
+      ne = C('wks'),
       re = i.QObject,
       ie = !re || !re[V] || !re[V].findChild,
       ae =
@@ -8434,10 +8434,10 @@
             };
           return s && ie && ae(G, t, { configurable: !0, set: n }), oe(t, e);
         }),
-        C(K[V], 'toString', function() {
+        A(K[V], 'toString', function() {
           return W(this).tag;
         }),
-        C(K, 'withoutSetter', function(e) {
+        A(K, 'withoutSetter', function(e) {
           return oe(P(e), e);
         }),
         (O.f = fe),
@@ -8455,7 +8455,7 @@
               return W(this).description;
             },
           }),
-          o || C(G, 'propertyIsEnumerable', fe, { unsafe: !0 }))),
+          o || A(G, 'propertyIsEnumerable', fe, { unsafe: !0 }))),
       r({ global: !0, wrap: !0, forced: !l, sham: !l }, { Symbol: K }),
       z(x(ne), function(e) {
         L(e);
@@ -8580,13 +8580,13 @@
         k = (t + r) / 2 + s(v) * _ + l(v) * S,
         O = d([1, 0], [(y - _) / c, (b - S) / h]),
         T = [(y - _) / c, (b - S) / h],
-        C = [(-1 * y - _) / c, (-1 * b - S) / h],
-        A = d(T, C);
-      f(T, C) <= -1 && (A = u),
-        f(T, C) >= 1 && (A = 0),
-        0 === a && A > 0 && (A -= 2 * u),
-        1 === a && A < 0 && (A += 2 * u),
-        m.addData(g, E, k, c, h, O, A, v, a);
+        A = [(-1 * y - _) / c, (-1 * b - S) / h],
+        C = d(T, A);
+      f(T, A) <= -1 && (C = u),
+        f(T, A) >= 1 && (C = 0),
+        0 === a && C > 0 && (C -= 2 * u),
+        1 === a && C < 0 && (C += 2 * u),
+        m.addData(g, E, k, c, h, O, C, v, a);
     }
     var p = /([mlvhzcqtsa])([^mlvhzcqtsa]*)/gi,
       g = /-?([0-9]*\.)?[0-9]+([eE]-?[0-9]+)?/g;
@@ -8625,8 +8625,8 @@
             k,
             O,
             T,
-            C = n,
-            A = r;
+            A = n,
+            C = r;
           switch (m) {
             case 'l':
               (n += v[x++]), (r += v[x++]), (f = l.L), s.addData(f, n, r);
@@ -8690,38 +8690,38 @@
                 I = s.data;
               t === l.C && ((w += n - I[M - 4]), (_ += r - I[M - 3])),
                 (f = l.C),
-                (C = v[x++]),
                 (A = v[x++]),
+                (C = v[x++]),
                 (n = v[x++]),
                 (r = v[x++]),
-                s.addData(f, w, _, C, A, n, r);
+                s.addData(f, w, _, A, C, n, r);
               break;
             case 's':
               (w = n), (_ = r);
               (M = s.len()), (I = s.data);
               t === l.C && ((w += n - I[M - 4]), (_ += r - I[M - 3])),
                 (f = l.C),
-                (C = n + v[x++]),
-                (A = r + v[x++]),
+                (A = n + v[x++]),
+                (C = r + v[x++]),
                 (n += v[x++]),
                 (r += v[x++]),
-                s.addData(f, w, _, C, A, n, r);
+                s.addData(f, w, _, A, C, n, r);
               break;
             case 'Q':
-              (C = v[x++]),
-                (A = v[x++]),
+              (A = v[x++]),
+                (C = v[x++]),
                 (n = v[x++]),
                 (r = v[x++]),
                 (f = l.Q),
-                s.addData(f, C, A, n, r);
+                s.addData(f, A, C, n, r);
               break;
             case 'q':
-              (C = v[x++] + n),
-                (A = v[x++] + r),
+              (A = v[x++] + n),
+                (C = v[x++] + r),
                 (n += v[x++]),
                 (r += v[x++]),
                 (f = l.Q),
-                s.addData(f, C, A, n, r);
+                s.addData(f, A, C, n, r);
               break;
             case 'T':
               (w = n), (_ = r);
@@ -8747,12 +8747,12 @@
                 (k = v[x++]),
                 (O = v[x++]),
                 (T = v[x++]),
-                (C = n),
-                (A = r),
+                (A = n),
+                (C = r),
                 (n = v[x++]),
                 (r = v[x++]),
                 (f = l.A),
-                h(C, A, n, r, O, T, S, E, k, f, s);
+                h(A, C, n, r, O, T, S, E, k, f, s);
               break;
             case 'a':
               (S = v[x++]),
@@ -8760,12 +8760,12 @@
                 (k = v[x++]),
                 (O = v[x++]),
                 (T = v[x++]),
-                (C = n),
-                (A = r),
+                (A = n),
+                (C = r),
                 (n += v[x++]),
                 (r += v[x++]),
                 (f = l.A),
-                h(C, A, n, r, O, T, S, E, k, f, s);
+                h(A, C, n, r, O, T, S, E, k, f, s);
               break;
           }
         }
@@ -9012,8 +9012,8 @@
       k = Math.pow,
       O = 'Invalid authority',
       T = 'Invalid scheme',
-      C = 'Invalid host',
-      A = 'Invalid port',
+      A = 'Invalid host',
+      C = 'Invalid port',
       M = /[A-Za-z]/,
       I = /[\d+-.A-Za-z]/,
       P = /\d/,
@@ -9028,15 +9028,15 @@
       V = function(e, t) {
         var n, r, i;
         if ('[' == t.charAt(0)) {
-          if (']' != t.charAt(t.length - 1)) return C;
-          if (((n = U(t.slice(1, -1))), !n)) return C;
+          if (']' != t.charAt(t.length - 1)) return A;
+          if (((n = U(t.slice(1, -1))), !n)) return A;
           e.host = n;
         } else if (Q(e)) {
-          if (((t = g(t)), j.test(t))) return C;
-          if (((n = H(t)), null === n)) return C;
+          if (((t = g(t)), j.test(t))) return A;
+          if (((n = H(t)), null === n)) return A;
           e.host = n;
         } else {
-          if (z.test(t)) return C;
+          if (z.test(t)) return A;
           for (n = '', r = h(t), i = 0; i < r.length; i++) n += J(r[i], K);
           e.host = n;
         }
@@ -9442,7 +9442,7 @@
                   '#' == o ||
                   ('\\' == o && Q(e))
                 ) {
-                  if (Q(e) && '' == d) return C;
+                  if (Q(e) && '' == d) return A;
                   if (n && '' == d && (Z(e) || null !== e.port)) return;
                   if (((l = V(e, d)), l)) return l;
                   if (((d = ''), (u = _e), n)) return;
@@ -9450,7 +9450,7 @@
                 }
                 '[' == o ? (g = !0) : ']' == o && (g = !1), (d += o);
               } else {
-                if ('' == d) return C;
+                if ('' == d) return A;
                 if (((l = V(e, d)), l)) return l;
                 if (((d = ''), (u = ye), n == ve)) return;
               }
@@ -9467,14 +9467,14 @@
                 ) {
                   if ('' != d) {
                     var x = parseInt(d, 10);
-                    if (x > 65535) return A;
+                    if (x > 65535) return C;
                     (e.port = Q(e) && x === $[e.scheme] ? null : x), (d = '');
                   }
                   if (n) return;
                   u = _e;
                   continue;
                 }
-                return A;
+                return C;
               }
               d += o;
               break;
@@ -9595,15 +9595,15 @@
           c++;
         }
       },
-      Ce = function(e) {
+      Ae = function(e) {
         var t,
           n,
-          r = c(this, Ce, 'URL'),
+          r = c(this, Ae, 'URL'),
           i = arguments.length > 1 ? arguments[1] : void 0,
           o = String(e),
           s = _(r, { type: 'URL' });
         if (void 0 !== i)
-          if (i instanceof Ce) t = S(i);
+          if (i instanceof Ae) t = S(i);
           else if (((n = Te((t = {}), String(i))), n)) throw TypeError(n);
         if (((n = Te(s, o, null, t)), n)) throw TypeError(n);
         var l = (s.searchParams = new x()),
@@ -9626,7 +9626,7 @@
             (r.searchParams = Be.call(r)),
             (r.hash = Ve.call(r)));
       },
-      Ae = Ce.prototype,
+      Ce = Ae.prototype,
       Me = function() {
         var e = S(this),
           t = e.scheme,
@@ -9709,7 +9709,7 @@
       };
     if (
       (a &&
-        l(Ae, {
+        l(Ce, {
           href: He(Me, function(e) {
             var t = S(this),
               n = String(e),
@@ -9777,7 +9777,7 @@
           }),
         }),
       u(
-        Ae,
+        Ce,
         'toJSON',
         function() {
           return Me.call(this);
@@ -9785,7 +9785,7 @@
         { enumerable: !0 },
       ),
       u(
-        Ae,
+        Ce,
         'toString',
         function() {
           return Me.call(this);
@@ -9797,15 +9797,15 @@
       var Ue = b.createObjectURL,
         We = b.revokeObjectURL;
       Ue &&
-        u(Ce, 'createObjectURL', function(e) {
+        u(Ae, 'createObjectURL', function(e) {
           return Ue.apply(b, arguments);
         }),
         We &&
-          u(Ce, 'revokeObjectURL', function(e) {
+          u(Ae, 'revokeObjectURL', function(e) {
             return We.apply(b, arguments);
           });
     }
-    m(Ce, 'URL'), i({ global: !0, forced: !o, sham: !a }, { URL: Ce });
+    m(Ae, 'URL'), i({ global: !0, forced: !o, sham: !a }, { URL: Ae });
   },
   '8g5g': function(e, t, n) {
     'use strict';
@@ -10548,29 +10548,29 @@
               k,
               O,
               T,
-              C = t.get(m, w),
-              A = t.get(v, w),
-              M = C >= 0 ? 'p' : 'n',
+              A = t.get(m, w),
+              C = t.get(v, w),
+              M = A >= 0 ? 'p' : 'n',
               I = x;
             if (
-              (y && (a[l][A] || (a[l][A] = { p: x, n: x }), (I = a[l][A][M])),
+              (y && (a[l][C] || (a[l][C] = { p: x, n: x }), (I = a[l][C][M])),
               b)
             ) {
-              var P = n.dataToPoint([C, A]);
+              var P = n.dataToPoint([A, C]);
               (S = I),
                 (k = P[1] + c),
                 (O = P[0] - x),
                 (T = f),
                 Math.abs(O) < g && (O = (O < 0 ? -1 : 1) * g),
-                isNaN(O) || (y && (a[l][A][M] += O));
+                isNaN(O) || (y && (a[l][C][M] += O));
             } else {
-              P = n.dataToPoint([A, C]);
+              P = n.dataToPoint([C, A]);
               (S = P[0] + c),
                 (k = I),
                 (O = f),
                 (T = P[1] - x),
                 Math.abs(T) < g && (T = (T <= 0 ? -1 : 1) * g),
-                isNaN(T) || (y && (a[l][A][M] += T));
+                isNaN(T) || (y && (a[l][C][M] += T));
             }
             t.setItemLayout(w, { x: S, y: k, width: O, height: T });
           }
@@ -10775,7 +10775,7 @@
         _owner: E.current,
       };
     }
-    function C(e, t) {
+    function A(e, t) {
       return {
         $$typeof: a,
         type: e.type,
@@ -10785,7 +10785,7 @@
         _owner: e._owner,
       };
     }
-    function A(e) {
+    function C(e) {
       return 'object' === typeof e && null !== e && e.$$typeof === a;
     }
     function M(e) {
@@ -10888,8 +10888,8 @@
               return e;
             })
           : null != e &&
-            (A(e) &&
-              (e = C(
+            (C(e) &&
+              (e = A(
                 e,
                 i +
                   (!e.key || (t && t.key === e.key)
@@ -10948,7 +10948,7 @@
         );
       },
       only: function(e) {
-        if (!A(e)) throw Error(v(143));
+        if (!C(e)) throw Error(v(143));
         return e;
       },
     }),
@@ -11020,7 +11020,7 @@
       (t.forwardRef = function(e) {
         return { $$typeof: d, render: e };
       }),
-      (t.isValidElement = A),
+      (t.isValidElement = C),
       (t.lazy = function(e) {
         return { $$typeof: g, _ctor: e, _status: -1, _result: null };
       }),
@@ -11726,6 +11726,235 @@
     }
     e.exports = f;
   },
+  AOtm: function(e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('xwgP'),
+      i = n.n(r),
+      a = n('fLni'),
+      o = n('xVRR'),
+      s = n('Rsk4'),
+      l = i.a.memo(s['default']['Area-demo'].component);
+    t['default'] = function() {
+      return i.a.createElement(
+        i.a.Fragment,
+        null,
+        i.a.createElement(
+          i.a.Fragment,
+          null,
+          i.a.createElement(
+            'div',
+            { className: 'markdown' },
+            i.a.createElement(
+              'h3',
+              { id: '\u7528\u6cd5' },
+              i.a.createElement(
+                a['AnchorLink'],
+                { to: '#\u7528\u6cd5', 'aria-hidden': 'true', tabIndex: -1 },
+                i.a.createElement('span', { className: 'icon icon-link' }),
+              ),
+              '\u7528\u6cd5:',
+            ),
+          ),
+          i.a.createElement(
+            o['default'],
+            s['default']['Area-demo'].previewerProps,
+            i.a.createElement(l, null),
+          ),
+          i.a.createElement(
+            'div',
+            { className: 'markdown' },
+            i.a.createElement(
+              'h3',
+              { id: 'api' },
+              i.a.createElement(
+                a['AnchorLink'],
+                { to: '#api', 'aria-hidden': 'true', tabIndex: -1 },
+                i.a.createElement('span', { className: 'icon icon-link' }),
+              ),
+              'API',
+            ),
+            i.a.createElement(
+              'table',
+              null,
+              i.a.createElement(
+                'thead',
+                null,
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('th', { align: 'center' }, '\u53c2\u6570'),
+                  i.a.createElement('th', { align: 'center' }, '\u8bf4\u660e'),
+                  i.a.createElement('th', { align: 'center' }, '\u7c7b\u578b'),
+                  i.a.createElement(
+                    'th',
+                    { align: 'left' },
+                    '\u9ed8\u8ba4\u503c',
+                  ),
+                ),
+              ),
+              i.a.createElement(
+                'tbody',
+                null,
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'x'),
+                  i.a.createElement('td', { align: 'center' }, '\u7ef4\u5ea6'),
+                  i.a.createElement('td', { align: 'center' }, 'array'),
+                  i.a.createElement('td', { align: 'left' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'y'),
+                  i.a.createElement('td', { align: 'center' }, '\u6307\u6807'),
+                  i.a.createElement('td', { align: 'center' }, 'array'),
+                  i.a.createElement('td', { align: 'left' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'yAxisName'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'y\u8f74\u540d\u79f0',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'array'),
+                  i.a.createElement('td', { align: 'left' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'boundaryGap'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u662f\u5426\u4e24\u8fb9\u7559\u767d',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'boolean'),
+                  i.a.createElement('td', { align: 'left' }, 'true'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'rotate'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'x \u8f74 label \u5b57\u4f53 rotate',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'number'),
+                  i.a.createElement('td', { align: 'left' }, '0'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'interval'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u8bbe\u7f6e\u5750\u6807\u8f74\u5206\u5272\u95f4\u9694\uff08\u8bbe\u7f6e 0 \u5f3a\u5236\u663e\u793a\uff09',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'number|string'),
+                  i.a.createElement('td', { align: 'left' }, "'auto'"),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'showLabel'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u662f\u5426\u663e\u793a\u8282\u70b9\u5904 label',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'boolean'),
+                  i.a.createElement('td', { align: 'left' }, 'false'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'options'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'echarts \u56fe\u8868\u914d\u7f6e\u9879 (\u4f18\u5148\u7ea7\u9ad8\u4e8e\u4ee5\u4e0a\u914d\u7f6e)',
+                    i.a.createElement(
+                      a['Link'],
+                      { to: 'https://echarts.apache.org/zh/option.html#title' },
+                      'echarts',
+                    ),
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'object'),
+                  i.a.createElement('td', { align: 'left' }, '{', '}'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'showLoading'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u662f\u5426\u663e\u793a\u52a0\u8f7d\u72b6\u6001',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'boolean'),
+                  i.a.createElement('td', { align: 'left' }, 'false'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'loadingOptions',
+                  ),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u56fe\u8868\u52a0\u8f7d\u6837\u5f0f',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'object'),
+                  i.a.createElement('td', { align: 'left' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'theme'),
+                  i.a.createElement('td', { align: 'center' }, '\u4e3b\u9898'),
+                  i.a.createElement('td', { align: 'center' }, 'string|object'),
+                  i.a.createElement('td', { align: 'left' }, 'xm'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'initOptions'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u521d\u59cb\u5316\u65f6\u7684\u9644\u52a0\u53c2\u6570',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'object'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'left' },
+                    '{',
+                    "devicePixelRatio: window.devicePixelRatio,renderer: 'canvas'",
+                    '}',
+                  ),
+                ),
+              ),
+            ),
+            i.a.createElement(
+              'p',
+              null,
+              '\u53ef\u4ee5\u901a\u8fc7\u5b9e\u4f8b\u7684 getEchartsInstance \u65b9\u6cd5\u83b7\u53d6\u56fe\u8868\u5b9e\u4f8b',
+            ),
+          ),
+        ),
+      );
+    };
+  },
   AaHE: function(e, t, n) {
     var r = n('oEo5'),
       i = n('ode/'),
@@ -12282,22 +12511,22 @@
       v.sort(function(e, t) {
         return y[e] - y[t];
       });
-      var C = [],
-        A = [],
+      var A = [],
+        C = [],
         M = [],
         I = [],
         P = [];
       for (w = 0; w < v.length; w++) {
         O = v[w];
-        (C[w] = d[O]),
-          (A[w] = h[O]),
+        (A[w] = d[O]),
+          (C[w] = h[O]),
           (M[w] = p[O]),
           (I[w] = g[O]),
           (P[w] = m[O]);
       }
       return {
-        current: C,
-        next: A,
+        current: A,
+        next: C,
         stackedOnCurrent: M,
         stackedOnNext: I,
         status: P,
@@ -12392,7 +12621,7 @@
             : 'text' === r && (this._isText = !0),
           this._isDefine)
         ) {
-          var i = C[r];
+          var i = A[r];
           if (i) {
             var a = i.call(this, e),
               o = e.getAttribute('id');
@@ -12553,18 +12782,18 @@
           return M(t, r), D(e, r, this._defs), r;
         },
       },
-      C = {
+      A = {
         lineargradient: function(e) {
           var t = parseInt(e.getAttribute('x1') || 0, 10),
             n = parseInt(e.getAttribute('y1') || 0, 10),
             r = parseInt(e.getAttribute('x2') || 10, 10),
             i = parseInt(e.getAttribute('y2') || 0, 10),
             a = new h(t, n, r, i);
-          return A(e, a), a;
+          return C(e, a), a;
         },
         radialgradient: function(e) {},
       };
-    function A(e, t) {
+    function C(e, t) {
       var n = e.firstChild;
       while (n) {
         if (1 === n.nodeType) {
@@ -13348,8 +13577,8 @@
             e
           );
         })(),
-        C = 'undefined' !== typeof WeakMap ? new WeakMap() : new n(),
-        A = (function() {
+        A = 'undefined' !== typeof WeakMap ? new WeakMap() : new n(),
+        C = (function() {
           function e(t) {
             if (!(this instanceof e))
               throw new TypeError('Cannot call a class as a function.');
@@ -13357,18 +13586,18 @@
               throw new TypeError('1 argument required, but only 0 present.');
             var n = f.getInstance(),
               r = new T(t, n, this);
-            C.set(this, r);
+            A.set(this, r);
           }
           return e;
         })();
       ['observe', 'unobserve', 'disconnect'].forEach(function(e) {
-        A.prototype[e] = function() {
+        C.prototype[e] = function() {
           var t;
-          return (t = C.get(this))[e].apply(t, arguments);
+          return (t = A.get(this))[e].apply(t, arguments);
         };
       });
       var M = (function() {
-        return 'undefined' !== typeof i.ResizeObserver ? i.ResizeObserver : A;
+        return 'undefined' !== typeof i.ResizeObserver ? i.ResizeObserver : C;
       })();
       t['a'] = M;
     }.call(this, n('+7+L')));
@@ -13857,9 +14086,9 @@
           k = (Math.PI / (E || S)) * 2,
           O = e.get('clockwise'),
           T = e.get('roseType'),
-          C = e.get('stillShowZeroSum'),
-          A = t.getDataExtent(r);
-        A[0] = 0;
+          A = e.get('stillShowZeroSum'),
+          C = t.getDataExtent(r);
+        C[0] = 0;
         var M = u,
           I = 0,
           P = w,
@@ -13880,7 +14109,7 @@
                 viewRect: o,
               });
             else {
-              (r = 'area' !== T ? (0 === E && C ? k : e * k) : u / S),
+              (r = 'area' !== T ? (0 === E && A ? k : e * k) : u / S),
                 r < _ ? ((r = _), (M -= _)) : (I += e);
               var i = P + D * r;
               t.setItemLayout(n, {
@@ -13891,7 +14120,7 @@
                 cx: v,
                 cy: y,
                 r0: b,
-                r: T ? a(e, A, [b, x]) : x,
+                r: T ? a(e, C, [b, x]) : x,
                 viewRect: o,
               }),
                 (P = i);
@@ -14233,11 +14462,11 @@
         a.setStyle(f);
       var T = e.getItemVisual(t, 'opacity');
       null != T && (k.opacity = T);
-      var C = e.getItemVisual(t, 'liftZ'),
-        A = a.__z2Origin;
-      null != C
-        ? null == A && ((a.__z2Origin = a.z2), (a.z2 += C))
-        : null != A && ((a.z2 = A), (a.__z2Origin = null));
+      var A = e.getItemVisual(t, 'liftZ'),
+        C = a.__z2Origin;
+      null != A
+        ? null == C && ((a.__z2Origin = a.z2), (a.z2 += A))
+        : null != C && ((a.z2 = C), (a.__z2Origin = null));
       var M = i && i.useNameLabel;
       function I(t, n) {
         return M ? e.getName(t) : c(e, t);
@@ -14695,16 +14924,16 @@
         var n = w || e.location,
           a = d(f(k, n), n),
           u = a.pathname,
-          C = u && u.replace(/([.+*?=^!:${}()[\]|/\\])/g, '\\$1'),
-          A = C
+          A = u && u.replace(/([.+*?=^!:${}()[\]|/\\])/g, '\\$1'),
+          C = A
             ? Object(r['i'])(n.pathname, {
-                path: C,
+                path: A,
                 exact: g,
                 sensitive: _,
                 strict: S,
               })
             : null,
-          M = !!(m ? m(A, n) : A),
+          M = !!(m ? m(C, n) : C),
           I = M ? x(p, s) : p,
           P = M ? Object(l['a'])({}, E, {}, h) : E,
           D = Object(l['a'])(
@@ -15116,7 +15345,7 @@
       if (!t) return '';
       var a = (e + '').split('\n');
       i = T(t, n, r, i);
-      for (var o = 0, s = a.length; o < s; o++) a[o] = C(a[o], i);
+      for (var o = 0, s = a.length; o < s; o++) a[o] = A(a[o], i);
       return a.join('\n');
     }
     function T(e, t, n, r) {
@@ -15140,7 +15369,7 @@
         r
       );
     }
-    function C(e, t) {
+    function A(e, t) {
       var n = t.containerWidth,
         r = t.font,
         i = t.contentWidth;
@@ -15154,7 +15383,7 @@
         }
         var s =
           0 === o
-            ? A(e, i, t.ascCharWidth, t.cnCharWidth)
+            ? C(e, i, t.ascCharWidth, t.cnCharWidth)
             : a > 0
             ? Math.floor((e.length * i) / a)
             : 0;
@@ -15162,7 +15391,7 @@
       }
       return '' === e && (e = t.placeholder), e;
     }
-    function A(e, t, n, r) {
+    function C(e, t, n, r) {
       for (var i = 0, a = 0, o = e.length; a < o && i < t; a++) {
         var s = e.charCodeAt(a);
         i += 0 <= s && s <= 127 ? n : r;
@@ -15198,7 +15427,7 @@
             p < g;
             p++
           )
-            o[p] = C(o[p], h);
+            o[p] = A(o[p], h);
       }
       return {
         lines: o,
@@ -15232,18 +15461,18 @@
           var E = x.tokens[S],
             k = (E.styleName && t.rich[E.styleName]) || {},
             T = (E.textPadding = k.textPadding),
-            C = (E.font = k.font || t.font),
-            A = (E.textHeight = l(k.textHeight, M(C)));
+            A = (E.font = k.font || t.font),
+            C = (E.textHeight = l(k.textHeight, M(A)));
           if (
-            (T && (A += T[0] + T[2]),
-            (E.height = A),
-            (E.lineHeight = u(k.textLineHeight, t.textLineHeight, A)),
+            (T && (C += T[0] + T[2]),
+            (E.height = C),
+            (E.lineHeight = u(k.textLineHeight, t.textLineHeight, C)),
             (E.textAlign = (k && k.textAlign) || t.textAlign),
             (E.textVerticalAlign = (k && k.textVerticalAlign) || 'middle'),
             null != v && c + E.lineHeight > v)
           )
             return { lines: [], width: 0, height: 0 };
-          E.textWidth = y(E.text, C);
+          E.textWidth = y(E.text, A);
           var I = k.textWidth,
             P = null == I || 'auto' === I;
           if ('string' === typeof I && '%' === I.charAt(I.length - 1))
@@ -15256,7 +15485,7 @@
               L &&
                 ((L = i.findExistImage(L)),
                 i.isImageReady(L) &&
-                  (I = Math.max(I, (L.width * A) / L.height)));
+                  (I = Math.max(I, (L.width * C) / L.height)));
             }
             var N = T ? T[1] + T[3] : 0;
             I += N;
@@ -15265,10 +15494,10 @@
               j < I &&
               (!P || j < N
                 ? ((E.text = ''), (E.textWidth = I = 0))
-                : ((E.text = O(E.text, j - N, C, g.ellipsis, {
+                : ((E.text = O(E.text, j - N, A, g.ellipsis, {
                     minChar: g.minChar,
                   })),
-                  (E.textWidth = y(E.text, C)),
+                  (E.textWidth = y(E.text, A)),
                   (I = E.textWidth + N)));
           }
           (_ += E.width = I), k && (w = Math.max(w, E.lineHeight));
@@ -16303,8 +16532,8 @@
       k = 'prototype',
       O = 'Wrong length',
       T = 'Wrong index',
-      C = r[S],
-      A = C,
+      A = r[S],
+      C = A,
       M = r[E],
       I = M && M[k],
       P = Object.prototype,
@@ -16359,24 +16588,24 @@
     if (a) {
       if (
         !l(function() {
-          C(1);
+          A(1);
         }) ||
         !l(function() {
-          new C(-1);
+          new A(-1);
         }) ||
         l(function() {
-          return new C(), new C(1.5), new C(NaN), C.name != S;
+          return new A(), new A(1.5), new A(NaN), A.name != S;
         })
       ) {
-        A = function(e) {
-          return u(this, A), new C(d(e));
+        C = function(e) {
+          return u(this, C), new A(d(e));
         };
-        for (var G, K = (A[k] = C[k]), q = m(C), Y = 0; q.length > Y; )
-          (G = q[Y++]) in A || o(A, G, C[G]);
-        K.constructor = A;
+        for (var G, K = (C[k] = A[k]), q = m(A), Y = 0; q.length > Y; )
+          (G = q[Y++]) in C || o(C, G, A[G]);
+        K.constructor = C;
       }
       g && p(I) !== P && g(I, P);
-      var X = new M(new A(2)),
+      var X = new M(new C(2)),
         J = I.setInt8;
       X.setInt8(0, 2147483648),
         X.setInt8(1, 2147483649),
@@ -16394,14 +16623,14 @@
             { unsafe: !0 },
           );
     } else
-      (A = function(e) {
-        u(this, A, S);
+      (C = function(e) {
+        u(this, C, S);
         var t = d(e);
         _(this, { bytes: y.call(new Array(t), 0), byteLength: t }),
           i || (this.byteLength = t);
       }),
         (M = function(e, t, n) {
-          u(this, M, E), u(e, A, E);
+          u(this, M, E), u(e, C, E);
           var r = w(e).byteLength,
             a = c(t);
           if (a < 0 || a > r) throw D('Wrong offset');
@@ -16411,7 +16640,7 @@
               ((this.buffer = e), (this.byteLength = n), (this.byteOffset = a));
         }),
         i &&
-          (H(A, 'byteLength'),
+          (H(C, 'byteLength'),
           H(M, 'buffer'),
           H(M, 'byteLength'),
           H(M, 'byteOffset')),
@@ -16478,7 +16707,7 @@
             W(this, 8, e, V, t, arguments.length > 2 ? arguments[2] : void 0);
           },
         });
-    b(A, S), b(M, E), (e.exports = { ArrayBuffer: A, DataView: M });
+    b(C, S), b(M, E), (e.exports = { ArrayBuffer: C, DataView: M });
   },
   HFu6: function(e, t, n) {
     'use strict';
@@ -16725,10 +16954,10 @@
     function T() {
       return -1 === window.navigator.userAgent.indexOf('Trident');
     }
-    function C() {
+    function A() {
       return -1 === window.navigator.userAgent.indexOf('Firefox');
     }
-    function A(e) {
+    function C(e) {
       return void 0 === e.state && -1 === navigator.userAgent.indexOf('CriOS');
     }
     var M = 'popstate',
@@ -16775,8 +17004,8 @@
           (J.length = t.length),
           b.notifyListeners(J.location, J.action);
       }
-      function C(e) {
-        A(e) || L(g(e.state));
+      function A(e) {
+        C(e) || L(g(e.state));
       }
       function D() {
         L(g(P()));
@@ -16857,10 +17086,10 @@
       function K(e) {
         (G += e),
           1 === G && 1 === e
-            ? (window.addEventListener(M, C),
+            ? (window.addEventListener(M, A),
               i && window.addEventListener(I, D))
             : 0 === G &&
-              (window.removeEventListener(M, C),
+              (window.removeEventListener(M, A),
               i && window.removeEventListener(I, D));
       }
       var q = !1;
@@ -16929,7 +17158,7 @@
     function B(e) {
       void 0 === e && (e = {}), E || Object(h['a'])(!1);
       var t = window.history,
-        n = (C(), e),
+        n = (A(), e),
         i = n.getUserConfirmation,
         a = void 0 === i ? k : i,
         o = n.hashType,
@@ -16966,10 +17195,10 @@
             r = Q.location;
           if (!b && O(r, n)) return;
           if (_ === x(n)) return;
-          (_ = null), A(n);
+          (_ = null), C(n);
         }
       }
-      function A(e) {
+      function C(e) {
         if (b) (b = !1), m();
         else {
           var t = 'POP';
@@ -17173,235 +17402,6 @@
       };
       return T;
     }
-  },
-  HHzP: function(e, t, n) {
-    'use strict';
-    n.r(t);
-    var r = n('xwgP'),
-      i = n.n(r),
-      a = n('fLni'),
-      o = n('xVRR'),
-      s = n('Rsk4'),
-      l = i.a.memo(s['default']['AreaChart-demo'].component);
-    t['default'] = function() {
-      return i.a.createElement(
-        i.a.Fragment,
-        null,
-        i.a.createElement(
-          i.a.Fragment,
-          null,
-          i.a.createElement(
-            'div',
-            { className: 'markdown' },
-            i.a.createElement(
-              'h3',
-              { id: '\u7528\u6cd5' },
-              i.a.createElement(
-                a['AnchorLink'],
-                { to: '#\u7528\u6cd5', 'aria-hidden': 'true', tabIndex: -1 },
-                i.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              '\u7528\u6cd5:',
-            ),
-          ),
-          i.a.createElement(
-            o['default'],
-            s['default']['AreaChart-demo'].previewerProps,
-            i.a.createElement(l, null),
-          ),
-          i.a.createElement(
-            'div',
-            { className: 'markdown' },
-            i.a.createElement(
-              'h3',
-              { id: 'api' },
-              i.a.createElement(
-                a['AnchorLink'],
-                { to: '#api', 'aria-hidden': 'true', tabIndex: -1 },
-                i.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              'API',
-            ),
-            i.a.createElement(
-              'table',
-              null,
-              i.a.createElement(
-                'thead',
-                null,
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('th', { align: 'center' }, '\u53c2\u6570'),
-                  i.a.createElement('th', { align: 'center' }, '\u8bf4\u660e'),
-                  i.a.createElement('th', { align: 'center' }, '\u7c7b\u578b'),
-                  i.a.createElement(
-                    'th',
-                    { align: 'left' },
-                    '\u9ed8\u8ba4\u503c',
-                  ),
-                ),
-              ),
-              i.a.createElement(
-                'tbody',
-                null,
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'x'),
-                  i.a.createElement('td', { align: 'center' }, '\u7ef4\u5ea6'),
-                  i.a.createElement('td', { align: 'center' }, 'array'),
-                  i.a.createElement('td', { align: 'left' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'y'),
-                  i.a.createElement('td', { align: 'center' }, '\u6307\u6807'),
-                  i.a.createElement('td', { align: 'center' }, 'array'),
-                  i.a.createElement('td', { align: 'left' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'yAxisName'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'y\u8f74\u540d\u79f0',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'array'),
-                  i.a.createElement('td', { align: 'left' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'boundaryGap'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u662f\u5426\u4e24\u8fb9\u7559\u767d',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'boolean'),
-                  i.a.createElement('td', { align: 'left' }, 'true'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'rotate'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'x \u8f74 label \u5b57\u4f53 rotate',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'number'),
-                  i.a.createElement('td', { align: 'left' }, '0'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'interval'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u8bbe\u7f6e\u5750\u6807\u8f74\u5206\u5272\u95f4\u9694\uff08\u8bbe\u7f6e 0 \u5f3a\u5236\u663e\u793a\uff09',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'number|string'),
-                  i.a.createElement('td', { align: 'left' }, "'auto'"),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'showLabel'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u662f\u5426\u663e\u793a\u8282\u70b9\u5904 label',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'boolean'),
-                  i.a.createElement('td', { align: 'left' }, 'false'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'options'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'echarts \u56fe\u8868\u914d\u7f6e\u9879 (\u4f18\u5148\u7ea7\u9ad8\u4e8e\u4ee5\u4e0a\u914d\u7f6e)',
-                    i.a.createElement(
-                      a['Link'],
-                      { to: 'https://echarts.apache.org/zh/option.html#title' },
-                      'echarts',
-                    ),
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'object'),
-                  i.a.createElement('td', { align: 'left' }, '{', '}'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'showLoading'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u662f\u5426\u663e\u793a\u52a0\u8f7d\u72b6\u6001',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'boolean'),
-                  i.a.createElement('td', { align: 'left' }, 'false'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'loadingOptions',
-                  ),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u56fe\u8868\u52a0\u8f7d\u6837\u5f0f',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'object'),
-                  i.a.createElement('td', { align: 'left' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'theme'),
-                  i.a.createElement('td', { align: 'center' }, '\u4e3b\u9898'),
-                  i.a.createElement('td', { align: 'center' }, 'string|object'),
-                  i.a.createElement('td', { align: 'left' }, 'xm'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'initOptions'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u521d\u59cb\u5316\u65f6\u7684\u9644\u52a0\u53c2\u6570',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'object'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'left' },
-                    '{',
-                    "devicePixelRatio: window.devicePixelRatio,renderer: 'canvas'",
-                    '}',
-                  ),
-                ),
-              ),
-            ),
-            i.a.createElement(
-              'p',
-              null,
-              '\u53ef\u4ee5\u901a\u8fc7\u5b9e\u4f8b\u7684 getEchartsInstance \u65b9\u6cd5\u83b7\u53d6\u56fe\u8868\u5b9e\u4f8b',
-            ),
-          ),
-        ),
-      );
-    };
   },
   HIsA: function(e, t, n) {
     var r = n('2JD6'),
@@ -18697,16 +18697,16 @@
           var k,
             O,
             T,
-            C,
-            A = (o.startAngle + o.endAngle) / 2,
-            M = Math.cos(A),
-            I = Math.sin(A);
+            A,
+            C = (o.startAngle + o.endAngle) / 2,
+            M = Math.cos(C),
+            I = Math.sin(C);
           (c = o.cx), (f = o.cy);
           var P,
             D = e.getFormattedLabel(i, 'normal') || d.getName(i),
-            R = r.getBoundingRect(D, w, C, 'top'),
+            R = r.getBoundingRect(D, w, A, 'top'),
             L = 'inside' === m || 'inner' === m;
-          if ('center' === m) (k = o.cx), (O = o.cy), (C = 'center');
+          if ('center' === m) (k = o.cx), (O = o.cy), (A = 'center');
           else {
             var N = (L ? ((o.r + o.r0) / 2) * M : o.r * M) + c,
               j = (L ? ((o.r + o.r0) / 2) * I : o.r * I) + f;
@@ -18728,7 +18728,7 @@
                   [B, V],
                 ]);
             }
-            C = L
+            A = L
               ? 'center'
               : 'edge' === y
               ? M > 0
@@ -18744,8 +18744,8 @@
               ? H * (Math.PI / 180)
               : H
               ? M < 0
-                ? -A + Math.PI
-                : -A
+                ? -C + Math.PI
+                : -C
               : 0),
             (p = !!P),
             (o.label = {
@@ -18756,7 +18756,7 @@
               len: S,
               len2: E,
               linePoints: T,
-              textAlign: C,
+              textAlign: A,
               verticalAlign: 'middle',
               rotation: P,
               inside: L,
@@ -19845,8 +19845,8 @@
       k = n('2RC6'),
       O = n('qmtO'),
       T = n('twJ5'),
-      C = n('cGOV'),
-      A = T.get,
+      A = n('cGOV'),
+      C = T.get,
       M = T.set,
       I = k.f,
       P = O.f,
@@ -19872,7 +19872,7 @@
       K = function(e, t) {
         I(e, t, {
           get: function() {
-            return A(this)[t];
+            return C(this)[t];
           },
         });
       },
@@ -19924,11 +19924,11 @@
             v = m && m.prototype,
             k = {},
             O = function(e, t) {
-              var n = A(e);
+              var n = C(e);
               return n.view[l](t * a + n.byteOffset, !0);
             },
             T = function(e, t, r) {
-              var i = A(e);
+              var i = C(e);
               n && (r = (r = D(r)) < 0 ? 0 : r > 255 ? 255 : 255 & r),
                 i.view[c](t * a + i.byteOffset, r, !0);
             },
@@ -19948,7 +19948,7 @@
               ((m = t(function(e, t, n, r) {
                 return (
                   u(e, m, s),
-                  C(
+                  A(
                     (function() {
                       return y(t)
                         ? q(t)
@@ -21007,7 +21007,7 @@
             y = [],
             b = this._backgroundEls || [],
             w = function(e) {
-              var t = C[l.type](a, e),
+              var t = A[l.type](a, e),
                 n = F(l, r, t);
               return (
                 n.useStyle(m.getBarItemStyle()),
@@ -21019,7 +21019,7 @@
           a.diff(s)
             .add(function(t) {
               var n = a.getItemModel(t),
-                o = C[l.type](a, t, n);
+                o = A[l.type](a, t, n);
               if ((g && w(t), a.hasValue(t))) {
                 if (f) {
                   var s = E[l.type](h, o);
@@ -21033,7 +21033,7 @@
             })
             .update(function(t, n) {
               var u = a.getItemModel(t),
-                d = C[l.type](a, t, u);
+                d = A[l.type](a, t, u);
               if (g) {
                 var x;
                 0 === b.length
@@ -21042,7 +21042,7 @@
                     x.useStyle(m.getBarItemStyle()),
                     'cartesian2d' === l.type && x.setShape('r', v),
                     (y[t] = x));
-                var _ = C[l.type](a, t),
+                var _ = A[l.type](a, t),
                   S = z(r, _, l);
                 o.updateProps(x, { shape: S }, c, t);
               }
@@ -21178,7 +21178,7 @@
           n.parent && n.parent.remove(n);
         });
     }
-    var C = {
+    var A = {
       cartesian2d: function(e, t, n) {
         var r = e.getItemLayout(t),
           i = n ? I(n, r) : 0,
@@ -21203,7 +21203,7 @@
         };
       },
     };
-    function A(e) {
+    function C(e) {
       return (
         null != e.startAngle &&
         null != e.endAngle &&
@@ -21219,7 +21219,7 @@
       c || e.setShape('r', p.get('barBorderRadius') || 0),
         e.useStyle(
           a.defaults(
-            { stroke: A(i) ? 'none' : h, fill: A(i) ? 'none' : f, opacity: d },
+            { stroke: C(i) ? 'none' : h, fill: C(i) ? 'none' : f, opacity: d },
             p.getBarItemStyle(),
           ),
         );
@@ -21233,7 +21233,7 @@
         ? 'left'
         : 'right';
       c || l(e.style, g, r, f, s, n, v),
-        A(i) && (g.fill = g.stroke = 'none'),
+        C(i) && (g.fill = g.stroke = 'none'),
         o.setHoverStyle(e, g);
     }
     function I(e, t) {
@@ -21708,18 +21708,18 @@
           if (
             (_.add(m(T, i, x, f, y, w)), !E && o && (o !== i || 'none' === o))
           ) {
-            var C = 0.8 * g;
+            var A = 0.8 * g;
             'none' === o && (o = 'circle');
-            var A = s(
+            var C = s(
               o,
-              (h - C) / 2,
-              (g - C) / 2,
-              C,
-              C,
+              (h - A) / 2,
+              (g - A) / 2,
+              A,
+              A,
               w ? c : v,
               null == b || b,
             );
-            _.add(m(A, o, x, f, y, w));
+            _.add(m(C, o, x, f, y, w));
           }
           var M = 'left' === u ? h + 5 : -5,
             I = u,
@@ -22894,7 +22894,7 @@
             ),
             i.a.createElement(s['a'], {
               code:
-                "import React from 'react'\nimport { LineChart, AreaChart } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u6307\u68071',\n  },\n  {\n    data: [200, 600],\n    name: '\u6307\u68072',\n  },\n]\n\nexport default () => <LineChart x={x} y={y} />",
+                "import React from 'react'\nimport { Line } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u6307\u68071',\n  },\n  {\n    data: [200, 600],\n    name: '\u6307\u68072',\n  },\n]\n\nexport default () => <Line x={x} y={y} />",
               lang: 'jsx',
             }),
             i.a.createElement(
@@ -23371,27 +23371,27 @@
                           )
                             (O += n[k].length), S >= O && (++b, (x = O));
                           if (n[b] instanceof l) continue;
-                          (C = k - b), (w = e.slice(x, O)), (_.index -= x);
+                          (A = k - b), (w = e.slice(x, O)), (_.index -= x);
                         } else {
                           d.lastIndex = 0;
                           _ = d.exec(w);
-                          var C = 1;
+                          var A = 1;
                         }
                         if (_) {
                           p && (m = _[1] ? _[1].length : 0);
                           (S = _.index + m),
                             (_ = _[0].slice(m)),
                             (E = S + _.length);
-                          var A = w.slice(0, S),
+                          var C = w.slice(0, S),
                             M = w.slice(E),
-                            I = [b, C];
-                          A && (++b, (x += A.length), I.push(A));
+                            I = [b, A];
+                          C && (++b, (x += C.length), I.push(C));
                           var P = new l(u, h ? t.tokenize(_, h) : _, v, _, g);
                           if (
                             (I.push(P),
                             M && I.push(M),
                             Array.prototype.splice.apply(n, I),
-                            1 != C && t.matchGrammar(e, n, r, b, x, !0, u),
+                            1 != A && t.matchGrammar(e, n, r, b, x, !0, u),
                             o)
                           )
                             break;
@@ -25756,8 +25756,8 @@
       k = n('nbNA'),
       O = n('U3UR'),
       T = n('SXou'),
-      C = n('W/V8'),
-      A = n('d4iy');
+      A = n('W/V8'),
+      C = n('d4iy');
     n('lENJ');
     var M = n('ICLB'),
       I = a.assert,
@@ -25831,8 +25831,8 @@
         return e.__prio - t.__prio;
       }
       l(Ie, c),
-        l(Ce, c),
-        (this._scheduler = new T(this, s, Ce, Ie)),
+        l(Ae, c),
+        (this._scheduler = new T(this, s, Ae, Ie)),
         u.call(this, (this._ecEventProcessor = new ke())),
         (this._messageCenter = new te()),
         this._initEvents(),
@@ -25910,7 +25910,7 @@
               o = (this._model = new c());
             (o.scheduler = this._scheduler), o.init(null, null, a, i);
           }
-          this._model.setOption(e, Ae),
+          this._model.setOption(e, Ce),
             n
               ? ((this[Q] = { silent: r }), (this[$] = !1))
               : (oe(this),
@@ -26660,8 +26660,8 @@
       });
     var Oe = {},
       Te = {},
-      Ce = [],
       Ae = [],
+      Ce = [],
       Me = [],
       Ie = [],
       Pe = {},
@@ -26744,10 +26744,10 @@
       Pe[e] = t;
     }
     function Ye(e) {
-      Ae.push(e);
+      Ce.push(e);
     }
     function Xe(e, t) {
-      nt(Ce, e, t, F);
+      nt(Ae, e, t, F);
     }
     function Je(e) {
       Me.push(e);
@@ -26818,8 +26818,8 @@
         a.noop,
       ),
       $e({ type: 'downplay', event: 'downplay', update: 'downplay' }, a.noop),
-      qe('light', C),
-      qe('dark', A);
+      qe('light', A),
+      qe('dark', C);
     var ft = {};
     (t.version = N),
       (t.dependencies = j),
@@ -27692,7 +27692,7 @@
                   t && (n.click(t.item, t.dimension, e), e.preventDefault());
                 },
                 T = [],
-                C = function(e) {
+                A = function(e) {
                   if (T[e]) return T[e];
                   var t = 8 * e,
                     r = t,
@@ -27714,7 +27714,7 @@
                   }
                   return (T[e] = i), i;
                 },
-                A = function() {
+                C = function() {
                   return (
                     n.abortThreshold > 0 &&
                     new Date().getTime() - h > n.abortThreshold
@@ -27786,15 +27786,15 @@
                     (u.textBaseline = 'middle'),
                     u.fillText(e, v * s, (y + 0.5 * a) * s);
                   var S = u.getImageData(0, 0, w, _).data;
-                  if (A()) return !1;
+                  if (C()) return !1;
                   i && (u.strokeRect(v * s, y, c * s, f * s), u.restore());
                   var E,
                     k,
                     O,
                     T = [],
-                    C = x,
+                    A = x,
                     M = [b / 2, x / 2, b / 2, x / 2];
-                  while (C--) {
+                  while (A--) {
                     E = b;
                     while (E--) {
                       O = g;
@@ -27802,21 +27802,21 @@
                         while (O--) {
                           k = g;
                           while (k--)
-                            if (S[4 * ((E * g + O) * w + (C * g + k)) + 3]) {
-                              T.push([C, E]),
-                                C < M[3] && (M[3] = C),
-                                C > M[1] && (M[1] = C),
+                            if (S[4 * ((E * g + O) * w + (A * g + k)) + 3]) {
+                              T.push([A, E]),
+                                A < M[3] && (M[3] = A),
+                                A > M[1] && (M[1] = A),
                                 E < M[0] && (M[0] = E),
                                 E > M[2] && (M[2] = E),
                                 i &&
                                   ((u.fillStyle = 'rgba(255, 0, 0, 0.5)'),
-                                  u.fillRect(C * g, E * g, g - 0.5, g - 0.5));
+                                  u.fillRect(A * g, E * g, g - 0.5, g - 0.5));
                               break e;
                             }
                         }
                         i &&
                           ((u.fillStyle = 'rgba(0, 0, 255, 0.5)'),
-                          u.fillRect(C * g, E * g, g - 0.5, g - 0.5));
+                          u.fillRect(A * g, E * g, g - 0.5, g - 0.5));
                       }
                     }
                   }
@@ -27979,7 +27979,7 @@
                   var a = M(),
                     o = I(t, r, a);
                   if (!o) return !1;
-                  if (A()) return !1;
+                  if (C()) return !1;
                   if (!n.drawOutOfBound) {
                     var l = o.bounds;
                     if (l[1] - l[3] + 1 > u || l[2] - l[0] + 1 > c) return !1;
@@ -27998,7 +27998,7 @@
                       );
                     };
                   while (f--) {
-                    var p = C(d - f);
+                    var p = A(d - f);
                     n.shuffle && ((p = [].concat(p)), s(p));
                     for (var g = 0; g < p.length; g++) {
                       var m = h(p[g]);
@@ -28119,16 +28119,16 @@
                           e.removeEventListener(t, n);
                         }, this);
                       },
-                      C = function e() {
+                      A = function e() {
                         T('wordcloudstart', e), p(M);
                       };
-                    E('wordcloudstart', C);
+                    E('wordcloudstart', A);
                     var M = s(function e() {
                       if (o >= n.list.length)
                         return (
                           p(M),
                           j('wordcloudstop', !1),
-                          void T('wordcloudstart', C)
+                          void T('wordcloudstart', A)
                         );
                       h = new Date().getTime();
                       var t = N(n.list[o]),
@@ -28136,13 +28136,13 @@
                           item: n.list[o],
                           drawn: t,
                         });
-                      if (A() || r)
+                      if (C() || r)
                         return (
                           p(M),
                           n.abort(),
                           j('wordcloudabort', !1),
                           j('wordcloudstop', !1),
-                          void T('wordcloudstart', C)
+                          void T('wordcloudstart', A)
                         );
                       o++, (M = s(e, n.wait));
                     }, n.wait);
@@ -28330,7 +28330,7 @@
             var r = n.mountOption('recreate' === e);
             this.option && 'recreate' !== e
               ? (this.restoreData(), this.mergeOption(r))
-              : A.call(this, r),
+              : C.call(this, r),
               (t = !0);
           }
           if (
@@ -28584,7 +28584,7 @@
         );
       }
     }
-    function C(e, t) {
+    function A(e, t) {
       var n = e.color && !e.colorLayer;
       a(t, function(t, r) {
         ('colorLayer' === r && n) ||
@@ -28594,14 +28594,14 @@
             : null == e[r] && (e[r] = t));
       });
     }
-    function A(e) {
+    function C(e) {
       (e = e),
         (this.option = {}),
         (this.option[k] = 1),
         (this._componentsMap = d({ series: [] })),
         this._seriesIndices,
         this._seriesIndicesMap,
-        C(e, this._theme.option),
+        A(e, this._theme.option),
         g(e, w, !1),
         this.mergeOption(e);
     }
@@ -28790,7 +28790,7 @@
     'use strict';
     n.r(t),
       (t['default'] = {
-        'AreaChart-demo': {
+        'Area-demo': {
           component: function() {
             var e = n('R8sE'),
               t = e(n('xwgP')),
@@ -28799,7 +28799,7 @@
               a = [{ data: [200, 600], name: '\u9762\u79ef\u56fe' }],
               o = ['\u5355\u4f4d: \u4e2a'],
               s = function() {
-                return t['default'].createElement(r.AreaChart, {
+                return t['default'].createElement(r.Area, {
                   x: i,
                   y: a,
                   yAxisName: o,
@@ -28811,7 +28811,7 @@
             sources: {
               _: {
                 jsx:
-                  "import React from 'react'\nimport { AreaChart } from '@xm/react-charts'\n\nconst options = {\n  xAxis: [\n    {\n      data: ['\u793a\u610f1', '\u793a\u610f2'],\n    },\n  ],\n  series: [\n    {\n      data: [200, 600],\n      name: '\u9762\u79ef\u56fe',\n    },\n  ],\n}\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2'] \n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u9762\u79ef\u56fe',\n  },\n]\n\n// y\u8f74\u540d\u79f0\nconst yAxisName = ['\u5355\u4f4d: \u4e2a']\n\nexport default () => <AreaChart x={x} y={y} yAxisName={yAxisName} />",
+                  "import React from 'react'\nimport { Area } from '@xm/react-charts'\n\nconst options = {\n  xAxis: [\n    {\n      data: ['\u793a\u610f1', '\u793a\u610f2'],\n    },\n  ],\n  series: [\n    {\n      data: [200, 600],\n      name: '\u9762\u79ef\u56fe',\n    },\n  ],\n}\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2'] \n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u9762\u79ef\u56fe',\n  },\n]\n\n// y\u8f74\u540d\u79f0\nconst yAxisName = ['\u5355\u4f4d: \u4e2a']\n\nexport default () => <Area x={x} y={y} yAxisName={yAxisName} />",
               },
             },
             dependencies: {
@@ -28819,10 +28819,10 @@
               '@xm/react-charts': { version: '1.0.2' },
               'react-dom': { version: '>=16.0.0' },
             },
-            identifier: 'AreaChart-demo',
+            identifier: 'Area-demo',
           },
         },
-        'BarChart-demo': {
+        'Bar-demo': {
           component: function() {
             var e = n('R8sE'),
               t = e(n('xwgP')),
@@ -28833,7 +28833,7 @@
                 { data: [200, 600], name: '\u6307\u68072' },
               ],
               o = function() {
-                return t['default'].createElement(r.BarChart, { x: i, y: a });
+                return t['default'].createElement(r.Bar, { x: i, y: a });
               };
             return t['default'].createElement(o);
           },
@@ -28841,7 +28841,7 @@
             sources: {
               _: {
                 jsx:
-                  "import React from 'react'\nimport { BarChart } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2'] \n\n// \u6307\u6807\nconst y = [\n   {\n      data: [200, 600],\n      name: '\u6307\u68071',\n    },\n     {\n      data: [200, 600],\n      name: '\u6307\u68072',\n    },\n]\n\nexport default () => <BarChart x={x} y={y} />",
+                  "import React from 'react'\nimport { Bar } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2'] \n\n// \u6307\u6807\nconst y = [\n   {\n      data: [200, 600],\n      name: '\u6307\u68071',\n    },\n     {\n      data: [200, 600],\n      name: '\u6307\u68072',\n    },\n]\n\nexport default () => <Bar x={x} y={y} />",
               },
             },
             dependencies: {
@@ -28849,10 +28849,10 @@
               '@xm/react-charts': { version: '1.0.2' },
               'react-dom': { version: '>=16.0.0' },
             },
-            identifier: 'BarChart-demo',
+            identifier: 'Bar-demo',
           },
         },
-        'BarChart-demo-1': {
+        'Bar-demo-1': {
           component: function() {
             var e = n('R8sE'),
               t = e(n('xwgP')),
@@ -28864,7 +28864,7 @@
               ],
               o = ['\u5355\u4f4d: \u4e2a'],
               s = function() {
-                return t['default'].createElement(r.BarChart, {
+                return t['default'].createElement(r.Bar, {
                   x: i,
                   y: a,
                   yAxisName: o,
@@ -28877,7 +28877,7 @@
             sources: {
               _: {
                 jsx:
-                  "import React from 'react'\nimport { BarChart } from '@xm/react-charts'\n\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2'] \n\n// \u6307\u6807\nconst y = [\n   {\n      data: [200, 600],\n      name: '\u6307\u68071',\n    },\n     {\n      data: [200, 600],\n      name: '\u6307\u68072',\n    },\n]\n\n// y\u8f74\u540d\u79f0\nconst yAxisName = ['\u5355\u4f4d: \u4e2a']\n\nexport default () => <BarChart x={x} y={y} yAxisName={yAxisName} isStack/>",
+                  "import React from 'react'\nimport { Bar } from '@xm/react-charts'\n\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2'] \n\n// \u6307\u6807\nconst y = [\n   {\n      data: [200, 600],\n      name: '\u6307\u68071',\n    },\n     {\n      data: [200, 600],\n      name: '\u6307\u68072',\n    },\n]\n\n// y\u8f74\u540d\u79f0\nconst yAxisName = ['\u5355\u4f4d: \u4e2a']\n\nexport default () => <Bar x={x} y={y} yAxisName={yAxisName} isStack/>",
               },
             },
             dependencies: {
@@ -28885,10 +28885,10 @@
               '@xm/react-charts': { version: '1.0.2' },
               'react-dom': { version: '>=16.0.0' },
             },
-            identifier: 'BarChart-demo-1',
+            identifier: 'Bar-demo-1',
           },
         },
-        'BarChart-demo-2': {
+        'Bar-demo-2': {
           component: function() {
             var e = n('R8sE'),
               t = e(n('xwgP')),
@@ -28899,7 +28899,7 @@
                 { data: [200, 6e4], name: '\u67f1\u72b6\u56fe2' },
               ],
               o = function() {
-                return t['default'].createElement(r.BarChart, {
+                return t['default'].createElement(r.Bar, {
                   x: i,
                   y: a,
                   isHorizontal: !0,
@@ -28911,7 +28911,7 @@
             sources: {
               _: {
                 jsx:
-                  "import React from 'react'\nimport { BarChart } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2'] \n\n// \u6307\u6807\nconst y = [\n   {\n      data: [200, 600],\n      name: '\u67f1\u72b6\u56fe',\n    },\n     {\n      data: [200, 60000],\n      name: '\u67f1\u72b6\u56fe2',\n    },\n]\n\nexport default () => <BarChart x={x} y={y} isHorizontal/>",
+                  "import React from 'react'\nimport { Bar } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2'] \n\n// \u6307\u6807\nconst y = [\n   {\n      data: [200, 600],\n      name: '\u67f1\u72b6\u56fe',\n    },\n     {\n      data: [200, 60000],\n      name: '\u67f1\u72b6\u56fe2',\n    },\n]\n\nexport default () => <Bar x={x} y={y} isHorizontal/>",
               },
             },
             dependencies: {
@@ -28919,7 +28919,7 @@
               '@xm/react-charts': { version: '1.0.2' },
               'react-dom': { version: '>=16.0.0' },
             },
-            identifier: 'BarChart-demo-2',
+            identifier: 'Bar-demo-2',
           },
         },
         'Core-demo': {
@@ -28963,7 +28963,7 @@
             identifier: 'Core-demo',
           },
         },
-        'LineChart-demo': {
+        'Line-demo': {
           component: function() {
             var e = n('R8sE'),
               t = e(n('xwgP')),
@@ -28975,7 +28975,7 @@
               ],
               o = ['\u5355\u4f4d: \u4e2a'],
               s = function() {
-                return t['default'].createElement(r.LineChart, {
+                return t['default'].createElement(r.Line, {
                   x: i,
                   y: a,
                   yAxisName: o,
@@ -28987,7 +28987,7 @@
             sources: {
               _: {
                 jsx:
-                  "import React from 'react'\nimport { LineChart } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u6307\u68071',\n  },\n  {\n    data: [100, 900],\n    name: '\u6307\u68072',\n  },\n]\n\n// y\u8f74\u540d\u79f0\nconst yAxisName = ['\u5355\u4f4d: \u4e2a']\n\nexport default () => <LineChart x={x} y={y} yAxisName={yAxisName}/>",
+                  "import React from 'react'\nimport { Line } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u6307\u68071',\n  },\n  {\n    data: [100, 900],\n    name: '\u6307\u68072',\n  },\n]\n\n// y\u8f74\u540d\u79f0\nconst yAxisName = ['\u5355\u4f4d: \u4e2a']\n\nexport default () => <Line x={x} y={y} yAxisName={yAxisName}/>",
               },
             },
             dependencies: {
@@ -28995,10 +28995,10 @@
               '@xm/react-charts': { version: '1.0.2' },
               'react-dom': { version: '>=16.0.0' },
             },
-            identifier: 'LineChart-demo',
+            identifier: 'Line-demo',
           },
         },
-        'LineChart-demo-1': {
+        'Line-demo-1': {
           component: function() {
             var e = n('R8sE'),
               t = e(n('xwgP')),
@@ -29011,7 +29011,7 @@
               o = ['\u5355\u4f4d: \u4e2a', '\u5355\u4f4d\uff1a %'],
               s = ['\u6307\u68072'],
               l = function() {
-                return t['default'].createElement(r.LineChart, {
+                return t['default'].createElement(r.Line, {
                   x: i,
                   y: a,
                   yAxisName: o,
@@ -29024,7 +29024,7 @@
             sources: {
               _: {
                 jsx:
-                  "import React from 'react'\nimport { LineChart } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u6307\u68071',\n  },\n  {\n    data: [20, 40],\n    name: '\u6307\u68072',\n  },\n]\n\n// y\u8f74\u540d\u79f0\nconst yAxisName = ['\u5355\u4f4d: \u4e2a','\u5355\u4f4d\uff1a %']\nconst rightAxisSite = ['\u6307\u68072']\n\nexport default () => <LineChart x={x} y={y} yAxisName={yAxisName} rightAxisSite={rightAxisSite}/>",
+                  "import React from 'react'\nimport { Line } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u6307\u68071',\n  },\n  {\n    data: [20, 40],\n    name: '\u6307\u68072',\n  },\n]\n\n// y\u8f74\u540d\u79f0\nconst yAxisName = ['\u5355\u4f4d: \u4e2a','\u5355\u4f4d\uff1a %']\nconst rightAxisSite = ['\u6307\u68072']\n\nexport default () => <Line x={x} y={y} yAxisName={yAxisName} rightAxisSite={rightAxisSite}/>",
               },
             },
             dependencies: {
@@ -29032,10 +29032,10 @@
               '@xm/react-charts': { version: '1.0.2' },
               'react-dom': { version: '>=16.0.0' },
             },
-            identifier: 'LineChart-demo-1',
+            identifier: 'Line-demo-1',
           },
         },
-        'PieChart-demo': {
+        'Pie-demo': {
           component: function() {
             var e = n('R8sE'),
               t = e(n('xwgP')),
@@ -29045,7 +29045,7 @@
                 { name: '\u6307\u68072', value: 600 },
               ],
               a = function() {
-                return t['default'].createElement(r.PieChart, { y: i });
+                return t['default'].createElement(r.Pie, { y: i });
               };
             return t['default'].createElement(a);
           },
@@ -29053,7 +29053,7 @@
             sources: {
               _: {
                 jsx:
-                  "import React from 'react'\nimport { PieChart } from '@xm/react-charts'\n\n// \u6307\u6807\nconst y = [\n  {\n    name: '\u6307\u68071',\n    value: 200,\n  },\n  {\n    name: '\u6307\u68072',\n    value: 600,\n  },\n]\n\nexport default () => <PieChart y={y} />",
+                  "import React from 'react'\nimport { Pie } from '@xm/react-charts'\n\n// \u6307\u6807\nconst y = [\n  {\n    name: '\u6307\u68071',\n    value: 200,\n  },\n  {\n    name: '\u6307\u68072',\n    value: 600,\n  },\n]\n\nexport default () => <Pie y={y} />",
               },
             },
             dependencies: {
@@ -29061,10 +29061,10 @@
               '@xm/react-charts': { version: '1.0.2' },
               'react-dom': { version: '>=16.0.0' },
             },
-            identifier: 'PieChart-demo',
+            identifier: 'Pie-demo',
           },
         },
-        'PieChart-demo-1': {
+        'Pie-demo-1': {
           component: function() {
             var e = n('R8sE'),
               t = e(n('xwgP')),
@@ -29074,7 +29074,7 @@
                 { name: '\u6307\u68072', value: 600 },
               ],
               a = function() {
-                return t['default'].createElement(r.PieChart, {
+                return t['default'].createElement(r.Pie, {
                   y: i,
                   radius: '70%',
                 });
@@ -29085,7 +29085,7 @@
             sources: {
               _: {
                 jsx:
-                  "import React from 'react'\nimport { PieChart } from '@xm/react-charts'\n\n// \u6307\u6807\nconst y = [\n  {\n    name: '\u6307\u68071',\n    value: 200,\n  },\n  {\n    name: '\u6307\u68072',\n    value: 600,\n  },\n]\n\nexport default () => <PieChart y={y} radius=\"70%\" />",
+                  "import React from 'react'\nimport { Pie } from '@xm/react-charts'\n\n// \u6307\u6807\nconst y = [\n  {\n    name: '\u6307\u68071',\n    value: 200,\n  },\n  {\n    name: '\u6307\u68072',\n    value: 600,\n  },\n]\n\nexport default () => <Pie y={y} radius=\"70%\" />",
               },
             },
             dependencies: {
@@ -29093,7 +29093,7 @@
               '@xm/react-charts': { version: '1.0.2' },
               'react-dom': { version: '>=16.0.0' },
             },
-            identifier: 'PieChart-demo-1',
+            identifier: 'Pie-demo-1',
           },
         },
         'WordCloud-demo': {
@@ -29143,7 +29143,7 @@
                 { data: [200, 600], name: '\u6307\u68072' },
               ],
               o = function() {
-                return t['default'].createElement(r.LineChart, { x: i, y: a });
+                return t['default'].createElement(r.Line, { x: i, y: a });
               };
             return t['default'].createElement(o);
           },
@@ -29151,7 +29151,7 @@
             sources: {
               _: {
                 jsx:
-                  "import React from 'react'\nimport { LineChart } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u6307\u68071',\n  },\n  {\n    data: [200, 600],\n    name: '\u6307\u68072',\n  },\n]\n\nexport default () => <LineChart x={x} y={y} />",
+                  "import React from 'react'\nimport { Line } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u6307\u68071',\n  },\n  {\n    data: [200, 600],\n    name: '\u6307\u68072',\n  },\n]\n\nexport default () => <Line x={x} y={y} />",
               },
             },
             dependencies: {
@@ -29759,7 +29759,7 @@
         l = t.getTargetSeries;
       function u(n) {
         var o = n.uid,
-          s = a.get(o) || a.set(o, c({ plan: T, reset: C, count: I }));
+          s = a.get(o) || a.set(o, c({ plan: T, reset: A, count: I }));
         (s.context = {
           model: n,
           ecModel: r,
@@ -29828,7 +29828,7 @@
     function T(e) {
       return e.plan && e.plan(e.model, e.ecModel, e.api, e.payload);
     }
-    function C(e) {
+    function A(e) {
       e.useClearVisual && e.data.clearAllVisual();
       var t = (e.resetDefines = m(
         e.reset(e.model, e.ecModel, e.api, e.payload),
@@ -29837,9 +29837,9 @@
         ? a(t, function(e, t) {
             return M(t);
           })
-        : A;
+        : C;
     }
-    var A = M(0);
+    var C = M(0);
     function M(e) {
       return function(t, n) {
         var r = n.data,
@@ -31412,26 +31412,26 @@
       return null != n ? e[n] : e;
     }
     var T = {
-      arrayRows: C,
+      arrayRows: A,
       objectRows: function(e, t, n, r) {
-        return A(e[t], this._dimensionInfos[t]);
+        return C(e[t], this._dimensionInfos[t]);
       },
-      keyedColumns: C,
+      keyedColumns: A,
       original: function(e, t, n, r) {
         var i = e && (null == e.value ? e : e.value);
         return (
           !this._rawData.pure && c(e) && (this.hasItemOption = !0),
-          A(i instanceof Array ? i[r] : i, this._dimensionInfos[t])
+          C(i instanceof Array ? i[r] : i, this._dimensionInfos[t])
         );
       },
       typedArray: function(e, t, n, r) {
         return e[r];
       },
     };
-    function C(e, t, n, r) {
-      return A(e[r], this._dimensionInfos[t]);
+    function A(e, t, n, r) {
+      return C(e[r], this._dimensionInfos[t]);
     }
-    function A(e, t) {
+    function C(e, t) {
       var n = t && t.type;
       if ('ordinal' === n) {
         var r = t && t.ordinalMeta;
@@ -32078,8 +32078,8 @@
       k = g('toStringTag'),
       O = m('TYPED_ARRAY_TAG'),
       T = i && !!p && 'Opera' !== u(o.opera),
-      C = !1,
-      A = {
+      A = !1,
+      C = {
         Int8Array: 1,
         Uint8Array: 1,
         Uint8ClampedArray: 1,
@@ -32092,10 +32092,10 @@
       },
       M = function(e) {
         var t = u(e);
-        return 'DataView' === t || l(A, t);
+        return 'DataView' === t || l(C, t);
       },
       I = function(e) {
-        return s(e) && l(A, u(e));
+        return s(e) && l(C, u(e));
       },
       P = function(e) {
         if (I(e)) return e;
@@ -32105,8 +32105,8 @@
         if (p) {
           if (E.call(w, e)) return e;
         } else
-          for (var t in A)
-            if (l(A, r)) {
+          for (var t in C)
+            if (l(C, r)) {
               var n = o[t];
               if (n && (e === n || E.call(n, e))) return e;
             }
@@ -32115,7 +32115,7 @@
       R = function(e, t, n) {
         if (a) {
           if (n)
-            for (var r in A) {
+            for (var r in C) {
               var i = o[r];
               i && l(i.prototype, e) && delete i.prototype[e];
             }
@@ -32126,16 +32126,16 @@
         var r, i;
         if (a) {
           if (p) {
-            if (n) for (r in A) (i = o[r]), i && l(i, e) && delete i[e];
+            if (n) for (r in C) (i = o[r]), i && l(i, e) && delete i[e];
             if (w[e] && !n) return;
             try {
               return f(w, e, n ? t : (T && v[e]) || t);
             } catch (s) {}
           }
-          for (r in A) (i = o[r]), !i || (i[e] && !n) || f(i, e, t);
+          for (r in C) (i = o[r]), !i || (i[e] && !n) || f(i, e, t);
         }
       };
-    for (r in A) o[r] || (T = !1);
+    for (r in C) o[r] || (T = !1);
     if (
       (!T || 'function' != typeof w || w === Function.prototype) &&
       ((w = function() {
@@ -32143,21 +32143,21 @@
       }),
       T)
     )
-      for (r in A) o[r] && p(o[r], w);
+      for (r in C) o[r] && p(o[r], w);
     if ((!T || !_ || _ === S) && ((_ = w.prototype), T))
-      for (r in A) o[r] && p(o[r].prototype, _);
+      for (r in C) o[r] && p(o[r].prototype, _);
     if ((T && h(x) !== _ && p(x, _), a && !l(_, k)))
-      for (r in ((C = !0),
+      for (r in ((A = !0),
       d(_, k, {
         get: function() {
           return s(this) ? this[O] : void 0;
         },
       }),
-      A))
+      C))
         o[r] && c(o[r], O, r);
     e.exports = {
       NATIVE_ARRAY_BUFFER_VIEWS: T,
-      TYPED_ARRAY_TAG: C && O,
+      TYPED_ARRAY_TAG: A && O,
       aTypedArray: P,
       aTypedArrayConstructor: D,
       exportTypedArrayMethod: R,
@@ -32226,12 +32226,12 @@
         } else {
           var O = (2 * p * u - 3 * l * m) / (2 * s(p * p * p)),
             T = Math.acos(O) / 3,
-            C = s(p),
-            A = Math.cos(T),
+            A = s(p),
+            C = Math.cos(T),
             M =
-              ((b = (-u - 2 * C * A) / (3 * l)),
-              (_ = (-u + C * (A + c * Math.sin(T))) / (3 * l)),
-              (-u + C * (A - c * Math.sin(T))) / (3 * l));
+              ((b = (-u - 2 * A * C) / (3 * l)),
+              (_ = (-u + A * (C + c * Math.sin(T))) / (3 * l)),
+              (-u + A * (C - c * Math.sin(T))) / (3 * l));
           b >= 0 && b <= 1 && (a[y++] = b),
             _ >= 0 && _ <= 1 && (a[y++] = _),
             M >= 0 && M <= 1 && (a[y++] = M);
@@ -32347,7 +32347,7 @@
         s = (o - a) * r + a;
       (i[0] = e), (i[1] = a), (i[2] = s), (i[3] = s), (i[4] = o), (i[5] = n);
     }
-    function C(e, t, n, r, i, o, l, c, f) {
+    function A(e, t, n, r, i, o, l, c, f) {
       var g,
         m = 0.005,
         v = 1 / 0;
@@ -32384,7 +32384,7 @@
       (t.quadraticRootAt = k),
       (t.quadraticExtremum = O),
       (t.quadraticSubdivide = T),
-      (t.quadraticProjectPoint = C);
+      (t.quadraticProjectPoint = A);
   },
   X260: function(e, t, n) {
     var r = n('HIsA'),
@@ -32425,7 +32425,7 @@
           k = {},
           O = {},
           T = { list: [], map: {} },
-          C = { showPointer: u(p, O), showTooltip: u(g, T) };
+          A = { showPointer: u(p, O), showTooltip: u(g, T) };
         l(f.coordSysMap, function(e, t) {
           var n = h || e.containPoint(a);
           l(f.coordSysAxesInfo[t], function(e, t) {
@@ -32434,11 +32434,11 @@
             if (!E && n && (!_ || i)) {
               var o = i && i.value;
               null != o || h || (o = r.pointToData(a)),
-                null != o && d(e, o, C, !1, k);
+                null != o && d(e, o, A, !1, k);
             }
           });
         });
-        var A = {};
+        var C = {};
         return (
           l(S, function(e, t) {
             var n = e.linkGroup;
@@ -32449,12 +32449,12 @@
                 if (t !== e && i) {
                   var a = i.value;
                   n.mapper && (a = e.axis.scale.parse(n.mapper(a, x(t), x(e)))),
-                    (A[e.key] = a);
+                    (C[e.key] = a);
                 }
               });
           }),
-          l(A, function(e, t) {
-            d(S[t], e, C, !0, k);
+          l(C, function(e, t) {
+            d(S[t], e, A, !0, k);
           }),
           m(O, S, k),
           v(T, a, e, c),
@@ -33055,7 +33055,7 @@
         for (var r = 0; r < 3; r++)
           (n[r] = t < 0 ? (n[r] * (1 - t)) | 0 : ((255 - n[r]) * t + n[r]) | 0),
             n[r] > 255 ? (n[r] = 255) : e[r] < 0 && (n[r] = 0);
-        return C(n, 4 === n.length ? 'rgba' : 'rgb');
+        return A(n, 4 === n.length ? 'rgba' : 'rgb');
       }
     }
     function w(e) {
@@ -33092,7 +33092,7 @@
           l = v(t[i]),
           u = v(t[o]),
           c = r - i,
-          d = C(
+          d = A(
             [
               a(f(l[0], u[0], c)),
               a(f(l[1], u[1], c)),
@@ -33112,13 +33112,13 @@
           null != t && (e[0] = o(t)),
           null != n && (e[1] = u(n)),
           null != r && (e[2] = u(r)),
-          C(y(e), 'rgba')
+          A(y(e), 'rgba')
         );
     }
     function T(e, t) {
-      if (((e = v(e)), e && null != t)) return (e[3] = s(t)), C(e, 'rgba');
+      if (((e = v(e)), e && null != t)) return (e[3] = s(t)), A(e, 'rgba');
     }
-    function C(e, t) {
+    function A(e, t) {
       if (e && e.length) {
         var n = e[0] + ',' + e[1] + ',' + e[2];
         return (
@@ -33136,7 +33136,7 @@
       (t.mapToColor = k),
       (t.modifyHSL = O),
       (t.modifyAlpha = T),
-      (t.stringify = C);
+      (t.stringify = A);
   },
   Xf1w: function(e, t, n) {
     var r = n('40mc'),
@@ -33251,8 +33251,8 @@
           for (var k = '', O = 0, T = 0; T < _.length; T++) {
             S = _[T];
             for (
-              var C = String(S[0]),
-                A = f(d(s(S.index), h.length), 0),
+              var A = String(S[0]),
+                C = f(d(s(S.index), h.length), 0),
                 M = [],
                 I = 1;
               I < S.length;
@@ -33261,11 +33261,11 @@
               M.push(m(S[I]));
             var P = S.groups;
             if (p) {
-              var D = [C].concat(M, A, h);
+              var D = [A].concat(M, C, h);
               void 0 !== P && D.push(P);
               var R = String(r.apply(void 0, D));
-            } else R = x(C, h, A, M, P, r);
-            A >= O && ((k += h.slice(O, A) + R), (O = A + C.length));
+            } else R = x(A, h, C, M, P, r);
+            C >= O && ((k += h.slice(O, C) + R), (O = C + A.length));
           }
           return k + h.slice(O);
         },
@@ -33545,30 +33545,30 @@
               O = e[v++],
               T = e[v++];
             v += 1;
-            var C = 1 - e[v++],
-              A = Math.cos(O) * E + _,
+            var A = 1 - e[v++],
+              C = Math.cos(O) * E + _,
               M = Math.sin(O) * k + S;
-            v > 1 ? (u += f(c, h, A, M, r, l)) : ((p = A), (m = M));
+            v > 1 ? (u += f(c, h, C, M, r, l)) : ((p = C), (m = M));
             var I = ((r - _) * k) / E + _;
             if (n) {
-              if (s.containStroke(_, S, k, O, O + T, C, t, I, l)) return !0;
-            } else u += w(_, S, k, O, O + T, C, I, l);
+              if (s.containStroke(_, S, k, O, O + T, A, t, I, l)) return !0;
+            } else u += w(_, S, k, O, O + T, A, I, l);
             (c = Math.cos(O + T) * E + _), (h = Math.sin(O + T) * k + S);
             break;
           case d.R:
             (p = c = e[v++]), (m = h = e[v++]);
             var P = e[v++],
               D = e[v++];
-            (A = p + P), (M = m + D);
+            (C = p + P), (M = m + D);
             if (n) {
               if (
-                i.containStroke(p, m, A, m, t, r, l) ||
-                i.containStroke(A, m, A, M, t, r, l) ||
-                i.containStroke(A, M, p, M, t, r, l) ||
+                i.containStroke(p, m, C, m, t, r, l) ||
+                i.containStroke(C, m, C, M, t, r, l) ||
+                i.containStroke(C, M, p, M, t, r, l) ||
                 i.containStroke(p, M, p, m, t, r, l)
               )
                 return !0;
-            } else (u += f(A, m, A, M, r, l)), (u += f(p, M, p, m, r, l));
+            } else (u += f(C, m, C, M, r, l)), (u += f(p, M, p, m, r, l));
             break;
           case d.Z:
             if (n) {
@@ -33859,8 +33859,8 @@
           (this._calculationInfo = {}),
           (this.userOutput = this._dimensionsSummary.userOutput);
       },
-      C = T.prototype;
-    function A(e, t, n, r, i) {
+      A = T.prototype;
+    function C(e, t, n, r, i) {
       var a = y[t.type],
         o = r - 1,
         s = t.name,
@@ -33940,9 +33940,9 @@
     function z() {
       return [1 / 0, -1 / 0];
     }
-    (C.type = 'list'),
-      (C.hasItemOption = !0),
-      (C.getDimension = function(e) {
+    (A.type = 'list'),
+      (A.hasItemOption = !0),
+      (A.getDimension = function(e) {
         return (
           ('number' !== typeof e &&
             (isNaN(e) || this._dimensionInfos.hasOwnProperty(e))) ||
@@ -33950,19 +33950,19 @@
           e
         );
       }),
-      (C.getDimensionInfo = function(e) {
+      (A.getDimensionInfo = function(e) {
         return this._dimensionInfos[this.getDimension(e)];
       }),
-      (C.getDimensionsOnCoord = function() {
+      (A.getDimensionsOnCoord = function() {
         return this._dimensionsSummary.dataDimsOnCoord.slice();
       }),
-      (C.mapDimension = function(e, t) {
+      (A.mapDimension = function(e, t) {
         var n = this._dimensionsSummary;
         if (null == t) return n.encodeFirstDimNotExtra[e];
         var r = n.encode[e];
         return !0 === t ? (r || []).slice() : r && r[t];
       }),
-      (C.initData = function(e, t, n) {
+      (A.initData = function(e, t, n) {
         var r = s.isInstance(e) || i.isArrayLike(e);
         r && (e = new c(e, this.dimensions.length)),
           (this._rawData = e),
@@ -33980,17 +33980,17 @@
           this._initDataFromProvider(0, e.count()),
           e.pure && (this.hasItemOption = !1);
       }),
-      (C.getProvider = function() {
+      (A.getProvider = function() {
         return this._rawData;
       }),
-      (C.appendData = function(e) {
+      (A.appendData = function(e) {
         var t = this._rawData,
           n = this.count();
         t.appendData(e);
         var r = t.count();
         t.persistent || (r += n), this._initDataFromProvider(n, r);
       }),
-      (C.appendValues = function(e, t) {
+      (A.appendValues = function(e, t) {
         for (
           var n = this._chunkSize,
             r = this._storage,
@@ -34007,7 +34007,7 @@
           var f = i[c];
           o[f] || (o[f] = z()),
             r[f] || (r[f] = []),
-            A(r, this._dimensionInfos[f], n, u, l),
+            C(r, this._dimensionInfos[f], n, u, l),
             (this._chunkCount = r[f].length);
         }
         for (var d = new Array(a), h = s; h < l; h++) {
@@ -34026,7 +34026,7 @@
         }
         (this._rawCount = this._count = l), (this._extent = {}), M(this);
       }),
-      (C._initDataFromProvider = function(e, t) {
+      (A._initDataFromProvider = function(e, t) {
         if (!(e >= t)) {
           for (
             var n,
@@ -34051,7 +34051,7 @@
             0 === m.otherDims.itemName && (n = this._nameDimIdx = p),
               0 === m.otherDims.itemId && (this._idDimIdx = p),
               a[g] || (a[g] = []),
-              A(a, m, r, h, t),
+              C(a, m, r, h, t),
               (this._chunkCount = a[g].length);
           }
           for (var v = new Array(s), y = e; y < t; y++) {
@@ -34073,8 +34073,8 @@
                     T = a[O][b];
                   if (T) {
                     k = T[x];
-                    var C = l[O].ordinalMeta;
-                    C && C.categories.length && (k = C.categories[k]);
+                    var A = l[O].ordinalMeta;
+                    A && A.categories.length && (k = A.categories[k]);
                   }
                 }
               var I = null == v ? null : v.id;
@@ -34093,10 +34093,10 @@
             M(this);
         }
       }),
-      (C.count = function() {
+      (A.count = function() {
         return this._count;
       }),
-      (C.getIndices = function() {
+      (A.getIndices = function() {
         var e = this._indices;
         if (e) {
           var t = e.constructor,
@@ -34112,7 +34112,7 @@
         }
         return i;
       }),
-      (C.get = function(e, t) {
+      (A.get = function(e, t) {
         if (!(t >= 0 && t < this._count)) return NaN;
         var n = this._storage;
         if (!n[e]) return NaN;
@@ -34123,7 +34123,7 @@
           o = a[i];
         return o;
       }),
-      (C.getByRawIndex = function(e, t) {
+      (A.getByRawIndex = function(e, t) {
         if (!(t >= 0 && t < this._rawCount)) return NaN;
         var n = this._storage[e];
         if (!n) return NaN;
@@ -34132,19 +34132,19 @@
           a = n[r];
         return a[i];
       }),
-      (C._getFast = function(e, t) {
+      (A._getFast = function(e, t) {
         var n = Math.floor(t / this._chunkSize),
           r = t % this._chunkSize,
           i = this._storage[e][n];
         return i[r];
       }),
-      (C.getValues = function(e, t) {
+      (A.getValues = function(e, t) {
         var n = [];
         i.isArray(e) || ((t = e), (e = this.dimensions));
         for (var r = 0, a = e.length; r < a; r++) n.push(this.get(e[r], t));
         return n;
       }),
-      (C.hasValue = function(e) {
+      (A.hasValue = function(e) {
         for (
           var t = this._dimensionsSummary.dataDimsOnCoord, n = 0, r = t.length;
           n < r;
@@ -34153,7 +34153,7 @@
           if (isNaN(this.get(t[n], e))) return !1;
         return !0;
       }),
-      (C.getDataExtent = function(e) {
+      (A.getDataExtent = function(e) {
         e = this.getDimension(e);
         var t = this._storage[e],
           n = z();
@@ -34170,24 +34170,24 @@
         }
         return (r = [o, s]), (this._extent[e] = r), r;
       }),
-      (C.getApproximateExtent = function(e) {
+      (A.getApproximateExtent = function(e) {
         return (
           (e = this.getDimension(e)),
           this._approximateExtent[e] || this.getDataExtent(e)
         );
       }),
-      (C.setApproximateExtent = function(e, t) {
+      (A.setApproximateExtent = function(e, t) {
         (t = this.getDimension(t)), (this._approximateExtent[t] = e.slice());
       }),
-      (C.getCalculationInfo = function(e) {
+      (A.getCalculationInfo = function(e) {
         return this._calculationInfo[e];
       }),
-      (C.setCalculationInfo = function(e, t) {
+      (A.setCalculationInfo = function(e, t) {
         p(e)
           ? i.extend(this._calculationInfo, e)
           : (this._calculationInfo[e] = t);
       }),
-      (C.getSum = function(e) {
+      (A.getSum = function(e) {
         var t = this._storage[e],
           n = 0;
         if (t)
@@ -34197,7 +34197,7 @@
           }
         return n;
       }),
-      (C.getMedian = function(e) {
+      (A.getMedian = function(e) {
         var t = [];
         this.each(e, function(e, n) {
           isNaN(e) || t.push(e);
@@ -34212,17 +34212,17 @@
           ? n[(r - 1) / 2]
           : (n[r / 2] + n[r / 2 - 1]) / 2;
       }),
-      (C.rawIndexOf = function(e, t) {
+      (A.rawIndexOf = function(e, t) {
         var n = e && this._invertedIndicesMap[e],
           r = n[t];
         return null == r || isNaN(r) ? m : r;
       }),
-      (C.indexOfName = function(e) {
+      (A.indexOfName = function(e) {
         for (var t = 0, n = this.count(); t < n; t++)
           if (this.getName(t) === e) return t;
         return -1;
       }),
-      (C.indexOfRawIndex = function(e) {
+      (A.indexOfRawIndex = function(e) {
         if (e >= this._rawCount || e < 0) return -1;
         if (!this._indices) return e;
         var t = this._indices,
@@ -34240,7 +34240,7 @@
         }
         return -1;
       }),
-      (C.indicesOfNearest = function(e, t, n) {
+      (A.indicesOfNearest = function(e, t, n) {
         var r = this._storage,
           i = r[e],
           a = [];
@@ -34260,8 +34260,8 @@
         }
         return (a.length = l), a;
       }),
-      (C.getRawIndex = P),
-      (C.getRawDataItem = function(e) {
+      (A.getRawIndex = P),
+      (A.getRawDataItem = function(e) {
         if (this._rawData.persistent)
           return this._rawData.getItem(this.getRawIndex(e));
         for (var t = [], n = 0; n < this.dimensions.length; n++) {
@@ -34270,14 +34270,14 @@
         }
         return t;
       }),
-      (C.getName = function(e) {
+      (A.getName = function(e) {
         var t = this.getRawIndex(e);
         return this._nameList[t] || I(this, this._nameDimIdx, t) || '';
       }),
-      (C.getId = function(e) {
+      (A.getId = function(e) {
         return R(this, this.getRawIndex(e));
       }),
-      (C.each = function(e, t, n, r) {
+      (A.each = function(e, t, n, r) {
         'use strict';
         if (this._count) {
           'function' === typeof e && ((r = n), (n = t), (t = e), (e = [])),
@@ -34300,7 +34300,7 @@
             }
         }
       }),
-      (C.filterSelf = function(e, t, n, r) {
+      (A.filterSelf = function(e, t, n, r) {
         'use strict';
         if (this._count) {
           'function' === typeof e && ((r = n), (n = t), (t = e), (e = [])),
@@ -34339,7 +34339,7 @@
           );
         }
       }),
-      (C.selectRange = function(e) {
+      (A.selectRange = function(e) {
         'use strict';
         if (this._count) {
           var t = [];
@@ -34431,7 +34431,7 @@
           }
         }
       }),
-      (C.mapArray = function(e, t, n, r) {
+      (A.mapArray = function(e, t, n, r) {
         'use strict';
         'function' === typeof e && ((r = n), (n = t), (t = e), (e = [])),
           (n = n || r || this);
@@ -34447,7 +34447,7 @@
           i
         );
       }),
-      (C.map = function(e, t, n, r) {
+      (A.map = function(e, t, n, r) {
         'use strict';
         (n = n || r || this), (e = i.map(L(e), this.getDimension, this));
         var a = N(this, e);
@@ -34489,7 +34489,7 @@
         }
         return a;
       }),
-      (C.downSample = function(e, t, n, r) {
+      (A.downSample = function(e, t, n, r) {
         for (
           var i = N(this, [e]),
             a = i._storage,
@@ -34523,11 +34523,11 @@
         }
         return (i._count = h), (i._indices = d), (i.getRawIndex = D), i;
       }),
-      (C.getItemModel = function(e) {
+      (A.getItemModel = function(e) {
         var t = this.hostModel;
         return new a(this.getRawDataItem(e), t, t && t.ecModel);
       }),
-      (C.diff = function(e) {
+      (A.diff = function(e) {
         var t = this;
         return new o(
           e ? e.getIndices() : [],
@@ -34540,45 +34540,45 @@
           },
         );
       }),
-      (C.getVisual = function(e) {
+      (A.getVisual = function(e) {
         var t = this._visual;
         return t && t[e];
       }),
-      (C.setVisual = function(e, t) {
+      (A.setVisual = function(e, t) {
         if (p(e))
           for (var n in e) e.hasOwnProperty(n) && this.setVisual(n, e[n]);
         else (this._visual = this._visual || {}), (this._visual[e] = t);
       }),
-      (C.setLayout = function(e, t) {
+      (A.setLayout = function(e, t) {
         if (p(e))
           for (var n in e) e.hasOwnProperty(n) && this.setLayout(n, e[n]);
         else this._layout[e] = t;
       }),
-      (C.getLayout = function(e) {
+      (A.getLayout = function(e) {
         return this._layout[e];
       }),
-      (C.getItemLayout = function(e) {
+      (A.getItemLayout = function(e) {
         return this._itemLayouts[e];
       }),
-      (C.setItemLayout = function(e, t, n) {
+      (A.setItemLayout = function(e, t, n) {
         this._itemLayouts[e] = n ? i.extend(this._itemLayouts[e] || {}, t) : t;
       }),
-      (C.clearItemLayouts = function() {
+      (A.clearItemLayouts = function() {
         this._itemLayouts.length = 0;
       }),
-      (C.getItemVisual = function(e, t, n) {
+      (A.getItemVisual = function(e, t, n) {
         var r = this._itemVisuals[e],
           i = r && r[t];
         return null != i || n ? i : this.getVisual(t);
       }),
-      (C.setItemVisual = function(e, t, n) {
+      (A.setItemVisual = function(e, t, n) {
         var r = this._itemVisuals[e] || {},
           i = this.hasItemVisual;
         if (((this._itemVisuals[e] = r), p(t)))
           for (var a in t) t.hasOwnProperty(a) && ((r[a] = t[a]), (i[a] = !0));
         else (r[t] = n), (i[t] = !0);
       }),
-      (C.clearAllVisual = function() {
+      (A.clearAllVisual = function() {
         (this._visual = {}),
           (this._itemVisuals = []),
           (this.hasItemVisual = {});
@@ -34588,7 +34588,7 @@
         (e.dataIndex = this.dataIndex),
         (e.dataType = this.dataType);
     };
-    (C.setItemGraphicEl = function(e, t) {
+    (A.setItemGraphicEl = function(e, t) {
       var n = this.hostModel;
       t &&
         ((t.dataIndex = e),
@@ -34597,15 +34597,15 @@
         'group' === t.type && t.traverse(F, t)),
         (this._graphicEls[e] = t);
     }),
-      (C.getItemGraphicEl = function(e) {
+      (A.getItemGraphicEl = function(e) {
         return this._graphicEls[e];
       }),
-      (C.eachItemGraphicEl = function(e, t) {
+      (A.eachItemGraphicEl = function(e, t) {
         i.each(this._graphicEls, function(n, r) {
           n && e && e.call(t, n, r);
         });
       }),
-      (C.cloneShallow = function(e) {
+      (A.cloneShallow = function(e) {
         if (!e) {
           var t = i.map(this.dimensions, this.getDimensionInfo, this);
           e = new T(t, this.hostModel);
@@ -34616,7 +34616,7 @@
         } else e._indices = null;
         return (e.getRawIndex = e._indices ? D : P), e;
       }),
-      (C.wrapMethod = function(e, t) {
+      (A.wrapMethod = function(e, t) {
         var n = this[e];
         'function' === typeof n &&
           ((this.__wrappedMethods = this.__wrappedMethods || []),
@@ -34626,8 +34626,8 @@
             return t.apply(this, [e].concat(i.slice(arguments)));
           }));
       }),
-      (C.TRANSFERABLE_METHODS = ['cloneShallow', 'downSample', 'map']),
-      (C.CHANGABLE_METHODS = ['filterSelf', 'selectRange']);
+      (A.TRANSFERABLE_METHODS = ['cloneShallow', 'downSample', 'map']),
+      (A.CHANGABLE_METHODS = ['filterSelf', 'selectRange']);
     var B = T;
     e.exports = B;
   },
@@ -35069,8 +35069,8 @@
           return e.time - t.time;
         }),
           (_ = a[w - 1].time);
-        for (var C = [], A = [], M = a[0].value, I = !0, P = 0; P < w; P++) {
-          C.push(a[P].time / _);
+        for (var A = [], C = [], M = a[0].value, I = !0, P = 0; P < w; P++) {
+          A.push(a[P].time / _);
           var D = a[P].value;
           if (
             ((E && p(D, M, T)) || (!E && D === M) || (I = !1),
@@ -35080,14 +35080,14 @@
             var R = i.parse(D);
             R ? ((D = R), (k = !0)) : (O = !0);
           }
-          A.push(D);
+          C.push(D);
         }
         if (l || !I) {
-          var L = A[w - 1];
+          var L = C[w - 1];
           for (P = 0; P < w - 1; P++)
             E
-              ? h(A[P], L, T)
-              : !isNaN(A[P]) || isNaN(L) || O || k || (A[P] = L);
+              ? h(C[P], L, T)
+              : !isNaN(C[P]) || isNaN(L) || O || k || (C[P] = L);
           E && h(u(e._target, s), L, T);
           var N,
             j,
@@ -35103,21 +35103,21 @@
               if (t < 0) n = 0;
               else if (t < U) {
                 for (N = Math.min(H + 1, w - 1), n = N; n >= 0; n--)
-                  if (C[n] <= t) break;
+                  if (A[n] <= t) break;
                 n = Math.min(n, w - 2);
               } else {
-                for (n = H; n < w; n++) if (C[n] > t) break;
+                for (n = H; n < w; n++) if (A[n] > t) break;
                 n = Math.min(n - 1, w - 2);
               }
               (H = n), (U = t);
-              var r = C[n + 1] - C[n];
+              var r = A[n + 1] - A[n];
               if (0 !== r)
-                if (((j = (t - C[n]) / r), x))
+                if (((j = (t - A[n]) / r), x))
                   if (
-                    ((F = A[n]),
-                    (z = A[0 === n ? n : n - 1]),
-                    (B = A[n > w - 2 ? w - 1 : n + 1]),
-                    (V = A[n > w - 3 ? w - 1 : n + 2]),
+                    ((F = C[n]),
+                    (z = C[0 === n ? n : n - 1]),
+                    (B = C[n > w - 2 ? w - 1 : n + 1]),
+                    (V = C[n > w - 3 ? w - 1 : n + 2]),
                     E)
                   )
                     g(z, F, B, V, j, j * j, j * j * j, u(e, s), T);
@@ -35131,13 +35131,13 @@
                     }
                     v(e, s, i);
                   }
-                else if (E) d(A[n], A[n + 1], j, u(e, s), T);
+                else if (E) d(C[n], C[n + 1], j, u(e, s), T);
                 else {
                   var i;
-                  if (k) d(A[n], A[n + 1], j, W, 1), (i = y(W));
+                  if (k) d(C[n], C[n + 1], j, W, 1), (i = y(W));
                   else {
-                    if (O) return f(A[n], A[n + 1], j);
-                    i = c(A[n], A[n + 1], j);
+                    if (O) return f(C[n], C[n + 1], j);
+                    i = c(C[n], C[n + 1], j);
                   }
                   v(e, s, i);
                 }
@@ -35741,8 +35741,8 @@
           e.scale.setExtent(1 / 0, -1 / 0);
         }),
           e.eachSeries(function(r) {
-            if (A(r)) {
-              var i = C(r, e),
+            if (C(r)) {
+              var i = A(r, e),
                 a = i[0],
                 o = i[1];
               if (!w(a, t, e) || !w(o, t, e)) return;
@@ -35767,13 +35767,13 @@
         );
       });
     var T = ['xAxis', 'yAxis'];
-    function C(e, t) {
+    function A(e, t) {
       return s(T, function(t) {
         var n = e.getReferringComponents(t)[0];
         return n;
       });
     }
-    function A(e) {
+    function C(e) {
       return 'cartesian2d' === e.get('coordinateSystem');
     }
     (_.create = function(e, t) {
@@ -35787,8 +35787,8 @@
             n.push(a);
         }),
         e.eachSeries(function(t) {
-          if (A(t)) {
-            var n = C(t, e),
+          if (C(t)) {
+            var n = A(t, e),
               r = n[0],
               i = n[1],
               a = r.getCoordSysModel(),
@@ -37315,7 +37315,7 @@
       e: for (;;) {
         var r = (n - 1) >>> 1,
           i = e[r];
-        if (!(void 0 !== i && 0 < C(i, t))) break e;
+        if (!(void 0 !== i && 0 < A(i, t))) break e;
         (e[r] = t), (e[n] = i), (n = r);
       }
     }
@@ -37333,12 +37333,12 @@
               o = e[a],
               s = a + 1,
               l = e[s];
-            if (void 0 !== o && 0 > C(o, n))
-              void 0 !== l && 0 > C(l, o)
+            if (void 0 !== o && 0 > A(o, n))
+              void 0 !== l && 0 > A(l, o)
                 ? ((e[r] = l), (e[s] = n), (r = s))
                 : ((e[r] = o), (e[a] = n), (r = a));
             else {
-              if (!(void 0 !== l && 0 > C(l, n))) break e;
+              if (!(void 0 !== l && 0 > A(l, n))) break e;
               (e[r] = l), (e[s] = n), (r = s);
             }
           }
@@ -37347,11 +37347,11 @@
       }
       return null;
     }
-    function C(e, t) {
+    function A(e, t) {
       var n = e.sortIndex - t.sortIndex;
       return 0 !== n ? n : e.id - t.id;
     }
-    var A = [],
+    var C = [],
       M = [],
       I = 1,
       P = null,
@@ -37364,14 +37364,14 @@
         if (null === t.callback) T(M);
         else {
           if (!(t.startTime <= e)) break;
-          T(M), (t.sortIndex = t.expirationTime), k(A, t);
+          T(M), (t.sortIndex = t.expirationTime), k(C, t);
         }
         t = O(M);
       }
     }
     function z(e) {
       if (((N = !1), j(e), !L))
-        if (null !== O(A)) (L = !0), r(F);
+        if (null !== O(C)) (L = !0), r(F);
         else {
           var t = O(M);
           null !== t && i(z, t.startTime - e);
@@ -37382,7 +37382,7 @@
       var r = D;
       try {
         for (
-          j(n), P = O(A);
+          j(n), P = O(C);
           null !== P && (!(P.expirationTime > n) || (e && !o()));
 
         ) {
@@ -37391,10 +37391,10 @@
             (P.callback = null), (D = P.priorityLevel);
             var l = s(P.expirationTime <= n);
             (n = t.unstable_now()),
-              'function' === typeof l ? (P.callback = l) : P === O(A) && T(A),
+              'function' === typeof l ? (P.callback = l) : P === O(C) && T(C),
               j(n);
-          } else T(A);
-          P = O(A);
+          } else T(C);
+          P = O(C);
         }
         if (null !== P) var u = !0;
         else {
@@ -37437,7 +37437,7 @@
         return D;
       }),
       (t.unstable_getFirstCallbackNode = function() {
-        return O(A);
+        return O(C);
       }),
       (t.unstable_next = function(e) {
         switch (D) {
@@ -37498,15 +37498,15 @@
           l > s
             ? ((e.sortIndex = l),
               k(M, e),
-              null === O(A) && e === O(M) && (N ? a() : (N = !0), i(z, l - s)))
-            : ((e.sortIndex = o), k(A, e), L || R || ((L = !0), r(F))),
+              null === O(C) && e === O(M) && (N ? a() : (N = !0), i(z, l - s)))
+            : ((e.sortIndex = o), k(C, e), L || R || ((L = !0), r(F))),
           e
         );
       }),
       (t.unstable_shouldYield = function() {
         var e = t.unstable_now();
         j(e);
-        var n = O(A);
+        var n = O(C);
         return (
           (n !== P &&
             null !== P &&
@@ -37651,6 +37651,239 @@
     function v(e) {
       return e && e.__esModule ? e : { default: e };
     }
+  },
+  fNdE: function(e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('xwgP'),
+      i = n.n(r),
+      a = n('fLni'),
+      o = n('xVRR'),
+      s = n('Rsk4'),
+      l = i.a.memo(s['default']['Pie-demo'].component),
+      u = i.a.memo(s['default']['Pie-demo-1'].component);
+    t['default'] = function() {
+      return i.a.createElement(
+        i.a.Fragment,
+        null,
+        i.a.createElement(
+          i.a.Fragment,
+          null,
+          i.a.createElement(
+            'div',
+            { className: 'markdown' },
+            i.a.createElement(
+              'h4',
+              { id: '\u73af\u5f62\u997c\u56fe' },
+              i.a.createElement(
+                a['AnchorLink'],
+                {
+                  to: '#\u73af\u5f62\u997c\u56fe',
+                  'aria-hidden': 'true',
+                  tabIndex: -1,
+                },
+                i.a.createElement('span', { className: 'icon icon-link' }),
+              ),
+              '\u73af\u5f62\u997c\u56fe',
+            ),
+          ),
+          i.a.createElement(
+            o['default'],
+            s['default']['Pie-demo'].previewerProps,
+            i.a.createElement(l, null),
+          ),
+          i.a.createElement(
+            'div',
+            { className: 'markdown' },
+            i.a.createElement(
+              'h4',
+              { id: '\u57fa\u672c\u997c\u56fe' },
+              i.a.createElement(
+                a['AnchorLink'],
+                {
+                  to: '#\u57fa\u672c\u997c\u56fe',
+                  'aria-hidden': 'true',
+                  tabIndex: -1,
+                },
+                i.a.createElement('span', { className: 'icon icon-link' }),
+              ),
+              '\u57fa\u672c\u997c\u56fe',
+            ),
+          ),
+          i.a.createElement(
+            o['default'],
+            s['default']['Pie-demo-1'].previewerProps,
+            i.a.createElement(u, null),
+          ),
+          i.a.createElement(
+            'div',
+            { className: 'markdown' },
+            i.a.createElement(
+              'h3',
+              { id: 'api' },
+              i.a.createElement(
+                a['AnchorLink'],
+                { to: '#api', 'aria-hidden': 'true', tabIndex: -1 },
+                i.a.createElement('span', { className: 'icon icon-link' }),
+              ),
+              'API',
+            ),
+            i.a.createElement(
+              'table',
+              null,
+              i.a.createElement(
+                'thead',
+                null,
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('th', { align: 'center' }, '\u53c2\u6570'),
+                  i.a.createElement('th', { align: 'center' }, '\u8bf4\u660e'),
+                  i.a.createElement('th', { align: 'center' }, '\u7c7b\u578b'),
+                  i.a.createElement(
+                    'th',
+                    { align: 'center' },
+                    '\u9ed8\u8ba4\u503c',
+                  ),
+                ),
+              ),
+              i.a.createElement(
+                'tbody',
+                null,
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'y'),
+                  i.a.createElement('td', { align: 'center' }, '\u6307\u6807'),
+                  i.a.createElement('td', { align: 'center' }, 'array'),
+                  i.a.createElement('td', { align: 'center' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'radius'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u997c\u56fe\u5916\u534a\u5f84\u5185\u534a\u5f84',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'string|array'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    "['35%', '50%']",
+                  ),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'center'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'xy \u4e2d\u5fc3\u70b9',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'array'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    "['50%', '50%']",
+                  ),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'showLabel'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u662f\u5426\u663e\u793a\u8282\u70b9\u5904 label',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'boolean'),
+                  i.a.createElement('td', { align: 'center' }, 'false'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'options'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'echarts \u56fe\u8868\u914d\u7f6e\u9879 (\u4f18\u5148\u7ea7\u9ad8\u4e8e\u4ee5\u4e0a\u914d\u7f6e)',
+                    i.a.createElement(
+                      a['Link'],
+                      { to: 'https://echarts.apache.org/zh/option.html#title' },
+                      'echarts',
+                    ),
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'object'),
+                  i.a.createElement('td', { align: 'center' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'showLoading'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u662f\u5426\u663e\u793a\u52a0\u8f7d\u72b6\u6001',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'boolean'),
+                  i.a.createElement('td', { align: 'center' }, 'false'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'loadingOptions',
+                  ),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u56fe\u8868\u52a0\u8f7d\u6837\u5f0f',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'object'),
+                  i.a.createElement('td', { align: 'center' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'theme'),
+                  i.a.createElement('td', { align: 'center' }, '\u4e3b\u9898'),
+                  i.a.createElement('td', { align: 'center' }, 'string|object'),
+                  i.a.createElement('td', { align: 'center' }, 'xm'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'initOptions'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u521d\u59cb\u5316\u65f6\u7684\u9644\u52a0\u53c2\u6570',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'object'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '{',
+                    "devicePixelRatio: window.devicePixelRatio,renderer: 'canvas'",
+                    '}',
+                  ),
+                ),
+              ),
+            ),
+            i.a.createElement(
+              'p',
+              null,
+              '\u53ef\u4ee5\u901a\u8fc7\u5b9e\u4f8b\u7684 getEchartsInstance \u65b9\u6cd5\u83b7\u53d6\u56fe\u8868\u5b9e\u4f8b',
+            ),
+          ),
+        ),
+      );
+    };
   },
   fSdY: function(e, t, n) {
     var r = n('oEo5'),
@@ -39181,7 +39414,7 @@
             t = this.opt,
             n = D(this, e, t),
             r = L(this, e, t);
-          C(e, r, n), R(this, e, t);
+          A(e, r, n), R(this, e, t);
         },
         axisName: function() {
           var e = this.opt,
@@ -39225,9 +39458,9 @@
                     })
                   : n,
               S = t.get('tooltip', !0),
-              C = t.mainType,
-              A = { componentType: C, name: n, $vars: ['name'] };
-            A[C + 'Index'] = t.componentIndex;
+              A = t.mainType,
+              C = { componentType: A, name: n, $vars: ['name'] };
+            C[A + 'Index'] = t.componentIndex;
             var M = new u.Text({
               anid: 'name',
               __fullText: n,
@@ -39244,7 +39477,7 @@
                         formatter: function() {
                           return n;
                         },
-                        formatterParams: A,
+                        formatterParams: C,
                       },
                       S,
                     )
@@ -39320,7 +39553,7 @@
       var t = e.get('tooltip');
       return e.get('silent') || !(e.get('triggerEvent') || (t && t.show));
     });
-    function C(e, t, n) {
+    function A(e, t, n) {
       if (!x(e.axis)) {
         var r = e.get('axisLabel.showMinLabel'),
           i = e.get('axisLabel.showMaxLabel');
@@ -39333,13 +39566,13 @@
           c = n[1],
           f = n[n.length - 1],
           d = n[n.length - 2];
-        !1 === r ? (A(a), A(u)) : M(a, o) && (r ? (A(o), A(c)) : (A(a), A(u))),
+        !1 === r ? (C(a), C(u)) : M(a, o) && (r ? (C(o), C(c)) : (C(a), C(u))),
           !1 === i
-            ? (A(s), A(f))
-            : M(l, s) && (i ? (A(l), A(d)) : (A(s), A(f)));
+            ? (C(s), C(f))
+            : M(l, s) && (i ? (C(l), C(d)) : (C(s), C(f)));
       }
     }
-    function A(e) {
+    function C(e) {
       e && (e.ignore = !0);
     }
     function M(e, t, n) {
@@ -40179,8 +40412,8 @@
             });
         },
         T = l(y),
-        C = 0;
-      while (T.length > C) O(T[C++]);
+        A = 0;
+      while (T.length > A) O(T[A++]);
       (b.constructor = k), (k.prototype = b), d(i, 'RegExp', k);
     }
     g('RegExp');
@@ -40226,7 +40459,7 @@
         return G;
       }),
       n.d(t, 'isBrowser', function() {
-        return C;
+        return A;
       });
     var r = n('SDju'),
       i = n.n(r),
@@ -40483,14 +40716,14 @@
       if (!e) throw new Error(t);
     }
     var T,
-      C = function() {
+      A = function() {
         return (
           'undefined' !== typeof window &&
           'undefined' !== typeof window.document &&
           'undefined' !== typeof window.document.createElement
         );
       };
-    function A(e) {
+    function C(e) {
       var t = e.fns,
         n = e.args;
       if (1 === t.length) return t[0];
@@ -40686,7 +40919,7 @@
                     });
                   case T.compose:
                     return function() {
-                      return A({ fns: s.concat(r), args: a })();
+                      return C({ fns: s.concat(r), args: a })();
                     };
                 }
               },
@@ -42314,7 +42547,7 @@
       k = y.SERIES_LAYOUT_BY_ROW,
       O = { Must: 1, Might: 2, Not: 3 },
       T = a();
-    function C(e) {
+    function A(e) {
       var t = e.option.source,
         n = S;
       if (p(t)) n = E;
@@ -42342,7 +42575,7 @@
       } else if (null != t) throw new Error('Invalid data');
       T(e).sourceFormat = n;
     }
-    function A(e) {
+    function C(e) {
       return T(e).source;
     }
     function M(e) {
@@ -42610,328 +42843,13 @@
       return O.Not;
     }
     (t.BE_ORDINAL = O),
-      (t.detectSourceFormat = C),
-      (t.getSource = A),
+      (t.detectSourceFormat = A),
+      (t.getSource = C),
       (t.resetSourceDefaulter = M),
       (t.prepareSource = I),
       (t.makeSeriesEncodeForAxisCoordSys = N),
       (t.makeSeriesEncodeForNameBased = j),
       (t.guessOrdinal = F);
-  },
-  kBlC: function(e, t, n) {
-    'use strict';
-    n.r(t);
-    var r = n('xwgP'),
-      i = n.n(r),
-      a = n('fLni'),
-      o = n('xVRR'),
-      s = n('Rsk4'),
-      l = i.a.memo(s['default']['BarChart-demo'].component),
-      u = i.a.memo(s['default']['BarChart-demo-1'].component),
-      c = i.a.memo(s['default']['BarChart-demo-2'].component);
-    t['default'] = function() {
-      return i.a.createElement(
-        i.a.Fragment,
-        null,
-        i.a.createElement(
-          i.a.Fragment,
-          null,
-          i.a.createElement(
-            'div',
-            { className: 'markdown' },
-            i.a.createElement(
-              'h4',
-              { id: '\u7528\u6cd5' },
-              i.a.createElement(
-                a['AnchorLink'],
-                { to: '#\u7528\u6cd5', 'aria-hidden': 'true', tabIndex: -1 },
-                i.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              '\u7528\u6cd5:',
-            ),
-            i.a.createElement(
-              'h5',
-              { id: '\u57fa\u672c\u67f1\u72b6\u56fe' },
-              i.a.createElement(
-                a['AnchorLink'],
-                {
-                  to: '#\u57fa\u672c\u67f1\u72b6\u56fe',
-                  'aria-hidden': 'true',
-                  tabIndex: -1,
-                },
-                i.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              '\u57fa\u672c\u67f1\u72b6\u56fe:',
-            ),
-          ),
-          i.a.createElement(
-            o['default'],
-            s['default']['BarChart-demo'].previewerProps,
-            i.a.createElement(l, null),
-          ),
-          i.a.createElement(
-            'div',
-            { className: 'markdown' },
-            i.a.createElement(
-              'h5',
-              { id: '\u5806\u53e0\u67f1\u72b6\u56fe' },
-              i.a.createElement(
-                a['AnchorLink'],
-                {
-                  to: '#\u5806\u53e0\u67f1\u72b6\u56fe',
-                  'aria-hidden': 'true',
-                  tabIndex: -1,
-                },
-                i.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              '\u5806\u53e0\u67f1\u72b6\u56fe:',
-            ),
-          ),
-          i.a.createElement(
-            o['default'],
-            s['default']['BarChart-demo-1'].previewerProps,
-            i.a.createElement(u, null),
-          ),
-          i.a.createElement(
-            'div',
-            { className: 'markdown' },
-            i.a.createElement(
-              'h5',
-              { id: '\u6c34\u5e73\u67f1\u72b6\u56fe' },
-              i.a.createElement(
-                a['AnchorLink'],
-                {
-                  to: '#\u6c34\u5e73\u67f1\u72b6\u56fe',
-                  'aria-hidden': 'true',
-                  tabIndex: -1,
-                },
-                i.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              '\u6c34\u5e73\u67f1\u72b6\u56fe:',
-            ),
-          ),
-          i.a.createElement(
-            o['default'],
-            s['default']['BarChart-demo-2'].previewerProps,
-            i.a.createElement(c, null),
-          ),
-          i.a.createElement(
-            'div',
-            { className: 'markdown' },
-            i.a.createElement(
-              'h3',
-              { id: 'api' },
-              i.a.createElement(
-                a['AnchorLink'],
-                { to: '#api', 'aria-hidden': 'true', tabIndex: -1 },
-                i.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              'API',
-            ),
-            i.a.createElement(
-              'table',
-              null,
-              i.a.createElement(
-                'thead',
-                null,
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('th', { align: 'center' }, '\u53c2\u6570'),
-                  i.a.createElement('th', { align: 'center' }, '\u8bf4\u660e'),
-                  i.a.createElement('th', { align: 'center' }, '\u7c7b\u578b'),
-                  i.a.createElement(
-                    'th',
-                    { align: 'center' },
-                    '\u9ed8\u8ba4\u503c',
-                  ),
-                ),
-              ),
-              i.a.createElement(
-                'tbody',
-                null,
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'x'),
-                  i.a.createElement('td', { align: 'center' }, '\u7ef4\u5ea6'),
-                  i.a.createElement('td', { align: 'center' }, 'array'),
-                  i.a.createElement('td', { align: 'center' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'y'),
-                  i.a.createElement('td', { align: 'center' }, '\u6307\u6807'),
-                  i.a.createElement('td', { align: 'center' }, 'array'),
-                  i.a.createElement('td', { align: 'center' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'yAxisName'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'y\u8f74\u540d\u79f0',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'array'),
-                  i.a.createElement('td', { align: 'center' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'isStack'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u662f\u5426\u5806\u53e0',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'boolean'),
-                  i.a.createElement('td', { align: 'center' }, 'false'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'isHorizontal'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u662f\u5426\u662f\u6c34\u5e73\u67f1\u72b6\u56fe',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'boolean'),
-                  i.a.createElement('td', { align: 'center' }, 'false'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'dataZoom'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u662f\u5426\u5f00\u542f\u6a2a\u5411\u6eda\u52a8',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'boolean'),
-                  i.a.createElement('td', { align: 'center' }, 'false'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'rotate'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'x \u8f74 label \u5b57\u4f53 rotate',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'number'),
-                  i.a.createElement('td', { align: 'center' }, '0'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'interval'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u8bbe\u7f6e\u5750\u6807\u8f74\u5206\u5272\u95f4\u9694\uff08\u8bbe\u7f6e 0 \u5f3a\u5236\u663e\u793a\uff09',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'number|string'),
-                  i.a.createElement('td', { align: 'center' }, "'auto'"),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'showLabel'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u662f\u5426\u663e\u793a\u8282\u70b9\u5904 label',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'boolean'),
-                  i.a.createElement('td', { align: 'center' }, 'false'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'options'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'echarts \u56fe\u8868\u914d\u7f6e\u9879 (\u4f18\u5148\u7ea7\u9ad8\u4e8e\u4ee5\u4e0a\u914d\u7f6e)',
-                    i.a.createElement(
-                      a['Link'],
-                      { to: 'https://echarts.apache.org/zh/option.html#title' },
-                      'echarts',
-                    ),
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'object'),
-                  i.a.createElement('td', { align: 'center' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'showLoading'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u662f\u5426\u663e\u793a\u52a0\u8f7d\u72b6\u6001',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'boolean'),
-                  i.a.createElement('td', { align: 'center' }, 'false'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'loadingOptions',
-                  ),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u56fe\u8868\u52a0\u8f7d\u6837\u5f0f',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'object'),
-                  i.a.createElement('td', { align: 'center' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'theme'),
-                  i.a.createElement('td', { align: 'center' }, '\u4e3b\u9898'),
-                  i.a.createElement('td', { align: 'center' }, 'string|object'),
-                  i.a.createElement('td', { align: 'center' }, 'xm'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'initOptions'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u521d\u59cb\u5316\u65f6\u7684\u9644\u52a0\u53c2\u6570',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'object'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '{',
-                    "devicePixelRatio: window.devicePixelRatio,renderer: 'canvas'",
-                    '}',
-                  ),
-                ),
-              ),
-            ),
-            i.a.createElement(
-              'p',
-              null,
-              '\u53ef\u4ee5\u901a\u8fc7\u5b9e\u4f8b\u7684 getEchartsInstance \u65b9\u6cd5\u83b7\u53d6\u56fe\u8868\u5b9e\u4f8b',
-            ),
-          ),
-        ),
-      );
-    };
   },
   kI7s: function(e, t, n) {
     var r = n('+qhb'),
@@ -43228,6 +43146,287 @@
             (n = t - (t - a)),
             n > l || n != n ? f * (1 / 0) : f * n);
       };
+  },
+  kfyp: function(e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('xwgP'),
+      i = n.n(r),
+      a = n('fLni'),
+      o = n('xVRR'),
+      s = n('Rsk4'),
+      l = i.a.memo(s['default']['Line-demo'].component),
+      u = i.a.memo(s['default']['Line-demo-1'].component);
+    t['default'] = function() {
+      return i.a.createElement(
+        i.a.Fragment,
+        null,
+        i.a.createElement(
+          i.a.Fragment,
+          null,
+          i.a.createElement(
+            'div',
+            { className: 'markdown' },
+            i.a.createElement(
+              'h4',
+              { id: '\u57fa\u672c\u6298\u7ebf\u56fe' },
+              i.a.createElement(
+                a['AnchorLink'],
+                {
+                  to: '#\u57fa\u672c\u6298\u7ebf\u56fe',
+                  'aria-hidden': 'true',
+                  tabIndex: -1,
+                },
+                i.a.createElement('span', { className: 'icon icon-link' }),
+              ),
+              '\u57fa\u672c\u6298\u7ebf\u56fe',
+            ),
+          ),
+          i.a.createElement(
+            o['default'],
+            s['default']['Line-demo'].previewerProps,
+            i.a.createElement(l, null),
+          ),
+          i.a.createElement(
+            'div',
+            { className: 'markdown' },
+            i.a.createElement(
+              'h4',
+              { id: '\u53ccy\u8f74' },
+              i.a.createElement(
+                a['AnchorLink'],
+                { to: '#\u53ccy\u8f74', 'aria-hidden': 'true', tabIndex: -1 },
+                i.a.createElement('span', { className: 'icon icon-link' }),
+              ),
+              '\u53ccy\u8f74',
+            ),
+          ),
+          i.a.createElement(
+            o['default'],
+            s['default']['Line-demo-1'].previewerProps,
+            i.a.createElement(u, null),
+          ),
+          i.a.createElement(
+            'div',
+            { className: 'markdown' },
+            i.a.createElement(
+              'h3',
+              { id: 'api' },
+              i.a.createElement(
+                a['AnchorLink'],
+                { to: '#api', 'aria-hidden': 'true', tabIndex: -1 },
+                i.a.createElement('span', { className: 'icon icon-link' }),
+              ),
+              'API',
+            ),
+            i.a.createElement(
+              'table',
+              null,
+              i.a.createElement(
+                'thead',
+                null,
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('th', { align: 'center' }, '\u53c2\u6570'),
+                  i.a.createElement('th', { align: 'center' }, '\u8bf4\u660e'),
+                  i.a.createElement('th', { align: 'center' }, '\u7c7b\u578b'),
+                  i.a.createElement(
+                    'th',
+                    { align: 'center' },
+                    '\u9ed8\u8ba4\u503c',
+                  ),
+                ),
+              ),
+              i.a.createElement(
+                'tbody',
+                null,
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'x'),
+                  i.a.createElement('td', { align: 'center' }, '\u7ef4\u5ea6'),
+                  i.a.createElement('td', { align: 'center' }, 'array'),
+                  i.a.createElement('td', { align: 'center' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'y'),
+                  i.a.createElement('td', { align: 'center' }, '\u6307\u6807'),
+                  i.a.createElement('td', { align: 'center' }, 'array'),
+                  i.a.createElement('td', { align: 'center' }),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'yAxisName'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'y\u8f74\u540d\u79f0',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'array'),
+                  i.a.createElement('td', { align: 'center' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'rightAxisSite'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u6307\u6807\u5728y\u8f74left or right',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'Array'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u9ed8\u8ba4left',
+                  ),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'isRate'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u662f\u5426\u662f\u767e\u5206\u6bd4',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'boolean'),
+                  i.a.createElement('td', { align: 'center' }, 'false'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'dataZoom'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u662f\u5426\u5f00\u542f\u6a2a\u5411\u6eda\u52a8',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'boolean'),
+                  i.a.createElement('td', { align: 'center' }, 'false'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'rotate'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'x \u8f74 label \u5b57\u4f53 rotate',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'number'),
+                  i.a.createElement('td', { align: 'center' }, '0'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'interval'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u8bbe\u7f6e\u5750\u6807\u8f74\u5206\u5272\u95f4\u9694\uff08\u8bbe\u7f6e 0 \u5f3a\u5236\u663e\u793a\uff09',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'number|string'),
+                  i.a.createElement('td', { align: 'center' }, "'auto'"),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'showLabel'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u662f\u5426\u663e\u793a\u8282\u70b9\u5904 label',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'boolean'),
+                  i.a.createElement('td', { align: 'center' }, 'false'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'options'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'echarts \u56fe\u8868\u914d\u7f6e\u9879 (\u4f18\u5148\u7ea7\u9ad8\u4e8e\u4ee5\u4e0a\u914d\u7f6e)',
+                    i.a.createElement(
+                      a['Link'],
+                      { to: 'https://echarts.apache.org/zh/option.html#title' },
+                      'echarts',
+                    ),
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'object'),
+                  i.a.createElement('td', { align: 'center' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'showLoading'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u662f\u5426\u663e\u793a\u52a0\u8f7d\u72b6\u6001',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'boolean'),
+                  i.a.createElement('td', { align: 'center' }, 'false'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'loadingOptions',
+                  ),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u56fe\u8868\u52a0\u8f7d\u6837\u5f0f',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'object'),
+                  i.a.createElement('td', { align: 'center' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'theme'),
+                  i.a.createElement('td', { align: 'center' }, '\u4e3b\u9898'),
+                  i.a.createElement('td', { align: 'center' }, 'string|object'),
+                  i.a.createElement('td', { align: 'center' }, 'xm'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'initOptions'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u521d\u59cb\u5316\u65f6\u7684\u9644\u52a0\u53c2\u6570',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'object'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '{',
+                    "devicePixelRatio:window.devicePixelRatio,renderer:'canvas'",
+                    '}',
+                  ),
+                ),
+              ),
+            ),
+            i.a.createElement(
+              'p',
+              null,
+              '\u53ef\u4ee5\u901a\u8fc7\u5b9e\u4f8b\u7684 getEchartsInstance \u65b9\u6cd5\u83b7\u53d6\u56fe\u8868\u5b9e\u4f8b',
+            ),
+          ),
+        ),
+      );
+    };
   },
   kh0G: function(e, t, n) {
     'use strict';
@@ -44149,7 +44348,7 @@
         k,
         O = function(e) {
           if (e === h && I) return I;
-          if (!g && e in A) return A[e];
+          if (!g && e in C) return C[e];
           switch (e) {
             case v:
               return function() {
@@ -44169,11 +44368,11 @@
           };
         },
         T = t + ' Iterator',
-        C = !1,
-        A = e.prototype,
-        M = A[m] || A['@@iterator'] || (h && A[h]),
+        A = !1,
+        C = e.prototype,
+        M = C[m] || C['@@iterator'] || (h && C[h]),
         I = (!g && M) || O(h),
-        P = ('Array' == t && A.entries) || M;
+        P = ('Array' == t && C.entries) || M;
       if (
         (P &&
           ((S = a(P.call(new e()))),
@@ -44187,17 +44386,17 @@
         h == y &&
           M &&
           M.name !== y &&
-          ((C = !0),
+          ((A = !0),
           (I = function() {
             return M.call(this);
           })),
-        (f && !_) || A[m] === I || l(A, m, I),
+        (f && !_) || C[m] === I || l(C, m, I),
         (d[t] = I),
         h)
       )
         if (((E = { values: O(y), keys: w ? I : O(v), entries: O(b) }), _))
-          for (k in E) (g || C || !(k in A)) && u(A, k, E[k]);
-        else r({ target: t, proto: !0, forced: g || C }, E);
+          for (k in E) (g || A || !(k in C)) && u(C, k, E[k]);
+        else r({ target: t, proto: !0, forced: g || A }, E);
       return E;
     };
   },
@@ -44289,8 +44488,8 @@
       var k = ',',
         O = 'progid:DXImageTransform.Microsoft',
         T = 21600,
-        C = T / 2,
-        A = 1e5,
+        A = T / 2,
+        C = 1e5,
         M = 1e3,
         I = function(e) {
           (e.style.cssText =
@@ -44313,7 +44512,7 @@
           t && e && t.parentNode === e && e.removeChild(t);
         },
         N = function(e, t, n) {
-          return (parseFloat(e) || 0) * A + (parseFloat(t) || 0) * M + n;
+          return (parseFloat(e) || 0) * C + (parseFloat(t) || 0) * M + n;
         },
         j = u.parsePercent,
         z = function(e, t, n) {
@@ -44366,11 +44565,11 @@
               S.sort(function(e, t) {
                 return e.offset - t.offset;
               });
-              for (var k = S.length, O = [], C = [], A = 0; A < k; A++) {
-                var M = S[A],
+              for (var k = S.length, O = [], A = [], C = 0; C < k; C++) {
+                var M = S[C],
                   I = F(M.color);
-                C.push(M.offset * u + l + ' ' + I[0]),
-                  (0 !== A && A !== k - 1) || O.push(I);
+                A.push(M.offset * u + l + ' ' + I[0]),
+                  (0 !== C && C !== k - 1) || O.push(I);
               }
               if (k >= 2) {
                 var P = O[0][0],
@@ -44383,7 +44582,7 @@
                   (e.angle = o),
                   (e.color = P),
                   (e.color2 = D),
-                  (e.colors = C.join(',')),
+                  (e.colors = A.join(',')),
                   (e.opacity = L),
                   (e.opacity2 = R);
               }
@@ -44448,19 +44647,19 @@
                   w,
                   E = g[o++],
                   O = g[o++],
-                  A = g[o++],
+                  C = g[o++],
                   M = g[o++];
                 i === h
-                  ? ((v = A),
+                  ? ((v = C),
                     (w = M),
-                    (A = (A + 2 * E) / 3),
+                    (C = (C + 2 * E) / 3),
                     (M = (M + 2 * O) / 3),
                     (E = (s + 2 * E) / 3),
                     (O = (l + 2 * O) / 3))
                   : ((v = g[o++]), (w = g[o++])),
                   (U[0][0] = E),
                   (U[0][1] = O),
-                  (U[1][0] = A),
+                  (U[1][0] = C),
                   (U[1][1] = M),
                   (U[2][0] = v),
                   (U[2][1] = w),
@@ -44505,21 +44704,21 @@
                     : (E -= 270 / T)),
                   p.push(
                     K,
-                    b(((N - z) * D + I) * T - C),
+                    b(((N - z) * D + I) * T - A),
                     k,
-                    b(((j - F) * R + P) * T - C),
+                    b(((j - F) * R + P) * T - A),
                     k,
-                    b(((N + z) * D + I) * T - C),
+                    b(((N + z) * D + I) * T - A),
                     k,
-                    b(((j + F) * R + P) * T - C),
+                    b(((j + F) * R + P) * T - A),
                     k,
-                    b((W * D + I) * T - C),
+                    b((W * D + I) * T - A),
                     k,
-                    b((G * R + P) * T - C),
+                    b((G * R + P) * T - A),
                     k,
-                    b((E * D + I) * T - C),
+                    b((E * D + I) * T - A),
                     k,
-                    b((O * R + P) * T - C),
+                    b((O * R + P) * T - A),
                   ),
                   (s = E),
                   (l = O);
@@ -44532,10 +44731,10 @@
                   (Y[0] = q[0] + g[o++]),
                   (Y[1] = q[1] + g[o++]),
                   t && (a(q, q, t), a(Y, Y, t)),
-                  (q[0] = b(q[0] * T - C)),
-                  (Y[0] = b(Y[0] * T - C)),
-                  (q[1] = b(q[1] * T - C)),
-                  (Y[1] = b(Y[1] * T - C)),
+                  (q[0] = b(q[0] * T - A)),
+                  (Y[0] = b(Y[0] * T - A)),
+                  (q[1] = b(q[1] * T - A)),
+                  (Y[1] = b(Y[1] * T - A)),
                   p.push(
                     ' m ',
                     q[0],
@@ -44564,9 +44763,9 @@
                 var J = U[X];
                 t && a(J, J, t),
                   p.push(
-                    b(J[0] * T - C),
+                    b(J[0] * T - A),
                     k,
-                    b(J[1] * T - C),
+                    b(J[1] * T - A),
                     X < n - 1 ? k : '',
                   );
               }
@@ -44659,16 +44858,16 @@
           _ || ((_ = v.doc.createElement('div')), I(_), (this._vmlEl = _));
           var S,
             T = _.style,
-            C = !1,
-            A = 1,
+            A = !1,
+            C = 1,
             M = 1;
           if (
             (this.transform &&
               ((S = this.transform),
-              (A = x(S[0] * S[0] + S[1] * S[1])),
+              (C = x(S[0] * S[0] + S[1] * S[1])),
               (M = x(S[2] * S[2] + S[3] * S[3])),
-              (C = S[1] || S[2])),
-            C)
+              (A = S[1] || S[2])),
+            A)
           ) {
             var P = [c, f],
               D = [c + d, f],
@@ -44680,19 +44879,19 @@
               B = [];
             B.push(
               'M11=',
-              S[0] / A,
+              S[0] / C,
               k,
               'M12=',
               S[2] / M,
               k,
               'M21=',
-              S[1] / A,
+              S[1] / C,
               k,
               'M22=',
               S[3] / M,
               k,
               'Dx=',
-              b(c * A + S[4]),
+              b(c * C + S[4]),
               k,
               'Dy=',
               b(f * M + S[5]),
@@ -44700,7 +44899,7 @@
               (T.padding = '0 ' + b(z) + 'px ' + b(F) + 'px 0'),
               (T.filter = O + '.Matrix(' + B.join('') + ', SizingMethod=clip)');
           } else
-            S && ((c = c * A + S[4]), (f = f * M + S[5])),
+            S && ((c = c * C + S[4]), (f = f * M + S[5])),
               (T.filter = ''),
               (T.left = b(c) + 'px'),
               (T.top = b(f) + 'px');
@@ -44710,7 +44909,7 @@
           var U = V.style;
           if (w) {
             if (t && n)
-              (U.width = b((A * t * d) / p) + 'px'),
+              (U.width = b((C * t * d) / p) + 'px'),
                 (U.height = b((M * n * h) / g) + 'px');
             else {
               var W = new Image(),
@@ -44719,7 +44918,7 @@
                 (W.onload = null),
                   (t = W.width),
                   (n = W.height),
-                  (U.width = b((A * t * d) / p) + 'px'),
+                  (U.width = b((C * t * d) / p) + 'px'),
                   (U.height = b((M * n * h) / g) + 'px'),
                   (K._imageWidth = t),
                   (K._imageHeight = n),
@@ -44732,19 +44931,19 @@
               (H.style.overflow = 'hidden'),
               (this._cropEl = H));
             var q = H.style;
-            (q.width = b((d + (m * d) / p) * A)),
+            (q.width = b((d + (m * d) / p) * C)),
               (q.height = b((h + (y * h) / g) * M)),
               (q.filter =
                 O +
                 '.Matrix(Dx=' +
-                ((-m * d) / p) * A +
+                ((-m * d) / p) * C +
                 ',Dy=' +
                 ((-y * h) / g) * M +
                 ')'),
               H.parentNode || _.appendChild(H),
               V.parentNode !== H && H.appendChild(V);
           } else
-            (U.width = b(A * d) + 'px'),
+            (U.width = b(C * d) + 'px'),
               (U.height = b(M * h) + 'px'),
               _.appendChild(V),
               H && H.parentNode && (_.removeChild(H), (this._cropEl = null));
@@ -44875,22 +45074,22 @@
                 (g += n.height / 2);
               var O,
                 T,
-                C,
-                A = v.createNode,
+                A,
+                C = v.createNode,
                 M = this._textVmlEl;
               M
-                ? ((C = M.firstChild), (O = C.nextSibling), (T = O.nextSibling))
-                : ((M = A('line')),
-                  (O = A('path')),
-                  (T = A('textpath')),
-                  (C = A('skew')),
+                ? ((A = M.firstChild), (O = A.nextSibling), (T = O.nextSibling))
+                : ((M = C('line')),
+                  (O = C('path')),
+                  (T = C('textpath')),
+                  (A = C('skew')),
                   (T.style['v-text-align'] = 'left'),
                   I(M),
                   (O.textpathok = !0),
                   (T.on = !0),
                   (M.from = '0 0'),
                   (M.to = '1000 0.05'),
-                  R(M, C),
+                  R(M, A),
                   R(M, O),
                   R(M, T),
                   (this._textVmlEl = M));
@@ -44898,8 +45097,8 @@
                 L = M.style;
               _ && r
                 ? (a(D, D, _),
-                  (C.on = !0),
-                  (C.matrix =
+                  (A.on = !0),
+                  (A.matrix =
                     _[0].toFixed(3) +
                     k +
                     _[2].toFixed(3) +
@@ -44908,11 +45107,11 @@
                     k +
                     _[3].toFixed(3) +
                     ',0,0'),
-                  (C.offset = (b(D[0]) || 0) + ',' + (b(D[1]) || 0)),
-                  (C.origin = '0 0'),
+                  (A.offset = (b(D[0]) || 0) + ',' + (b(D[1]) || 0)),
+                  (A.origin = '0 0'),
                   (L.left = '0px'),
                   (L.top = '0px'))
-                : ((C.on = !1), (L.left = b(p) + 'px'), (L.top = b(g) + 'px')),
+                : ((A.on = !1), (L.left = b(p) + 'px'), (L.top = b(g) + 'px')),
                 (T.string = P(o));
               try {
                 T.style.font = w;
@@ -45022,7 +45221,7 @@
         !h(function() {
           'a'.matchAll(/./);
         }),
-      C = function(e, t) {
+      A = function(e, t) {
         var n,
           r = e.exec;
         if ('function' == typeof r) {
@@ -45032,7 +45231,7 @@
         }
         return k.call(e, t);
       },
-      A = i(
+      C = i(
         function(e, t, n, r) {
           _(this, {
             type: w,
@@ -45049,7 +45248,7 @@
           if (e.done) return { value: void 0, done: !0 };
           var t = e.regexp,
             n = e.string,
-            r = C(t, n);
+            r = A(t, n);
           return null === r
             ? { value: void 0, done: (e.done = !0) }
             : e.global
@@ -45080,7 +45279,7 @@
           (a = !!~r.indexOf('g')),
           (s = !!~r.indexOf('u')),
           (i.lastIndex = o(u.lastIndex)),
-          new A(i, c, a, s)
+          new C(i, c, a, s)
         );
       };
     r(
@@ -46469,7 +46668,7 @@
         return n;
       }
     }
-    function C(e, t, n) {
+    function A(e, t, n) {
       if (e && t) {
         if (e.filter && e.filter === s) return e.filter(t, n);
         for (var r = [], i = 0, a = e.length; i < a; i++)
@@ -46477,7 +46676,7 @@
         return r;
       }
     }
-    function A(e, t, n) {
+    function C(e, t, n) {
       if (e && t)
         for (var r = 0, i = e.length; r < i; r++)
           if (t.call(n, e[r], r, e)) return e[r];
@@ -46620,8 +46819,8 @@
       (t.each = k),
       (t.map = O),
       (t.reduce = T),
-      (t.filter = C),
-      (t.find = A),
+      (t.filter = A),
+      (t.find = C),
       (t.bind = M),
       (t.curry = I),
       (t.isArray = P),
@@ -46891,19 +47090,19 @@
         }
       n && w();
     }
-    var C = !(
+    var A = !(
         'undefined' === typeof window ||
         'undefined' === typeof window.document ||
         'undefined' === typeof window.document.createElement
       ),
-      A = null,
+      C = null,
       M = null,
       I = null;
     function P(e) {
       if ((e = m(e))) {
-        if ('function' !== typeof A) throw Error(o(280));
+        if ('function' !== typeof C) throw Error(o(280));
         var t = e.stateNode;
-        t && ((t = g(t)), A(e.stateNode, e.type, t));
+        t && ((t = g(t)), C(e.stateNode, e.type, t));
       }
     }
     function D(e) {
@@ -47285,7 +47484,7 @@
         e !== n && (t.setValue(e), !0)
       );
     }
-    function Ce(e, t) {
+    function Ae(e, t) {
       var n = t.checked;
       return i({}, t, {
         defaultChecked: void 0,
@@ -47294,7 +47493,7 @@
         checked: null != n ? n : e._wrapperState.initialChecked,
       });
     }
-    function Ae(e, t) {
+    function Ce(e, t) {
       var n = null == t.defaultValue ? '' : t.defaultValue,
         r = null != t.checked ? t.checked : t.defaultChecked;
       (n = Se(null != t.value ? t.value : n)),
@@ -47504,7 +47703,7 @@
       for (t in n) if (n.hasOwnProperty(t) && t in Je) return (Xe[e] = n[t]);
       return e;
     }
-    C &&
+    A &&
       ((Je = document.createElement('div').style),
       'AnimationEvent' in window ||
         (delete Ye.animationend.animation,
@@ -47667,7 +47866,7 @@
       );
     }
     function mt(e) {
-      if (!C) return !1;
+      if (!A) return !1;
       e = 'on' + e;
       var t = e in document;
       return (
@@ -47769,8 +47968,8 @@
       kt = !1,
       Ot = [],
       Tt = null,
-      Ct = null,
       At = null,
+      Ct = null,
       Mt = new Map(),
       It = new Map(),
       Pt = [],
@@ -47806,11 +48005,11 @@
           break;
         case 'dragenter':
         case 'dragleave':
-          Ct = null;
+          At = null;
           break;
         case 'mouseover':
         case 'mouseout':
-          At = null;
+          Ct = null;
           break;
         case 'pointerover':
         case 'pointerout':
@@ -47833,9 +48032,9 @@
         case 'focus':
           return (Tt = zt(Tt, e, t, n, r, i)), !0;
         case 'dragenter':
-          return (Ct = zt(Ct, e, t, n, r, i)), !0;
-        case 'mouseover':
           return (At = zt(At, e, t, n, r, i)), !0;
+        case 'mouseover':
+          return (Ct = zt(Ct, e, t, n, r, i)), !0;
         case 'pointerover':
           var a = i.pointerId;
           return Mt.set(a, zt(Mt.get(a) || null, e, t, n, r, i)), !0;
@@ -47900,8 +48099,8 @@
         null !== t ? (e.blockedOn = t) : Ot.shift();
       }
       null !== Tt && Vt(Tt) && (Tt = null),
-        null !== Ct && Vt(Ct) && (Ct = null),
         null !== At && Vt(At) && (At = null),
+        null !== Ct && Vt(Ct) && (Ct = null),
         Mt.forEach(Ht),
         It.forEach(Ht);
     }
@@ -47925,8 +48124,8 @@
       }
       for (
         null !== Tt && Wt(Tt, e),
-          null !== Ct && Wt(Ct, e),
           null !== At && Wt(At, e),
+          null !== Ct && Wt(Ct, e),
           Mt.forEach(t),
           It.forEach(t),
           n = 0;
@@ -48314,8 +48513,8 @@
     var kn = '$',
       On = '/$',
       Tn = '$?',
-      Cn = '$!',
-      An = null,
+      An = '$!',
+      Cn = null,
       Mn = null;
     function In(e, t) {
       switch (e) {
@@ -48353,7 +48552,7 @@
       for (var t = 0; e; ) {
         if (8 === e.nodeType) {
           var n = e.data;
-          if (n === kn || n === Cn || n === Tn) {
+          if (n === kn || n === An || n === Tn) {
             if (0 === t) return e;
             t--;
           } else n === On && t++;
@@ -48595,11 +48794,11 @@
     var lr = ir.extend({ data: null }),
       ur = ir.extend({ data: null }),
       cr = [9, 13, 27, 32],
-      fr = C && 'CompositionEvent' in window,
+      fr = A && 'CompositionEvent' in window,
       dr = null;
-    C && 'documentMode' in document && (dr = document.documentMode);
-    var hr = C && 'TextEvent' in window && !dr,
-      pr = C && (!fr || (dr && 8 < dr && 11 >= dr)),
+    A && 'documentMode' in document && (dr = document.documentMode);
+    var hr = A && 'TextEvent' in window && !dr,
+      pr = A && (!fr || (dr && 8 < dr && 11 >= dr)),
       gr = String.fromCharCode(32),
       mr = {
         beforeInput: {
@@ -48782,8 +48981,8 @@
         e
       );
     }
-    var Cr = null,
-      Ar = null;
+    var Ar = null,
+      Cr = null;
     function Mr(e) {
       pt(e);
     }
@@ -48796,11 +48995,11 @@
     }
     var Dr = !1;
     function Rr() {
-      Cr && (Cr.detachEvent('onpropertychange', Lr), (Ar = Cr = null));
+      Ar && (Ar.detachEvent('onpropertychange', Lr), (Cr = Ar = null));
     }
     function Lr(e) {
-      if ('value' === e.propertyName && Ir(Ar))
-        if (((e = Tr(Ar, e, gt(e))), F)) pt(e);
+      if ('value' === e.propertyName && Ir(Cr))
+        if (((e = Tr(Cr, e, gt(e))), F)) pt(e);
         else {
           F = !0;
           try {
@@ -48812,12 +49011,12 @@
     }
     function Nr(e, t, n) {
       'focus' === e
-        ? (Rr(), (Cr = t), (Ar = n), Cr.attachEvent('onpropertychange', Lr))
+        ? (Rr(), (Ar = t), (Cr = n), Ar.attachEvent('onpropertychange', Lr))
         : 'blur' === e && Rr();
     }
     function jr(e) {
       if ('selectionchange' === e || 'keyup' === e || 'keydown' === e)
-        return Ir(Ar);
+        return Ir(Cr);
     }
     function zr(e, t) {
       if ('click' === e) return Ir(t);
@@ -48825,7 +49024,7 @@
     function Fr(e, t) {
       if ('input' === e || 'change' === e) return Ir(t);
     }
-    C &&
+    A &&
       (Dr =
         mt('input') && (!document.documentMode || 9 < document.documentMode));
     var Br = {
@@ -49044,7 +49243,7 @@
         if (!ti.call(t, n[r]) || !ei(e[n[r]], t[n[r]])) return !1;
       return !0;
     }
-    var ri = C && 'documentMode' in document && 11 >= document.documentMode,
+    var ri = A && 'documentMode' in document && 11 >= document.documentMode,
       ii = {
         select: {
           phasedRegistrationNames: {
@@ -49384,13 +49583,13 @@
     function Ti(e, t) {
       ki++, (Ei[ki] = e.current), (e.current = t);
     }
-    var Ci = {},
-      Ai = { current: Ci },
+    var Ai = {},
+      Ci = { current: Ai },
       Mi = { current: !1 },
-      Ii = Ci;
+      Ii = Ai;
     function Pi(e, t) {
       var n = e.type.contextTypes;
-      if (!n) return Ci;
+      if (!n) return Ai;
       var r = e.stateNode;
       if (r && r.__reactInternalMemoizedUnmaskedChildContext === t)
         return r.__reactInternalMemoizedMaskedChildContext;
@@ -49409,11 +49608,11 @@
       return (e = e.childContextTypes), null !== e && void 0 !== e;
     }
     function Ri() {
-      Oi(Mi), Oi(Ai);
+      Oi(Mi), Oi(Ci);
     }
     function Li(e, t, n) {
-      if (Ai.current !== Ci) throw Error(o(168));
-      Ti(Ai, t), Ti(Mi, n);
+      if (Ci.current !== Ai) throw Error(o(168));
+      Ti(Ci, t), Ti(Mi, n);
     }
     function Ni(e, t, n) {
       var r = e.stateNode;
@@ -49427,9 +49626,9 @@
       return (
         (e =
           ((e = e.stateNode) && e.__reactInternalMemoizedMergedChildContext) ||
-          Ci),
-        (Ii = Ai.current),
-        Ti(Ai, e),
+          Ai),
+        (Ii = Ci.current),
+        Ti(Ci, e),
         Ti(Mi, Mi.current),
         !0
       );
@@ -49441,8 +49640,8 @@
         ? ((e = Ni(e, t, Ii)),
           (r.__reactInternalMemoizedMergedChildContext = e),
           Oi(Mi),
-          Oi(Ai),
-          Ti(Ai, e))
+          Oi(Ci),
+          Ti(Ci, e))
         : Oi(Mi),
         Ti(Mi, n);
     }
@@ -49652,7 +49851,7 @@
           ? ((e.baseQueue = t.next = t), (t.next = t))
           : ((t.next = n.next), (n.next = t));
     }
-    function Ca(e, t, n, r) {
+    function Aa(e, t, n, r) {
       var a = e.updateQueue;
       _a = !1;
       var o = a.baseQueue,
@@ -49747,7 +49946,7 @@
           (e.memoizedState = u);
       }
     }
-    function Aa(e, t, n) {
+    function Ca(e, t, n) {
       if (((e = t.effects), (t.effects = null), null !== e))
         for (t = 0; t < e.length; t++) {
           var r = e[t],
@@ -49821,14 +50020,14 @@
     }
     function La(e, t, n) {
       var r = !1,
-        i = Ci,
+        i = Ai,
         a = t.contextType;
       return (
         'object' === typeof a && null !== a
           ? (a = wa(a))
-          : ((i = Di(t) ? Ii : Ai.current),
+          : ((i = Di(t) ? Ii : Ci.current),
             (r = t.contextTypes),
-            (a = (r = null !== r && void 0 !== r) ? Pi(e, i) : Ci)),
+            (a = (r = null !== r && void 0 !== r) ? Pi(e, i) : Ai)),
         (t = new t(n, a)),
         (e.memoizedState =
           null !== t.state && void 0 !== t.state ? t.state : null),
@@ -49856,8 +50055,8 @@
       var a = t.contextType;
       'object' === typeof a && null !== a
         ? (i.context = wa(a))
-        : ((a = Di(t) ? Ii : Ai.current), (i.context = Pi(e, a))),
-        Ca(e, n, i, r),
+        : ((a = Di(t) ? Ii : Ci.current), (i.context = Pi(e, a))),
+        Aa(e, n, i, r),
         (i.state = e.memoizedState),
         (a = t.getDerivedStateFromProps),
         'function' === typeof a &&
@@ -49871,7 +50070,7 @@
           'function' === typeof i.UNSAFE_componentWillMount &&
             i.UNSAFE_componentWillMount(),
           t !== i.state && Da.enqueueReplaceState(i, i.state, null),
-          Ca(e, n, i, r),
+          Aa(e, n, i, r),
           (i.state = e.memoizedState)),
         'function' === typeof i.componentDidMount && (e.effectTag |= 4);
     }
@@ -50275,7 +50474,7 @@
           var n = t.memoizedState;
           if (
             null !== n &&
-            ((n = n.dehydrated), null === n || n.data === Tn || n.data === Cn)
+            ((n = n.dehydrated), null === n || n.data === Tn || n.data === An)
           )
             return t;
         } else if (19 === t.tag && void 0 !== t.memoizedProps.revealOrder) {
@@ -50533,8 +50732,8 @@
         _o(4, 2, Oo.bind(null, t, e), n)
       );
     }
-    function Co() {}
-    function Ao(e, t) {
+    function Ao() {}
+    function Co(e, t) {
       return (ho().memoizedState = [e, void 0 === t ? null : t]), e;
     }
     function Mo(e, t) {
@@ -50620,7 +50819,7 @@
       },
       Lo = {
         readContext: wa,
-        useCallback: Ao,
+        useCallback: Co,
         useContext: wa,
         useEffect: So,
         useImperativeHandle: function(e, t, n) {
@@ -50661,7 +50860,7 @@
           return (e = { current: e }), (t.memoizedState = e);
         },
         useState: yo,
-        useDebugValue: Co,
+        useDebugValue: Ao,
         useResponder: to,
         useDeferredValue: function(e, t) {
           var n = yo(e),
@@ -50686,7 +50885,7 @@
         useTransition: function(e) {
           var t = yo(!1),
             n = t[0];
-          return (t = t[1]), [Ao(Po.bind(null, t, e), [t, e]), n];
+          return (t = t[1]), [Co(Po.bind(null, t, e), [t, e]), n];
         },
       },
       No = {
@@ -50702,7 +50901,7 @@
         useState: function() {
           return mo(go);
         },
-        useDebugValue: Co,
+        useDebugValue: Ao,
         useResponder: to,
         useDeferredValue: function(e, t) {
           var n = mo(go),
@@ -50743,7 +50942,7 @@
         useState: function() {
           return vo(go);
         },
-        useDebugValue: Co,
+        useDebugValue: Ao,
         useResponder: to,
         useDeferredValue: function(e, t) {
           var n = vo(go),
@@ -50856,7 +51055,7 @@
                   break e;
                 }
                 t--;
-              } else (n !== kn && n !== Cn && n !== Tn) || t++;
+              } else (n !== kn && n !== An && n !== Tn) || t++;
             }
             e = e.nextSibling;
           }
@@ -50930,7 +51129,7 @@
         (t.effectTag |= 128);
     }
     function es(e, t, n, r, i) {
-      var a = Di(n) ? Ii : Ai.current;
+      var a = Di(n) ? Ii : Ci.current;
       return (
         (a = Pi(t, a)),
         xa(t, i),
@@ -50962,7 +51161,7 @@
           u = n.contextType;
         'object' === typeof u && null !== u
           ? (u = wa(u))
-          : ((u = Di(n) ? Ii : Ai.current), (u = Pi(t, u)));
+          : ((u = Di(n) ? Ii : Ci.current), (u = Pi(t, u)));
         var c = n.getDerivedStateFromProps,
           f =
             'function' === typeof c ||
@@ -50974,7 +51173,7 @@
           (_a = !1);
         var d = t.memoizedState;
         (o.state = d),
-          Ca(t, r, o, i),
+          Aa(t, r, o, i),
           (l = t.memoizedState),
           s !== r || d !== l || Mi.current || _a
             ? ('function' === typeof c &&
@@ -51008,7 +51207,7 @@
           (u = n.contextType),
           'object' === typeof u && null !== u
             ? (u = wa(u))
-            : ((u = Di(n) ? Ii : Ai.current), (u = Pi(t, u))),
+            : ((u = Di(n) ? Ii : Ci.current), (u = Pi(t, u))),
           (c = n.getDerivedStateFromProps),
           (f =
             'function' === typeof c ||
@@ -51019,7 +51218,7 @@
           (_a = !1),
           (l = t.memoizedState),
           (o.state = l),
-          Ca(t, r, o, i),
+          Aa(t, r, o, i),
           (d = t.memoizedState),
           s !== r || l !== d || Mi.current || _a
             ? ('function' === typeof c &&
@@ -51331,7 +51530,7 @@
           return (
             Ja(),
             Oi(Mi),
-            Oi(Ai),
+            Oi(Ci),
             (n = t.stateNode),
             n.pendingContext &&
               ((n.context = n.pendingContext), (n.pendingContext = null)),
@@ -51377,7 +51576,7 @@
                   nn('toggle', r);
                   break;
                 case 'input':
-                  Ae(r, s), nn('invalid', r), vn(n, 'onChange');
+                  Ce(r, s), nn('invalid', r), vn(n, 'onChange');
                   break;
                 case 'select':
                   (r._wrapperState = { wasMultiple: !!s.multiple }),
@@ -51462,7 +51661,7 @@
                   nn('toggle', e), (u = r);
                   break;
                 case 'input':
-                  Ae(e, r), (u = Ce(e, r)), nn('invalid', e), vn(n, 'onChange');
+                  Ce(e, r), (u = Ae(e, r)), nn('invalid', e), vn(n, 'onChange');
                   break;
                 case 'option':
                   u = Le(e, r);
@@ -51688,7 +51887,7 @@
           var t = e.effectTag;
           return 4096 & t ? ((e.effectTag = (-4097 & t) | 64), e) : null;
         case 3:
-          if ((Ja(), Oi(Mi), Oi(Ai), (t = e.effectTag), 0 !== (64 & t)))
+          if ((Ja(), Oi(Mi), Oi(Ci), (t = e.effectTag), 0 !== (64 & t)))
             throw Error(o(285));
           return (e.effectTag = (-4097 & t) | 64), e;
         case 5:
@@ -51736,7 +51935,7 @@
             u = t.stateNode;
           switch ((Ya(Ga.current), (e = null), n)) {
             case 'input':
-              (o = Ce(u, o)), (r = Ce(u, r)), (e = []);
+              (o = Ae(u, o)), (r = Ae(u, r)), (e = []);
               break;
             case 'option':
               (o = Le(u, o)), (r = Le(u, r)), (e = []);
@@ -51925,7 +52124,7 @@
                 e.__reactInternalSnapshotBeforeUpdate,
               );
             }
-          return (t = n.updateQueue), void (null !== t && Aa(n, t, e));
+          return (t = n.updateQueue), void (null !== t && Ca(n, t, e));
         case 3:
           if (((t = n.updateQueue), null !== t)) {
             if (((e = null), null !== n.child))
@@ -51936,7 +52135,7 @@
                 case 1:
                   e = n.child.stateNode;
               }
-            Aa(n, t, e);
+            Ca(n, t, e);
           }
           return;
         case 5:
@@ -52027,13 +52226,13 @@
         (e.stateNode = null),
         null !== t && Ts(t);
     }
-    function Cs(e) {
+    function As(e) {
       return 5 === e.tag || 3 === e.tag || 4 === e.tag;
     }
-    function As(e) {
+    function Cs(e) {
       e: {
         for (var t = e.return; null !== t; ) {
-          if (Cs(t)) {
+          if (As(t)) {
             var n = t;
             break e;
           }
@@ -52057,7 +52256,7 @@
       16 & n.effectTag && (Ke(t, ''), (n.effectTag &= -17));
       e: t: for (n = e; ; ) {
         for (; null === n.sibling; ) {
-          if (null === n.return || Cs(n.return)) {
+          if (null === n.return || As(n.return)) {
             n = null;
             break e;
           }
@@ -52418,7 +52617,7 @@
         var n = ia();
         1073741823 === t
           ? (Qs & Us) !== Hs && (Qs & (Ws | Gs)) === Hs
-            ? Al(e)
+            ? Cl(e)
             : (Tl(e), Qs === Hs && ua())
           : Tl(e),
           (4 & Qs) === Hs ||
@@ -52469,7 +52668,7 @@
       if (0 !== e.lastExpiredTime)
         (e.callbackExpirationTime = 1073741823),
           (e.callbackPriority = 99),
-          (e.callbackNode = la(Al.bind(null, e)));
+          (e.callbackNode = la(Cl.bind(null, e)));
       else {
         var t = Ol(e),
           n = e.callbackNode;
@@ -52497,15 +52696,15 @@
             (e.callbackPriority = r),
             (t =
               1073741823 === t
-                ? la(Al.bind(null, e))
-                : sa(r, Cl.bind(null, e), {
+                ? la(Cl.bind(null, e))
+                : sa(r, Al.bind(null, e), {
                     timeout: 10 * (1073741821 - t) - ra(),
                   })),
             (e.callbackNode = t);
         }
       }
     }
-    function Cl(e, t) {
+    function Al(e, t) {
       if (((wl = 0), t)) return (t = _l()), pu(e, t), Tl(e), null;
       var n = Ol(e);
       if (0 !== n) {
@@ -52634,12 +52833,12 @@
               default:
                 throw Error(o(329));
             }
-          if ((Tl(e), e.callbackNode === t)) return Cl.bind(null, e);
+          if ((Tl(e), e.callbackNode === t)) return Al.bind(null, e);
         }
       }
       return null;
     }
-    function Al(e) {
+    function Cl(e) {
       var t = e.lastExpiredTime;
       if (((t = 0 !== t ? t : 1073741823), (Qs & (Ws | Gs)) !== Hs))
         throw Error(o(327));
@@ -52706,7 +52905,7 @@
                 null !== r && void 0 !== r && Ri();
               break;
             case 3:
-              Ja(), Oi(Mi), Oi(Ai);
+              Ja(), Oi(Mi), Oi(Ci);
               break;
             case 5:
               Qa(r);
@@ -52971,7 +53170,7 @@
         null !== i)
       ) {
         var a = Qs;
-        (Qs |= Gs), (Vs.current = null), (An = tn);
+        (Qs |= Gs), (Vs.current = null), (Cn = tn);
         var s = Sn();
         if (En(s)) {
           if ('selectionStart' in s)
@@ -53056,10 +53255,10 @@
               }
               switch (1038 & x) {
                 case 2:
-                  As(fl), (fl.effectTag &= -3);
+                  Cs(fl), (fl.effectTag &= -3);
                   break;
                 case 6:
-                  As(fl), (fl.effectTag &= -3), Ds(fl.alternate, fl);
+                  Cs(fl), (fl.effectTag &= -3), Ds(fl.alternate, fl);
                   break;
                 case 1024:
                   fl.effectTag &= -1025;
@@ -53135,7 +53334,7 @@
               (_.element.scrollLeft = _.left),
               (_.element.scrollTop = _.top);
         }
-        (tn = !!An), (Mn = An = null), (e.current = n), (fl = i);
+        (tn = !!Cn), (Mn = Cn = null), (e.current = n), (fl = i);
         do {
           try {
             for (x = e; null !== fl; ) {
@@ -53340,7 +53539,7 @@
             null !== e &&
               ((e.alternate = null), (t.alternate = null), (t.effectTag |= 2)),
             (e = t.pendingProps),
-            (i = Pi(t, Ai.current)),
+            (i = Pi(t, Ci.current)),
             xa(t, n),
             (i = fo(null, t, r, e, i, n)),
             (t.effectTag |= 1),
@@ -53428,7 +53627,7 @@
             (i = t.memoizedState),
             (i = null !== i ? i.element : null),
             Ea(e, t),
-            Ca(t, r, null, n),
+            Aa(t, r, null, n),
             (r = t.memoizedState.element),
             r === i)
           )
@@ -53838,7 +54037,7 @@
           }
         }
         n = l;
-      } else n = Ci;
+      } else n = Ai;
       return (
         null === t.context ? (t.context = n) : (t.pendingContext = n),
         (t = ka(a, s)),
@@ -53975,7 +54174,7 @@
           (t = Sl(t, e, null)), El(e, t), yu(e, t);
         }
       }),
-      (A = function(e, t, n) {
+      (C = function(e, t, n) {
         switch (t) {
           case 'input':
             if ((Ie(e, n), (t = n.name), 'radio' === n.type && null != t)) {
@@ -54383,11 +54582,11 @@
       mousemove: function(e) {
         e = o(this.dom, e);
         var t = this._mayPointerCapture;
-        !t || (e.zrX === t[0] && e.zrY === t[1]) || A(this, !0),
+        !t || (e.zrX === t[0] && e.zrY === t[1]) || C(this, !0),
           this.trigger('mousemove', e);
       },
       mouseup: function(e) {
-        (e = o(this.dom, e)), A(this, !1), this.trigger('mouseup', e);
+        (e = o(this.dom, e)), C(this, !1), this.trigger('mouseup', e);
       },
       mouseout: function(e) {
         (e = o(this.dom, e)),
@@ -54446,7 +54645,7 @@
       },
       mouseup: function(e) {
         var t = this._pointerCapturing;
-        A(this, !1),
+        C(this, !1),
           this.trigger('mouseup', e),
           t &&
             ((e.zrEventControl = 'only_globalout'),
@@ -54488,17 +54687,17 @@
     function T(e, t, n, r) {
       (e.mounted[t] = n), (e.listenerOpts[t] = r), i(e.domTarget, g(t), n, r);
     }
-    function C(e) {
+    function A(e) {
       var t = e.mounted;
       for (var n in t)
         t.hasOwnProperty(n) && a(e.domTarget, g(n), t[n], e.listenerOpts[n]);
       e.mounted = {};
     }
-    function A(e, t) {
+    function C(e, t) {
       if (((e._mayPointerCapture = null), d && e._pointerCapturing ^ t)) {
         e._pointerCapturing = t;
         var n = e._globalHandlerScope;
-        t ? O(e, n) : C(n);
+        t ? O(e, n) : A(n);
       }
     }
     function M(e, t) {
@@ -54521,7 +54720,7 @@
     }
     var P = I.prototype;
     (P.dispose = function() {
-      C(this._localHandlerScope), d && C(this._globalHandlerScope);
+      A(this._localHandlerScope), d && A(this._globalHandlerScope);
     }),
       (P.setCursor = function(e) {
         this.dom.style && (this.dom.style.cursor = e || 'default');
@@ -55135,12 +55334,12 @@
           k = Object(r['a'])(E, 2),
           O = k[0],
           T = k[1],
-          C = 'site' === d,
-          A = C && p.hero,
-          M = C && p.features,
-          I = !1 !== p.sidemenu && !A && !M && !p.gapless,
+          A = 'site' === d,
+          C = A && p.hero,
+          M = A && p.features,
+          I = !1 !== p.sidemenu && !C && !M && !p.gapless,
           P =
-            !A &&
+            !C &&
             !M &&
             Boolean(
               null === (t = p.slugs) || void 0 === t ? void 0 : t.length,
@@ -55165,7 +55364,7 @@
             'data-route': l.pathname,
             'data-show-sidemenu': String(I),
             'data-show-slugs': String(P),
-            'data-site-mode': C,
+            'data-site-mode': A,
             'data-gapless': String(!!p.gapless),
             onClick: () => {
               O || T(!0);
@@ -55184,13 +55383,13 @@
               slugs: p.slugs,
               className: '__dumi-default-layout-toc',
             }),
-          A && b(p.hero),
+          C && b(p.hero),
           M && x(p.features),
           a.a.createElement(
             'div',
             { className: '__dumi-default-layout-content' },
             s,
-            !A &&
+            !C &&
               !M &&
               p.filePath &&
               !p.gapless &&
@@ -55220,7 +55419,7 @@
                   L,
                 ),
               ),
-            (A || M) &&
+            (C || M) &&
               p.footer &&
               a.a.createElement('div', {
                 className: '__dumi-default-layout-footer',
@@ -55359,7 +55558,7 @@
   },
   q3YX: function(e) {
     e.exports = JSON.parse(
-      '{"menus":{"en-US":{"/chart":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/chart/quick-learning","meta":{"order":0},"children":[{"path":"/chart/quick-learning","title":"\u5165\u95e8","meta":{}}]},{"title":"\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6","path":"/chart/components","meta":{"order":5},"children":[{"path":"/chart/components/area-chart","title":"AreaChart-\u9762\u79ef\u56fe","meta":{}},{"path":"/chart/components/bar-chart","title":"BarChart-\u67f1\u72b6\u56fe","meta":{}},{"path":"/chart/components/core","title":"Chart-\u5e95\u5c42\u7ec4\u4ef6","meta":{}},{"path":"/chart/components/line-chart","title":"LineChart-\u6298\u7ebf\u56fe","meta":{}},{"path":"/chart/components/pie-chart","title":"PieChart-\u997c\u56fe","meta":{}},{"path":"/chart/components/word-cloud","title":"WordCloud-\u8bcd\u4e91","meta":{}}]}],"*":[{"path":"/","title":"Index","meta":{}}]}},"locales":[{"name":"en-US","label":"English"}],"navs":{"en-US":[{"title":"React\u7ec4\u4ef6","path":"/chart"},{"title":"echarts","path":"https://echarts.apache.org/zh/index.html"}]},"title":"xm-charts","logo":"https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png","mode":"site","repository":{"branch":"master"},"theme":{}}',
+      '{"menus":{"en-US":{"/chart":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/chart/quick-learning","meta":{"order":0},"children":[{"path":"/chart/quick-learning","title":"\u5165\u95e8","meta":{}}]},{"title":"\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6","path":"/chart/components","meta":{"order":5},"children":[{"path":"/chart/components/area","title":"Area-\u9762\u79ef\u56fe","meta":{}},{"path":"/chart/components/bar","title":"Bar-\u67f1\u72b6\u56fe","meta":{}},{"path":"/chart/components/core","title":"Chart-\u5e95\u5c42\u7ec4\u4ef6","meta":{}},{"path":"/chart/components/line","title":"Line-\u6298\u7ebf\u56fe","meta":{}},{"path":"/chart/components/pie","title":"Pie-\u997c\u56fe","meta":{}},{"path":"/chart/components/word-cloud","title":"WordCloud-\u8bcd\u4e91","meta":{}}]}],"*":[{"path":"/","title":"Index","meta":{}}]}},"locales":[{"name":"en-US","label":"English"}],"navs":{"en-US":[{"title":"React\u7ec4\u4ef6","path":"/chart"},{"title":"echarts","path":"https://echarts.apache.org/zh/index.html"}]},"title":"xm-charts","logo":"https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png","mode":"site","repository":{"branch":"master"},"theme":{}}',
     );
   },
   'q5+0': function(e, t, n) {
@@ -55371,7 +55570,7 @@
         return _;
       }),
       n.d(t, 'c', function() {
-        return C;
+        return A;
       }),
       n.d(t, 'd', function() {
         return R;
@@ -55559,7 +55758,7 @@
         '/' === e ? e : O(e)(t, { pretty: !0 })
       );
     }
-    function C(e) {
+    function A(e) {
       var t = e.computedMatch,
         n = e.to,
         r = e.push,
@@ -55591,12 +55790,12 @@
             });
       });
     }
-    var A = {},
+    var C = {},
       M = 1e4,
       I = 0;
     function P(e, t) {
       var n = '' + t.end + t.strict + t.sensitive,
-        r = A[n] || (A[n] = {});
+        r = C[n] || (C[n] = {});
       if (r[e]) return r[e];
       var i = [],
         a = f()(e, i, t),
@@ -57490,14 +57689,14 @@
           k = t[E];
           if (!k || h(k)) u(d, S);
           else {
-            var C, A;
+            var A, C;
             if (
               (h(k) && !b && (k = S), i.sub(c, k, T), 'x' === y || 'y' === y)
             ) {
               var M = 'x' === y ? 0 : 1;
-              (C = Math.abs(S[M] - T[M])), (A = Math.abs(S[M] - k[M]));
-            } else (C = i.dist(S, T)), (A = i.dist(S, k));
-            (O = A / (A + C)), l(d, S, c, -v * (1 - O));
+              (A = Math.abs(S[M] - T[M])), (C = Math.abs(S[M] - k[M]));
+            } else (A = i.dist(S, T)), (C = i.dist(S, k));
+            (O = C / (C + A)), l(d, S, c, -v * (1 - O));
           }
           o(f, f, m),
             s(f, f, g),
@@ -57929,239 +58128,6 @@
   t3Yf: function(e, t, n) {
     n('rAVC'), n('JSme'), n('UZiS'), n('7hf9'), n('Imzy'), n('JhJE'), n('BjFK');
   },
-  t4xn: function(e, t, n) {
-    'use strict';
-    n.r(t);
-    var r = n('xwgP'),
-      i = n.n(r),
-      a = n('fLni'),
-      o = n('xVRR'),
-      s = n('Rsk4'),
-      l = i.a.memo(s['default']['PieChart-demo'].component),
-      u = i.a.memo(s['default']['PieChart-demo-1'].component);
-    t['default'] = function() {
-      return i.a.createElement(
-        i.a.Fragment,
-        null,
-        i.a.createElement(
-          i.a.Fragment,
-          null,
-          i.a.createElement(
-            'div',
-            { className: 'markdown' },
-            i.a.createElement(
-              'h4',
-              { id: '\u73af\u5f62\u997c\u56fe' },
-              i.a.createElement(
-                a['AnchorLink'],
-                {
-                  to: '#\u73af\u5f62\u997c\u56fe',
-                  'aria-hidden': 'true',
-                  tabIndex: -1,
-                },
-                i.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              '\u73af\u5f62\u997c\u56fe',
-            ),
-          ),
-          i.a.createElement(
-            o['default'],
-            s['default']['PieChart-demo'].previewerProps,
-            i.a.createElement(l, null),
-          ),
-          i.a.createElement(
-            'div',
-            { className: 'markdown' },
-            i.a.createElement(
-              'h4',
-              { id: '\u57fa\u672c\u997c\u56fe' },
-              i.a.createElement(
-                a['AnchorLink'],
-                {
-                  to: '#\u57fa\u672c\u997c\u56fe',
-                  'aria-hidden': 'true',
-                  tabIndex: -1,
-                },
-                i.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              '\u57fa\u672c\u997c\u56fe',
-            ),
-          ),
-          i.a.createElement(
-            o['default'],
-            s['default']['PieChart-demo-1'].previewerProps,
-            i.a.createElement(u, null),
-          ),
-          i.a.createElement(
-            'div',
-            { className: 'markdown' },
-            i.a.createElement(
-              'h3',
-              { id: 'api' },
-              i.a.createElement(
-                a['AnchorLink'],
-                { to: '#api', 'aria-hidden': 'true', tabIndex: -1 },
-                i.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              'API',
-            ),
-            i.a.createElement(
-              'table',
-              null,
-              i.a.createElement(
-                'thead',
-                null,
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('th', { align: 'center' }, '\u53c2\u6570'),
-                  i.a.createElement('th', { align: 'center' }, '\u8bf4\u660e'),
-                  i.a.createElement('th', { align: 'center' }, '\u7c7b\u578b'),
-                  i.a.createElement(
-                    'th',
-                    { align: 'center' },
-                    '\u9ed8\u8ba4\u503c',
-                  ),
-                ),
-              ),
-              i.a.createElement(
-                'tbody',
-                null,
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'y'),
-                  i.a.createElement('td', { align: 'center' }, '\u6307\u6807'),
-                  i.a.createElement('td', { align: 'center' }, 'array'),
-                  i.a.createElement('td', { align: 'center' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'radius'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u997c\u56fe\u5916\u534a\u5f84\u5185\u534a\u5f84',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'string|array'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    "['35%', '50%']",
-                  ),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'center'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'xy \u4e2d\u5fc3\u70b9',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'array'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    "['50%', '50%']",
-                  ),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'showLabel'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u662f\u5426\u663e\u793a\u8282\u70b9\u5904 label',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'boolean'),
-                  i.a.createElement('td', { align: 'center' }, 'false'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'options'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'echarts \u56fe\u8868\u914d\u7f6e\u9879 (\u4f18\u5148\u7ea7\u9ad8\u4e8e\u4ee5\u4e0a\u914d\u7f6e)',
-                    i.a.createElement(
-                      a['Link'],
-                      { to: 'https://echarts.apache.org/zh/option.html#title' },
-                      'echarts',
-                    ),
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'object'),
-                  i.a.createElement('td', { align: 'center' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'showLoading'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u662f\u5426\u663e\u793a\u52a0\u8f7d\u72b6\u6001',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'boolean'),
-                  i.a.createElement('td', { align: 'center' }, 'false'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'loadingOptions',
-                  ),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u56fe\u8868\u52a0\u8f7d\u6837\u5f0f',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'object'),
-                  i.a.createElement('td', { align: 'center' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'theme'),
-                  i.a.createElement('td', { align: 'center' }, '\u4e3b\u9898'),
-                  i.a.createElement('td', { align: 'center' }, 'string|object'),
-                  i.a.createElement('td', { align: 'center' }, 'xm'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'initOptions'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u521d\u59cb\u5316\u65f6\u7684\u9644\u52a0\u53c2\u6570',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'object'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '{',
-                    "devicePixelRatio: window.devicePixelRatio,renderer: 'canvas'",
-                    '}',
-                  ),
-                ),
-              ),
-            ),
-            i.a.createElement(
-              'p',
-              null,
-              '\u53ef\u4ee5\u901a\u8fc7\u5b9e\u4f8b\u7684 getEchartsInstance \u65b9\u6cd5\u83b7\u53d6\u56fe\u8868\u5b9e\u4f8b',
-            ),
-          ),
-        ),
-      );
-    };
-  },
   tB8F: function(e, t, n) {
     'use strict';
     n.r(t);
@@ -58384,40 +58350,40 @@
           wrappers: [n('i1ss').default, n('pN7B').default],
           routes: [
             {
-              path: '/chart/components/area-chart',
-              component: n('HHzP').default,
+              path: '/chart/components/area',
+              component: n('AOtm').default,
               exact: !0,
               meta: {
-                filePath: 'src/components/AreaChart/index.md',
-                updatedTime: 1619057883e3,
+                filePath: 'src/components/Area/index.md',
+                updatedTime: 1619095575502,
                 nav: { title: 'React\u7ec4\u4ef6', path: '/chart' },
                 group: {
                   title: '\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6',
                   order: 2,
                   path: '/chart/components',
                 },
-                title: 'AreaChart-\u9762\u79ef\u56fe',
+                title: 'Area-\u9762\u79ef\u56fe',
                 slugs: [
                   { depth: 3, value: '\u7528\u6cd5:', heading: '\u7528\u6cd5' },
                   { depth: 3, value: 'API', heading: 'api' },
                 ],
               },
-              title: 'AreaChart-\u9762\u79ef\u56fe',
+              title: 'Area-\u9762\u79ef\u56fe',
             },
             {
-              path: '/chart/components/bar-chart',
-              component: n('kBlC').default,
+              path: '/chart/components/bar',
+              component: n('usgm').default,
               exact: !0,
               meta: {
-                filePath: 'src/components/BarChart/index.md',
-                updatedTime: 1619057883e3,
+                filePath: 'src/components/Bar/index.md',
+                updatedTime: 1619094647989,
                 nav: { title: 'React\u7ec4\u4ef6', path: '/chart' },
                 group: {
                   title: '\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6',
                   order: 2,
                   path: '/chart/components',
                 },
-                title: 'BarChart-\u67f1\u72b6\u56fe',
+                title: 'Bar-\u67f1\u72b6\u56fe',
                 slugs: [
                   { depth: 4, value: '\u7528\u6cd5:', heading: '\u7528\u6cd5' },
                   {
@@ -58438,7 +58404,7 @@
                   { depth: 3, value: 'API', heading: 'api' },
                 ],
               },
-              title: 'BarChart-\u67f1\u72b6\u56fe',
+              title: 'Bar-\u67f1\u72b6\u56fe',
             },
             {
               path: '/chart/components/core',
@@ -58459,19 +58425,19 @@
               title: 'Chart-\u5e95\u5c42\u7ec4\u4ef6',
             },
             {
-              path: '/chart/components/line-chart',
-              component: n('yehc').default,
+              path: '/chart/components/line',
+              component: n('kfyp').default,
               exact: !0,
               meta: {
-                filePath: 'src/components/LineChart/index.md',
-                updatedTime: 1619057883e3,
+                filePath: 'src/components/Line/index.md',
+                updatedTime: 1619095553132,
                 nav: { title: 'React\u7ec4\u4ef6', path: '/chart' },
                 group: {
                   title: '\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6',
                   order: 3,
                   path: '/chart/components',
                 },
-                title: 'LineChart-\u6298\u7ebf\u56fe',
+                title: 'Line-\u6298\u7ebf\u56fe',
                 slugs: [
                   {
                     depth: 4,
@@ -58486,22 +58452,22 @@
                   { depth: 3, value: 'API', heading: 'api' },
                 ],
               },
-              title: 'LineChart-\u6298\u7ebf\u56fe',
+              title: 'Line-\u6298\u7ebf\u56fe',
             },
             {
-              path: '/chart/components/pie-chart',
-              component: n('t4xn').default,
+              path: '/chart/components/pie',
+              component: n('fNdE').default,
               exact: !0,
               meta: {
-                filePath: 'src/components/PieChart/index.md',
-                updatedTime: 1619057883e3,
+                filePath: 'src/components/Pie/index.md',
+                updatedTime: 1619095711578,
                 nav: { title: 'React\u7ec4\u4ef6', path: '/chart' },
                 group: {
                   title: '\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6',
                   order: 4,
                   path: '/chart/components',
                 },
-                title: 'PieChart-\u997c\u56fe',
+                title: 'Pie-\u997c\u56fe',
                 slugs: [
                   {
                     depth: 4,
@@ -58516,7 +58482,7 @@
                   { depth: 3, value: 'API', heading: 'api' },
                 ],
               },
-              title: 'PieChart-\u997c\u56fe',
+              title: 'Pie-\u997c\u56fe',
             },
             {
               path: '/chart/components/word-cloud',
@@ -58616,7 +58582,7 @@
               path: '/chart/components',
               meta: { order: 2 },
               exact: !0,
-              redirect: '/chart/components/area-chart',
+              redirect: '/chart/components/area',
             },
             {
               path: '/chart',
@@ -58789,7 +58755,7 @@
       function l(e, t, n, r) {
         var i = t && t.prototype instanceof g ? t : g,
           a = Object.create(i.prototype),
-          o = new C(r || []);
+          o = new A(r || []);
         return (a._invoke = E(e, n, o)), a;
       }
       function u(e, t, n) {
@@ -58813,7 +58779,7 @@
         return this;
       };
       var b = Object.getPrototypeOf,
-        x = b && b(b(A([])));
+        x = b && b(b(C([])));
       x && x !== n && r.call(x, a) && (y = x);
       var w = (v.prototype = g.prototype = Object.create(y));
       function _(e) {
@@ -58940,12 +58906,12 @@
         var t = e.completion || {};
         (t.type = 'normal'), delete t.arg, (e.completion = t);
       }
-      function C(e) {
+      function A(e) {
         (this.tryEntries = [{ tryLoc: 'root' }]),
           e.forEach(O, this),
           this.reset(!0);
       }
-      function A(e) {
+      function C(e) {
         if (e) {
           var n = e[a];
           if (n) return n.call(e);
@@ -59024,9 +58990,9 @@
             }
           );
         }),
-        (e.values = A),
-        (C.prototype = {
-          constructor: C,
+        (e.values = C),
+        (A.prototype = {
+          constructor: A,
           reset: function(e) {
             if (
               ((this.prev = 0),
@@ -59146,7 +59112,7 @@
           },
           delegateYield: function(e, n, r) {
             return (
-              (this.delegate = { iterator: A(e), resultName: n, nextLoc: r }),
+              (this.delegate = { iterator: C(e), resultName: n, nextLoc: r }),
               'next' === this.method && (this.arg = t),
               p
             );
@@ -59326,16 +59292,16 @@
       n.d(t, 'Chart', function() {
         return v;
       }),
-      n.d(t, 'BarChart', function() {
+      n.d(t, 'Bar', function() {
         return k;
       }),
-      n.d(t, 'PieChart', function() {
+      n.d(t, 'Pie', function() {
         return M;
       }),
-      n.d(t, 'LineChart', function() {
-        return C;
+      n.d(t, 'Line', function() {
+        return A;
       }),
-      n.d(t, 'AreaChart', function() {
+      n.d(t, 'Area', function() {
         return P;
       }),
       n.d(t, 'WordCloud', function() {
@@ -59645,7 +59611,7 @@
           k = e.yAxisName,
           O = e.isHorizontal,
           T = e.isStack,
-          C = Object(u['a'])(e, [
+          A = Object(u['a'])(e, [
             'options',
             'showTitle',
             'rotate',
@@ -59658,8 +59624,8 @@
             'isHorizontal',
             'isStack',
           ]),
-          A = Array.isArray,
-          M = A(o)
+          C = Array.isArray,
+          M = C(o)
             ? o.map(e => {
                 var t = e.axisLabel,
                   n = Object(u['a'])(e, ['axisLabel']);
@@ -59684,9 +59650,9 @@
                   ),
                 },
               ),
-          I = A(c)
-            ? c.map((e, t) => Object(l['a'])({ name: A(k) ? k[t] : k }, e))
-            : Object(l['a'])({ name: A(k) ? k[0] : k }, c),
+          I = C(c)
+            ? c.map((e, t) => Object(l['a'])({ name: C(k) ? k[t] : k }, e))
+            : Object(l['a'])({ name: C(k) ? k[0] : k }, c),
           P = Object(l['a'])(
             {
               title: Object(l['a'])({ show: p }, r),
@@ -59723,7 +59689,7 @@
           }),
           f.a.createElement(
             v,
-            Object(s['a'])({ notMerge: !0, options: P, ref: t }, C),
+            Object(s['a'])({ notMerge: !0, options: P, ref: t }, A),
           )
         );
       });
@@ -59771,8 +59737,8 @@
           E = e.y,
           k = e.dataZoom,
           T = e.yAxisName,
-          C = e.rightAxisSite,
-          A = Object(u['a'])(e, [
+          A = e.rightAxisSite,
+          C = Object(u['a'])(e, [
             'options',
             'showTitle',
             'rotate',
@@ -59836,7 +59802,7 @@
           );
         return (
           I.series.forEach(e => {
-            var t = C.indexOf(e.name) > -1;
+            var t = A.indexOf(e.name) > -1 ? 1 : 0;
             (y || (e.label && e.label.show)) &&
               (e.label = Object(l['a'])(
                 Object(l['a'])({}, _),
@@ -59851,13 +59817,13 @@
                 },
                 e.label,
               )),
-              (e.yAxisIndex = t ? 1 : 0),
+              (e.yAxisIndex = t),
               (e.type = e.type || 'line'),
               (e.barMaxWidth = e.barMaxWidth || 22);
           }),
           f.a.createElement(
             v,
-            Object(s['a'])({ notMerge: !0, options: I, ref: t }, A),
+            Object(s['a'])({ notMerge: !0, options: I, ref: t }, C),
           )
         );
       });
@@ -59874,8 +59840,8 @@
       options: {},
       rightAxisSite: [],
     };
-    var C = T;
-    class A extends c['PureComponent'] {
+    var A = T;
+    class C extends c['PureComponent'] {
       constructor() {
         super(...arguments),
           (this.saveRef = e => {
@@ -59946,7 +59912,7 @@
         );
       }
     }
-    A.defaultProps = {
+    C.defaultProps = {
       style: {},
       className: '',
       theme: 'xm',
@@ -59955,7 +59921,7 @@
       center: ['50%', '50%'],
       options: {},
     };
-    var M = A,
+    var M = C,
       I = Object(c['forwardRef'])((e, t) => {
         var n = e.options,
           r = n.title,
@@ -59993,15 +59959,15 @@
             'dataZoom',
             'yAxisName',
           ]),
-          C = Array.isArray,
-          A = Object(l['a'])(
+          A = Array.isArray,
+          C = Object(l['a'])(
             {
               title: Object(l['a'])({ show: p }, r),
               tooltip: { trigger: 'axis' },
               legend: Object(l['a'])({ type: 'scroll' }, i),
               grid: Object(l['a'])({}, a),
               dataZoom: k ? w : [],
-              xAxis: C(o)
+              xAxis: A(o)
                 ? o.map(e => {
                     var t = e.axisLabel,
                       n = Object(u['a'])(e, ['axisLabel']);
@@ -60027,15 +59993,15 @@
                       ),
                     },
                   ),
-              yAxis: C(c)
-                ? c.map((e, t) => Object(l['a'])({ name: C(O) ? O[t] : O }, e))
-                : Object(l['a'])({ name: C(O) ? O[0] : O }, c),
+              yAxis: A(c)
+                ? c.map((e, t) => Object(l['a'])({ name: A(O) ? O[t] : O }, e))
+                : Object(l['a'])({ name: A(O) ? O[0] : O }, c),
               series: d || E,
             },
             h,
           );
         return (
-          A.series.forEach(e => {
+          C.series.forEach(e => {
             (m || (e.label && e.label.show)) &&
               (e.label = Object(l['a'])(
                 Object(l['a'])({}, _),
@@ -60053,7 +60019,7 @@
           }),
           f.a.createElement(
             v,
-            Object(s['a'])({ notMerge: !0, options: A, ref: t }, T),
+            Object(s['a'])({ notMerge: !0, options: C, ref: t }, T),
           )
         );
       });
@@ -60417,6 +60383,321 @@
         },
       });
     e.exports = i;
+  },
+  usgm: function(e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('xwgP'),
+      i = n.n(r),
+      a = n('fLni'),
+      o = n('xVRR'),
+      s = n('Rsk4'),
+      l = i.a.memo(s['default']['Bar-demo'].component),
+      u = i.a.memo(s['default']['Bar-demo-1'].component),
+      c = i.a.memo(s['default']['Bar-demo-2'].component);
+    t['default'] = function() {
+      return i.a.createElement(
+        i.a.Fragment,
+        null,
+        i.a.createElement(
+          i.a.Fragment,
+          null,
+          i.a.createElement(
+            'div',
+            { className: 'markdown' },
+            i.a.createElement(
+              'h4',
+              { id: '\u7528\u6cd5' },
+              i.a.createElement(
+                a['AnchorLink'],
+                { to: '#\u7528\u6cd5', 'aria-hidden': 'true', tabIndex: -1 },
+                i.a.createElement('span', { className: 'icon icon-link' }),
+              ),
+              '\u7528\u6cd5:',
+            ),
+            i.a.createElement(
+              'h5',
+              { id: '\u57fa\u672c\u67f1\u72b6\u56fe' },
+              i.a.createElement(
+                a['AnchorLink'],
+                {
+                  to: '#\u57fa\u672c\u67f1\u72b6\u56fe',
+                  'aria-hidden': 'true',
+                  tabIndex: -1,
+                },
+                i.a.createElement('span', { className: 'icon icon-link' }),
+              ),
+              '\u57fa\u672c\u67f1\u72b6\u56fe:',
+            ),
+          ),
+          i.a.createElement(
+            o['default'],
+            s['default']['Bar-demo'].previewerProps,
+            i.a.createElement(l, null),
+          ),
+          i.a.createElement(
+            'div',
+            { className: 'markdown' },
+            i.a.createElement(
+              'h5',
+              { id: '\u5806\u53e0\u67f1\u72b6\u56fe' },
+              i.a.createElement(
+                a['AnchorLink'],
+                {
+                  to: '#\u5806\u53e0\u67f1\u72b6\u56fe',
+                  'aria-hidden': 'true',
+                  tabIndex: -1,
+                },
+                i.a.createElement('span', { className: 'icon icon-link' }),
+              ),
+              '\u5806\u53e0\u67f1\u72b6\u56fe:',
+            ),
+          ),
+          i.a.createElement(
+            o['default'],
+            s['default']['Bar-demo-1'].previewerProps,
+            i.a.createElement(u, null),
+          ),
+          i.a.createElement(
+            'div',
+            { className: 'markdown' },
+            i.a.createElement(
+              'h5',
+              { id: '\u6c34\u5e73\u67f1\u72b6\u56fe' },
+              i.a.createElement(
+                a['AnchorLink'],
+                {
+                  to: '#\u6c34\u5e73\u67f1\u72b6\u56fe',
+                  'aria-hidden': 'true',
+                  tabIndex: -1,
+                },
+                i.a.createElement('span', { className: 'icon icon-link' }),
+              ),
+              '\u6c34\u5e73\u67f1\u72b6\u56fe:',
+            ),
+          ),
+          i.a.createElement(
+            o['default'],
+            s['default']['Bar-demo-2'].previewerProps,
+            i.a.createElement(c, null),
+          ),
+          i.a.createElement(
+            'div',
+            { className: 'markdown' },
+            i.a.createElement(
+              'h3',
+              { id: 'api' },
+              i.a.createElement(
+                a['AnchorLink'],
+                { to: '#api', 'aria-hidden': 'true', tabIndex: -1 },
+                i.a.createElement('span', { className: 'icon icon-link' }),
+              ),
+              'API',
+            ),
+            i.a.createElement(
+              'table',
+              null,
+              i.a.createElement(
+                'thead',
+                null,
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('th', { align: 'center' }, '\u53c2\u6570'),
+                  i.a.createElement('th', { align: 'center' }, '\u8bf4\u660e'),
+                  i.a.createElement('th', { align: 'center' }, '\u7c7b\u578b'),
+                  i.a.createElement(
+                    'th',
+                    { align: 'center' },
+                    '\u9ed8\u8ba4\u503c',
+                  ),
+                ),
+              ),
+              i.a.createElement(
+                'tbody',
+                null,
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'x'),
+                  i.a.createElement('td', { align: 'center' }, '\u7ef4\u5ea6'),
+                  i.a.createElement('td', { align: 'center' }, 'array'),
+                  i.a.createElement('td', { align: 'center' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'y'),
+                  i.a.createElement('td', { align: 'center' }, '\u6307\u6807'),
+                  i.a.createElement('td', { align: 'center' }, 'array'),
+                  i.a.createElement('td', { align: 'center' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'yAxisName'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'y\u8f74\u540d\u79f0',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'array'),
+                  i.a.createElement('td', { align: 'center' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'isStack'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u662f\u5426\u5806\u53e0',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'boolean'),
+                  i.a.createElement('td', { align: 'center' }, 'false'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'isHorizontal'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u662f\u5426\u662f\u6c34\u5e73\u67f1\u72b6\u56fe',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'boolean'),
+                  i.a.createElement('td', { align: 'center' }, 'false'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'dataZoom'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u662f\u5426\u5f00\u542f\u6a2a\u5411\u6eda\u52a8',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'boolean'),
+                  i.a.createElement('td', { align: 'center' }, 'false'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'rotate'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'x \u8f74 label \u5b57\u4f53 rotate',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'number'),
+                  i.a.createElement('td', { align: 'center' }, '0'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'interval'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u8bbe\u7f6e\u5750\u6807\u8f74\u5206\u5272\u95f4\u9694\uff08\u8bbe\u7f6e 0 \u5f3a\u5236\u663e\u793a\uff09',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'number|string'),
+                  i.a.createElement('td', { align: 'center' }, "'auto'"),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'showLabel'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u662f\u5426\u663e\u793a\u8282\u70b9\u5904 label',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'boolean'),
+                  i.a.createElement('td', { align: 'center' }, 'false'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'options'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'echarts \u56fe\u8868\u914d\u7f6e\u9879 (\u4f18\u5148\u7ea7\u9ad8\u4e8e\u4ee5\u4e0a\u914d\u7f6e)',
+                    i.a.createElement(
+                      a['Link'],
+                      { to: 'https://echarts.apache.org/zh/option.html#title' },
+                      'echarts',
+                    ),
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'object'),
+                  i.a.createElement('td', { align: 'center' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'showLoading'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u662f\u5426\u663e\u793a\u52a0\u8f7d\u72b6\u6001',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'boolean'),
+                  i.a.createElement('td', { align: 'center' }, 'false'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    'loadingOptions',
+                  ),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u56fe\u8868\u52a0\u8f7d\u6837\u5f0f',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'object'),
+                  i.a.createElement('td', { align: 'center' }, '-'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'theme'),
+                  i.a.createElement('td', { align: 'center' }, '\u4e3b\u9898'),
+                  i.a.createElement('td', { align: 'center' }, 'string|object'),
+                  i.a.createElement('td', { align: 'center' }, 'xm'),
+                ),
+                i.a.createElement(
+                  'tr',
+                  null,
+                  i.a.createElement('td', { align: 'center' }, 'initOptions'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '\u521d\u59cb\u5316\u65f6\u7684\u9644\u52a0\u53c2\u6570',
+                  ),
+                  i.a.createElement('td', { align: 'center' }, 'object'),
+                  i.a.createElement(
+                    'td',
+                    { align: 'center' },
+                    '{',
+                    "devicePixelRatio: window.devicePixelRatio,renderer: 'canvas'",
+                    '}',
+                  ),
+                ),
+              ),
+            ),
+            i.a.createElement(
+              'p',
+              null,
+              '\u53ef\u4ee5\u901a\u8fc7\u5b9e\u4f8b\u7684 getEchartsInstance \u65b9\u6cd5\u83b7\u53d6\u56fe\u8868\u5b9e\u4f8b',
+            ),
+          ),
+        ),
+      );
+    };
   },
   uyFV: function(e, t, n) {
     'use strict';
@@ -60903,12 +61184,12 @@
         }
       }
     }
-    function C(e, t, n) {
+    function A(e, t, n) {
       var r = e.get('showAllSymbol'),
         a = 'auto' === r;
       if (!r || a) {
         var o = n.getAxesByScale('ordinal')[0];
-        if (o && (!a || !A(o, t))) {
+        if (o && (!a || !C(o, t))) {
           var s = t.mapDimension(o.dim),
             l = {};
           return (
@@ -60922,7 +61203,7 @@
         }
       }
     }
-    function A(e, t) {
+    function C(e, t) {
       var n = e.getExtent(),
         r = Math.abs(n[1] - n[0]) / e.scale.count();
       isNaN(r) && (r = 0);
@@ -60976,7 +61257,7 @@
           x = v(r, o, b),
           w = k(r, o, x),
           S = e.get('showSymbol'),
-          A = S && !c && C(e, o, r),
+          C = S && !c && A(e, o, r),
           I = this._data;
         I &&
           I.eachItemGraphicEl(function(e, t) {
@@ -60999,7 +61280,7 @@
                 ? (p = this._newPolygon(u, w, r, m))
                 : p && !y && (g.remove(p), (p = this._polygon = null)),
               g.setClipPath(M(r, !1, e)),
-              S && d.updateData(o, { isIgnore: A, clipShape: P }),
+              S && d.updateData(o, { isIgnore: C, clipShape: P }),
               o.eachItemGraphicEl(function(e) {
                 e.stopAnimation(!0);
               }),
@@ -61009,7 +61290,7 @@
                   : (D && ((u = O(u, r, D)), (w = O(w, r, D))),
                     h.setShape({ points: u }),
                     p && p.setShape({ points: u, stackedOnPoints: w }))))
-            : (S && d.updateData(o, { isIgnore: A, clipShape: P }),
+            : (S && d.updateData(o, { isIgnore: C, clipShape: P }),
               D && ((u = O(u, r, D)), (w = O(w, r, D))),
               (h = this._newPolyline(u, r, m)),
               y && (p = this._newPolygon(u, w, r, m)),
@@ -61425,8 +61706,8 @@
       k = 'URLSearchParams',
       O = k + 'Iterator',
       T = c.set,
-      C = c.getterFor(k),
-      A = c.getterFor(O),
+      A = c.getterFor(k),
+      C = c.getterFor(O),
       M = /\+/g,
       I = Array(4),
       P = function(e) {
@@ -61487,11 +61768,11 @@
       },
       H = u(
         function(e, t) {
-          T(this, { type: O, iterator: b(C(e).entries), kind: t });
+          T(this, { type: O, iterator: b(A(e).entries), kind: t });
         },
         'Iterator',
         function() {
-          var e = A(this),
+          var e = C(this),
             t = e.kind,
             n = e.iterator.next(),
             r = n.value;
@@ -61561,12 +61842,12 @@
       {
         append: function(e, t) {
           V(arguments.length, 2);
-          var n = C(this);
+          var n = A(this);
           n.entries.push({ key: e + '', value: t + '' }), n.updateURL();
         },
         delete: function(e) {
           V(arguments.length, 1);
-          var t = C(this),
+          var t = A(this),
             n = t.entries,
             r = e + '',
             i = 0;
@@ -61575,14 +61856,14 @@
         },
         get: function(e) {
           V(arguments.length, 1);
-          for (var t = C(this).entries, n = e + '', r = 0; r < t.length; r++)
+          for (var t = A(this).entries, n = e + '', r = 0; r < t.length; r++)
             if (t[r].key === n) return t[r].value;
           return null;
         },
         getAll: function(e) {
           V(arguments.length, 1);
           for (
-            var t = C(this).entries, n = e + '', r = [], i = 0;
+            var t = A(this).entries, n = e + '', r = [], i = 0;
             i < t.length;
             i++
           )
@@ -61591,7 +61872,7 @@
         },
         has: function(e) {
           V(arguments.length, 1);
-          var t = C(this).entries,
+          var t = A(this).entries,
             n = e + '',
             r = 0;
           while (r < t.length) if (t[r++].key === n) return !0;
@@ -61601,7 +61882,7 @@
           V(arguments.length, 1);
           for (
             var n,
-              r = C(this),
+              r = A(this),
               i = r.entries,
               a = !1,
               o = e + '',
@@ -61618,7 +61899,7 @@
           var e,
             t,
             n,
-            r = C(this),
+            r = A(this),
             i = r.entries,
             a = i.slice();
           for (i.length = 0, n = 0; n < a.length; n++) {
@@ -61633,7 +61914,7 @@
         },
         forEach: function(e) {
           var t,
-            n = C(this).entries,
+            n = A(this).entries,
             r = h(e, arguments.length > 1 ? arguments[1] : void 0, 3),
             i = 0;
           while (i < n.length) (t = n[i++]), r(t.value, t.key, this);
@@ -61656,7 +61937,7 @@
         'toString',
         function() {
           var e,
-            t = C(this).entries,
+            t = A(this).entries,
             n = [],
             r = 0;
           while (r < t.length)
@@ -61697,7 +61978,7 @@
             },
           },
         ),
-      (e.exports = { URLSearchParams: U, getState: C });
+      (e.exports = { URLSearchParams: U, getState: A });
   },
   w7rW: function(e, t, n) {
     'use strict';
@@ -61914,7 +62195,7 @@
     function T(e, t, n) {
       e.setAttributeNS('http://www.w3.org/1999/xlink', t, n);
     }
-    function C(e, t, n, r) {
+    function A(e, t, n, r) {
       if (S(t, n)) {
         var i = n ? t.textFill : t.fill;
         (i = 'transparent' === i ? h : i),
@@ -61947,7 +62228,7 @@
           t.miterLimit && O(e, 'stroke-miterlimit', t.miterLimit);
       } else O(e, 'stroke', h);
     }
-    function A(e) {
+    function C(e) {
       for (var t = [], n = e.data, r = e.len(), i = 0; i < r; ) {
         var a = n[i++],
           o = '',
@@ -61977,17 +62258,17 @@
               k = Math.abs(x),
               O = _(k - y) || (E ? x >= y : -x >= y),
               T = x > 0 ? x % y : (x % y) + y,
-              C = !1;
-            C = !!O || (!_(k) && T >= v === !!E);
-            var A = w(l + c * m(h)),
+              A = !1;
+            A = !!O || (!_(k) && T >= v === !!E);
+            var C = w(l + c * m(h)),
               M = w(u + d * g(h));
             O &&
               ((x = E ? y - 1e-4 : 1e-4 - y),
-              (C = !0),
-              9 === i && t.push('M', A, M));
+              (A = !0),
+              9 === i && t.push('M', C, M));
             var I = w(l + c * m(h + x)),
               P = w(u + d * g(h + x));
-            t.push('A', w(c), w(d), p(S * b), +C, +E, I, P);
+            t.push('A', w(c), w(d), p(S * b), +A, +E, I, P);
             break;
           case f.Z:
             o = 'Z';
@@ -62032,10 +62313,10 @@
               (r.subPixelOptimize = !1),
               e.buildPath(r, e.shape),
               (e.__dirtyPath = !1);
-            var a = A(r);
+            var a = C(r);
             a.indexOf('NaN') < 0 && O(n, 'd', a);
           }
-          C(n, t, !1, e),
+          A(n, t, !1, e),
             k(n, e.transform),
             null != t.text ? j(e, e.getBoundingRect()) : V(e);
         },
@@ -62108,13 +62389,13 @@
           var S = l.adjustTextY(x, v, _),
             E = b,
             k = S;
-          p && ((E = F(b, w, p)), (k += p[0])), (k += y / 2), C(s, n, !0, e);
+          p && ((E = F(b, w, p)), (k += p[0])), (k += y / 2), A(s, n, !0, e);
           var O = m.canCacheByTextString,
             T = e.__tspanList || (e.__tspanList = []),
-            A = T.length;
+            C = T.length;
           if (O && e.__canCacheByTextString && e.__text === o) {
-            if (e.__dirtyText && A)
-              for (var M = 0; M < A; ++M) B(T[M], w, E, k + M * y);
+            if (e.__dirtyText && C)
+              for (var M = 0; M < C; ++M) B(T[M], w, E, k + M * y);
           } else {
             (e.__text = o), (e.__canCacheByTextString = O);
             var I = m.lines,
@@ -62131,8 +62412,8 @@
                   L.appendChild(document.createTextNode(N))),
                 B(L, w, E, k + M * y);
             }
-            if (A > P) {
-              for (; M < A; M++) s.removeChild(T[M]);
+            if (C > P) {
+              for (; M < C; M++) s.removeChild(T[M]);
               T.length = P;
             }
           }
@@ -62772,7 +63053,7 @@
           Object.defineProperty(e, r.key, r);
       }
     }
-    function C(e, t, n) {
+    function A(e, t, n) {
       return t && T(e.prototype, t), n && T(e, n), e;
     }
     'undefined' !== typeof window &&
@@ -62784,7 +63065,7 @@
         return window.cancelAnimationFrame(e);
       })),
       (k.cancel = E);
-    var A = n('OO8P');
+    var C = n('OO8P');
     function M(e, t) {
       if ('function' !== typeof t && null !== t)
         throw new TypeError(
@@ -62793,7 +63074,7 @@
       (e.prototype = Object.create(t && t.prototype, {
         constructor: { value: e, writable: !0, configurable: !0 },
       })),
-        t && Object(A['a'])(e, t);
+        t && Object(C['a'])(e, t);
     }
     function I(e) {
       return (
@@ -62951,7 +63232,7 @@
           );
         }
         return (
-          C(n, [
+          A(n, [
             {
               key: 'componentDidMount',
               value: function() {
@@ -63282,12 +63563,12 @@
       function T(e) {
         h || w(e);
       }
-      function C(e) {
+      function A(e) {
         e.preventDefault(),
           e.stopPropagation(),
           x.onEdit('remove', { key: c, event: e });
       }
-      var A = i['createElement'](
+      var C = i['createElement'](
         'div',
         {
           key: c,
@@ -63333,13 +63614,13 @@
               tabIndex: 0,
               className: ''.concat(E, '-remove'),
               onClick: function(e) {
-                e.stopPropagation(), C(e);
+                e.stopPropagation(), A(e);
               },
             },
             p || x.removeIcon || '\xd7',
           ),
       );
-      return y && (A = y(A)), A;
+      return y && (C = y(C)), C;
     }
     var ie = i['forwardRef'](re),
       ae = { width: 0, height: 0, left: 0, top: 0 };
@@ -63688,8 +63969,8 @@
           };
     }
     var Te = /iPhone/i,
-      Ce = /iPod/i,
-      Ae = /iPad/i,
+      Ae = /iPod/i,
+      Ce = /iPad/i,
       Me = /\bAndroid(?:.+)Mobile\b/i,
       Ie = /Android/i,
       Pe = /\bAndroid(?:.+)SD4930UR\b/i,
@@ -63721,9 +64002,9 @@
       var l = {
         apple: {
           phone: Ve(Te, t) && !Ve(Re, t),
-          ipod: Ve(Ce, t),
-          tablet: !Ve(Te, t) && Ve(Ae, t) && !Ve(Re, t),
-          device: (Ve(Te, t) || Ve(Ce, t) || Ve(Ae, t)) && !Ve(Re, t),
+          ipod: Ve(Ae, t),
+          tablet: !Ve(Te, t) && Ve(Ce, t) && !Ve(Re, t),
+          device: (Ve(Te, t) || Ve(Ae, t) || Ve(Ce, t)) && !Ve(Re, t),
         },
         amazon: {
           phone: Ve(Pe, t),
@@ -64012,8 +64293,8 @@
       kt = 'none',
       Ot = 'prepare',
       Tt = 'start',
-      Ct = 'active',
-      At = 'end';
+      At = 'active',
+      Ct = 'end';
     function Mt(e) {
       var t = Object(i['useRef'])(!1),
         n = Object(i['useState'])(e),
@@ -64063,11 +64344,11 @@
           [n, t]
         );
       },
-      Rt = [Ot, Tt, Ct, At],
+      Rt = [Ot, Tt, At, Ct],
       Lt = !1,
       Nt = !0;
     function jt(e) {
-      return e === Ct || e === At;
+      return e === At || e === Ct;
     }
     var zt = function(e, t) {
         var n = i['useState'](kt),
@@ -64084,7 +64365,7 @@
         return (
           Pt(
             function() {
-              if (o !== kt && o !== At) {
+              if (o !== kt && o !== Ct) {
                 var e = Rt.indexOf(o),
                   n = Rt[e + 1],
                   r = t(o);
@@ -64156,9 +64437,9 @@
         k = a.onAppearEnd,
         O = a.onEnterEnd,
         T = a.onLeaveEnd,
-        C = a.onVisibleChanged,
-        A = Mt(),
-        M = Object(r['a'])(A, 2),
+        A = a.onVisibleChanged,
+        C = Mt(),
+        M = Object(r['a'])(C, 2),
         I = M[0],
         P = M[1],
         D = Mt(wt),
@@ -64203,7 +64484,7 @@
                   (e = {}),
                   Object(s['a'])(e, Ot, m),
                   Object(s['a'])(e, Tt, b),
-                  Object(s['a'])(e, Ct, _),
+                  Object(s['a'])(e, At, _),
                   e
                 );
               case 'enter':
@@ -64211,7 +64492,7 @@
                   (t = {}),
                   Object(s['a'])(t, Ot, v),
                   Object(s['a'])(t, Tt, x),
-                  Object(s['a'])(t, Ct, S),
+                  Object(s['a'])(t, At, S),
                   t
                 );
               case 'leave':
@@ -64219,7 +64500,7 @@
                   (n = {}),
                   Object(s['a'])(n, Ot, y),
                   Object(s['a'])(n, Tt, w),
-                  Object(s['a'])(n, Ct, E),
+                  Object(s['a'])(n, At, E),
                   n
                 );
               default:
@@ -64241,7 +64522,7 @@
                 : n.call($, G(), null)) || null,
             );
           return (
-            te === Ct &&
+            te === At &&
               (J(G()),
               p > 0 &&
                 (clearTimeout(H.current),
@@ -64283,7 +64564,7 @@
         }, []),
         Object(i['useEffect'])(
           function() {
-            void 0 !== I && L === wt && (null === C || void 0 === C || C(I));
+            void 0 !== I && L === wt && (null === A || void 0 === A || A(I));
           },
           [I, L],
         );
@@ -64300,7 +64581,7 @@
           return O(this, n), t.apply(this, arguments);
         }
         return (
-          C(n, [
+          A(n, [
             {
               key: 'render',
               value: function() {
@@ -64346,8 +64627,8 @@
           O = _[3],
           T = Object(i['useRef'])(t);
         T.current = t;
-        var C,
-          A = i['useCallback'](function(e) {
+        var A,
+          C = i['useCallback'](function(e) {
             (y.current = e), K(T.current, e);
           }, []),
           M = Object(c['a'])(Object(c['a'])({}, m), {}, { visible: o });
@@ -64359,7 +64640,7 @@
               : jt(E)
               ? (P = 'active')
               : E === Tt && (P = 'start'),
-              (C = h(
+              (A = h(
                 Object(c['a'])(
                   Object(c['a'])({}, M),
                   {},
@@ -64374,11 +64655,11 @@
                     style: k,
                   },
                 ),
-                A,
+                C,
               ));
           } else
-            C = O
-              ? h(Object(c['a'])({}, M), A)
+            A = O
+              ? h(Object(c['a'])({}, M), C)
               : u
               ? f
                 ? h(
@@ -64387,15 +64668,15 @@
                       {},
                       { style: { display: 'none' } },
                     ),
-                    A,
+                    C,
                   )
                 : null
               : h(
                   Object(c['a'])(Object(c['a'])({}, M), {}, { className: g }),
-                  A,
+                  C,
                 );
-        else C = null;
-        return i['createElement'](Ht, { ref: b }, C);
+        else A = null;
+        return i['createElement'](Ht, { ref: b }, A);
       });
       return (a.displayName = 'CSSMotion'), a;
     }
@@ -64530,7 +64811,7 @@
             );
           }
           return (
-            C(
+            A(
               r,
               [
                 {
@@ -64847,14 +65128,14 @@
     function Tn(e) {
       return On(e);
     }
-    function Cn(e) {
+    function An(e) {
       return On(e, !0);
     }
-    function An(e) {
+    function Cn(e) {
       var t = kn(e),
         n = e.ownerDocument,
         r = n.defaultView || n.parentWindow;
-      return (t.left += Tn(r)), (t.top += Cn(r)), t;
+      return (t.left += Tn(r)), (t.top += An(r)), t;
     }
     function Mn(e) {
       return null !== e && void 0 !== e && e == e.window;
@@ -64922,12 +65203,12 @@
         l = Vn(o);
       'left' !== a && (r = 999), 'top' !== o && (i = 999);
       var u = '',
-        c = An(e);
+        c = Cn(e);
       ('left' in t || 'top' in t) && ((u = mn(e) || ''), pn(e, 'none')),
         'left' in t && ((e.style[s] = ''), (e.style[a] = ''.concat(r, 'px'))),
         'top' in t && ((e.style[l] = ''), (e.style[o] = ''.concat(i, 'px'))),
         Sn(e);
-      var f = An(e),
+      var f = Cn(e),
         d = {};
       for (var h in t)
         if (t.hasOwnProperty(h)) {
@@ -64947,7 +65228,7 @@
       En(e, v);
     }
     function Un(e, t) {
-      var n = An(e),
+      var n = Cn(e),
         r = vn(e),
         i = { x: r.x, y: r.y };
       'left' in t && (i.x = r.x + t.left - n.left),
@@ -64956,7 +65237,7 @@
     }
     function Wn(e, t, n) {
       if (n.ignoreShake) {
-        var r = An(e),
+        var r = Cn(e),
           i = r.left.toFixed(0),
           a = r.top.toFixed(0),
           o = t.left.toFixed(0),
@@ -65104,7 +65385,7 @@
       },
       getDocument: In,
       offset: function(e, t, n) {
-        if ('undefined' === typeof t) return An(e);
+        if ('undefined' === typeof t) return Cn(e);
         Wn(e, t, n || {});
       },
       isWindow: Mn,
@@ -65124,7 +65405,7 @@
         return Tn(e);
       },
       getWindowScrollTop: function(e) {
-        return Cn(e);
+        return An(e);
       },
       merge: function() {
         for (var e = {}, t = 0; t < arguments.length; t++)
@@ -65426,13 +65707,13 @@
               e.clientX === t.clientX && e.clientY === t.clientY))
       );
     }
-    function Cr(e, t) {
+    function Ar(e, t) {
       e !== document.activeElement &&
         et(t, e) &&
         'function' === typeof e.focus &&
         e.focus();
     }
-    function Ar(e, t) {
+    function Cr(e, t) {
       var n = null,
         i = null;
       function a(e) {
@@ -65525,7 +65806,7 @@
                 c = u.activeElement;
               return (
                 o && an(o) ? (i = kr(a, o, s)) : l && (i = Or(a, l, s)),
-                Cr(c, a),
+                Ar(c, a),
                 r && i && r(a, i),
                 !0
               );
@@ -65543,13 +65824,13 @@
           h.current !== w.current.element &&
             (w.current.cancel(),
             (w.current.element = h.current),
-            (w.current.cancel = Ar(h.current, y))),
+            (w.current.cancel = Cr(h.current, y))),
             (d.current.element === e && Tr(d.current.point, t)) ||
               (y(),
               x.current.element !== e &&
                 (x.current.cancel(),
                 (x.current.element = e),
-                (x.current.cancel = Ar(e, y))));
+                (x.current.cancel = Cr(e, y))));
         }),
           a.a.useEffect(
             function() {
@@ -65743,8 +66024,8 @@
           k = Object(i['useRef'])(),
           O = Object(i['useState'])(),
           T = Object(r['a'])(O, 2),
-          C = T[0],
-          A = T[1],
+          A = T[0],
+          C = T[1],
           M = Ur(h),
           I = Object(r['a'])(M, 2),
           P = I[0],
@@ -65767,8 +66048,8 @@
         function H(e, t) {
           if ('align' === j) {
             var n = y(t);
-            A(n),
-              C !== n
+            C(n),
+              A !== n
                 ? Promise.resolve().then(function() {
                     V();
                   })
@@ -65835,7 +66116,7 @@
             function(e, t) {
               var n = e.className,
                 r = e.style,
-                o = d()(a, s, C, n);
+                o = d()(a, s, A, n);
               return i['createElement'](
                 Nr,
                 {
@@ -66209,7 +66490,7 @@
           );
         }
         return (
-          C(
+          A(
             r,
             [
               {
@@ -66811,7 +67092,7 @@
           );
         }
         return (
-          C(n, [
+          A(n, [
             {
               key: 'componentDidMount',
               value: function() {
@@ -67015,8 +67296,8 @@
                     Object(s['a'])(n, ''.concat(l, '-rtl'), b),
                     n),
                   ),
-                  C = r.disabled,
-                  A = r.triggerSubMenuAction,
+                  A = r.disabled,
+                  C = r.triggerSubMenuAction,
                   M = r.subMenuOpenDelay,
                   I = r.forceSubMenuRender,
                   P = r.subMenuCloseDelay,
@@ -67045,7 +67326,7 @@
                       popupVisible: !u && a,
                       popupAlign: O,
                       popup: u ? null : S,
-                      action: C || u ? [] : [A],
+                      action: A || u ? [] : [C],
                       mouseEnterDelay: M,
                       mouseLeaveDelay: P,
                       onPopupVisibleChange: this.onPopupVisibleChange,
@@ -67222,7 +67503,7 @@
           );
         }
         return (
-          C(n, [
+          A(n, [
             {
               key: 'componentDidMount',
               value: function() {
@@ -67559,7 +67840,7 @@
         );
       }
       return (
-        C(n, [
+        A(n, [
           {
             key: 'componentDidMount',
             value: function() {
@@ -67795,7 +68076,7 @@
         );
       }
       return (
-        C(
+        A(
           n,
           [
             {
@@ -67971,7 +68252,7 @@
       overflowedIndicator: i['createElement']('span', null, '\xb7\xb7\xb7'),
     };
     var Ti = Oi,
-      Ci = (function(e) {
+      Ai = (function(e) {
         M(n, e);
         var t = j(n);
         function n() {
@@ -68015,7 +68296,7 @@
           );
         }
         return (
-          C(n, [
+          A(n, [
             {
               key: 'componentDidMount',
               value: function() {
@@ -68146,14 +68427,14 @@
           n
         );
       })(i['Component']);
-    (Ci.isMenuItem = !0),
-      (Ci.defaultProps = {
+    (Ai.isMenuItem = !0),
+      (Ai.defaultProps = {
         onSelect: Ge,
         onMouseEnter: Ge,
         onMouseLeave: Ge,
         manualRef: Ge,
       });
-    var Ai = xe(function(e, t) {
+    var Ci = xe(function(e, t) {
         var n = e.activeKey,
           r = e.selectedKeys,
           i = t.eventKey,
@@ -68162,8 +68443,8 @@
           active: n[a] === i,
           isSelected: Array.isArray(r) ? -1 !== r.indexOf(i) : r === i,
         };
-      })(Ci),
-      Mi = Ai,
+      })(Ai),
+      Mi = Ci,
       Ii = (function(e) {
         M(n, e);
         var t = j(n);
@@ -68182,7 +68463,7 @@
           );
         }
         return (
-          C(n, [
+          A(n, [
             {
               key: 'render',
               value: function() {
@@ -68318,10 +68599,10 @@
           'trigger',
         ]),
         T = i['useState'](),
-        C = Object(r['a'])(T, 2),
-        A = C[0],
-        M = C[1],
-        I = 'visible' in e ? S : A,
+        A = Object(r['a'])(T, 2),
+        C = A[0],
+        M = A[1],
+        I = 'visible' in e ? S : C,
         P = i['useRef'](null);
       i['useImperativeHandle'](t, function() {
         return P.current;
@@ -68373,7 +68654,7 @@
           var t = e.children,
             n = t.props ? t.props : {},
             r = d()(n.className, F());
-          return A && t ? i['cloneElement'](t, { className: r }) : t;
+          return C && t ? i['cloneElement'](t, { className: r }) : t;
         },
         V = x;
       return (
@@ -68456,9 +68737,9 @@
         k = Object(r['a'])(E, 2),
         O = k[0],
         T = k[1],
-        C = ''.concat(a, '-more-popup'),
-        A = ''.concat(n, '-dropdown'),
-        M = null !== O ? ''.concat(C, '-').concat(O) : null,
+        A = ''.concat(a, '-more-popup'),
+        C = ''.concat(n, '-dropdown'),
+        M = null !== O ? ''.concat(A, '-').concat(O) : null,
         I = null === l || void 0 === l ? void 0 : l.dropdownAriaLabel,
         P = i['createElement'](
           Di,
@@ -68468,7 +68749,7 @@
                 n = e.domEvent;
               b(t, n), S(!1);
             },
-            id: C,
+            id: A,
             tabIndex: -1,
             role: 'listbox',
             'aria-activedescendant': M,
@@ -68480,7 +68761,7 @@
               Mi,
               {
                 key: e.key,
-                id: ''.concat(C, '-').concat(e.key),
+                id: ''.concat(A, '-').concat(e.key),
                 role: 'option',
                 'aria-controls': a && ''.concat(a, '-panel-').concat(e.key),
                 disabled: e.disabled,
@@ -68545,13 +68826,13 @@
         );
       var L = Object(s['a'])({}, y ? 'marginLeft' : 'marginRight', v);
       o.length || ((L.visibility = 'hidden'), (L.order = 1));
-      var N = d()(Object(s['a'])({}, ''.concat(A, '-rtl'), y)),
+      var N = d()(Object(s['a'])({}, ''.concat(C, '-rtl'), y)),
         j = u
           ? null
           : i['createElement'](
               Bi,
               {
-                prefixCls: A,
+                prefixCls: C,
                 overlay: P,
                 trigger: ['hover'],
                 visible: _,
@@ -68570,7 +68851,7 @@
                   tabIndex: -1,
                   'aria-hidden': 'true',
                   'aria-haspopup': 'listbox',
-                  'aria-controls': C,
+                  'aria-controls': A,
                   id: ''.concat(a, '-more'),
                   'aria-expanded': _,
                   onKeyDown: R,
@@ -68757,8 +69038,8 @@
         E = e.children,
         O = e.onTabClick,
         T = e.onTabScroll,
-        C = Object(i['useRef'])(),
         A = Object(i['useRef'])(),
+        C = Object(i['useRef'])(),
         M = Object(i['useRef'])(),
         I = Object(i['useRef'])(),
         P = $i(),
@@ -68809,9 +69090,9 @@
         ke = Object(i['useState'])(0),
         Oe = Object(r['a'])(ke, 2),
         Te = Oe[0],
-        Ce = Oe[1],
-        Ae = ee(new Map()),
-        Me = Object(r['a'])(Ae, 2),
+        Ae = Oe[1],
+        Ce = ee(new Map()),
+        Me = Object(r['a'])(Ce, 2),
         Ie = Me[0],
         Pe = Me[1],
         De = oe(u, Ie, q),
@@ -68861,7 +69142,7 @@
             W(je(r));
         }
       }
-      Ji(C, function(e, t) {
+      Ji(A, function(e, t) {
         function n(e, t) {
           e(function(e) {
             var n = je(e + t);
@@ -68926,8 +69207,8 @@
             onFocus: function() {
               Ge(t),
                 Ue(),
-                v || (C.current.scrollLeft = 0),
-                (C.current.scrollTop = 0);
+                v || (A.current.scrollLeft = 0),
+                (A.current.scrollTop = 0);
             },
           });
         }),
@@ -68942,11 +69223,11 @@
             s,
             l,
             c =
-              (null === (e = C.current) || void 0 === e
+              (null === (e = A.current) || void 0 === e
                 ? void 0
                 : e.offsetWidth) || 0,
             f =
-              (null === (t = C.current) || void 0 === t
+              (null === (t = A.current) || void 0 === t
                 ? void 0
                 : t.offsetHeight) || 0,
             d =
@@ -68965,13 +69246,13 @@
               (null === (a = M.current) || void 0 === a
                 ? void 0
                 : a.offsetHeight) || 0;
-          me(c), xe(f), Ee(d), Ce(h);
+          me(c), xe(f), Ee(d), Ae(h);
           var m =
-              ((null === (o = A.current) || void 0 === o
+              ((null === (o = C.current) || void 0 === o
                 ? void 0
                 : o.offsetWidth) || 0) - d,
             v =
-              ((null === (s = A.current) || void 0 === s
+              ((null === (s = C.current) || void 0 === s
                 ? void 0
                 : s.offsetHeight) || 0) - h;
           Y(m), te(v);
@@ -69089,7 +69370,7 @@
                   Object(s['a'])(n, ''.concat(ht, '-ping-bottom'), ft),
                   n),
                 ),
-                ref: C,
+                ref: A,
               },
               i['createElement'](
                 Q,
@@ -69097,7 +69378,7 @@
                 i['createElement'](
                   'div',
                   {
-                    ref: A,
+                    ref: C,
                     className: ''.concat(l, '-nav-list'),
                     style: {
                       transform: 'translate('
@@ -69274,8 +69555,8 @@
         k = e.tabPosition,
         O = void 0 === k ? 'top' : k,
         T = e.tabBarGutter,
-        C = e.tabBarStyle,
-        A = e.tabBarExtraContent,
+        A = e.tabBarStyle,
+        C = e.tabBarExtraContent,
         M = e.locale,
         I = e.moreIcon,
         P = e.moreTransitionName,
@@ -69396,8 +69677,8 @@
             tabBarGutter: T,
             onTabClick: ie,
             onTabScroll: j,
-            extra: A,
-            style: C,
+            extra: C,
+            style: A,
             panes: y,
           },
         );
@@ -69485,9 +69766,9 @@
         k = Object(i['useState'])('_'),
         O = Object(r['a'])(k, 2),
         T = O[0],
-        C = O[1],
-        A = Object(i['useState'])(ha(T, c.sources[T])),
-        M = Object(r['a'])(A, 2),
+        A = O[1],
+        C = Object(i['useState'])(ha(T, c.sources[T])),
+        M = Object(r['a'])(C, 2),
         I = M[0],
         P = M[1],
         D = Object(i['useState'])(Boolean(c.defaultShowCode)),
@@ -69505,7 +69786,7 @@
         G = Object(r['a'])(W, 1),
         K = G[0];
       function q(e) {
-        C(e), P(ha(e, c.sources[e]));
+        A(e), P(ha(e, c.sources[e]));
       }
       return (
         Object(i['useEffect'])(() => {
@@ -70217,287 +70498,6 @@
         return r(e, i);
       };
   },
-  yehc: function(e, t, n) {
-    'use strict';
-    n.r(t);
-    var r = n('xwgP'),
-      i = n.n(r),
-      a = n('fLni'),
-      o = n('xVRR'),
-      s = n('Rsk4'),
-      l = i.a.memo(s['default']['LineChart-demo'].component),
-      u = i.a.memo(s['default']['LineChart-demo-1'].component);
-    t['default'] = function() {
-      return i.a.createElement(
-        i.a.Fragment,
-        null,
-        i.a.createElement(
-          i.a.Fragment,
-          null,
-          i.a.createElement(
-            'div',
-            { className: 'markdown' },
-            i.a.createElement(
-              'h4',
-              { id: '\u57fa\u672c\u6298\u7ebf\u56fe' },
-              i.a.createElement(
-                a['AnchorLink'],
-                {
-                  to: '#\u57fa\u672c\u6298\u7ebf\u56fe',
-                  'aria-hidden': 'true',
-                  tabIndex: -1,
-                },
-                i.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              '\u57fa\u672c\u6298\u7ebf\u56fe',
-            ),
-          ),
-          i.a.createElement(
-            o['default'],
-            s['default']['LineChart-demo'].previewerProps,
-            i.a.createElement(l, null),
-          ),
-          i.a.createElement(
-            'div',
-            { className: 'markdown' },
-            i.a.createElement(
-              'h4',
-              { id: '\u53ccy\u8f74' },
-              i.a.createElement(
-                a['AnchorLink'],
-                { to: '#\u53ccy\u8f74', 'aria-hidden': 'true', tabIndex: -1 },
-                i.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              '\u53ccy\u8f74',
-            ),
-          ),
-          i.a.createElement(
-            o['default'],
-            s['default']['LineChart-demo-1'].previewerProps,
-            i.a.createElement(u, null),
-          ),
-          i.a.createElement(
-            'div',
-            { className: 'markdown' },
-            i.a.createElement(
-              'h3',
-              { id: 'api' },
-              i.a.createElement(
-                a['AnchorLink'],
-                { to: '#api', 'aria-hidden': 'true', tabIndex: -1 },
-                i.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              'API',
-            ),
-            i.a.createElement(
-              'table',
-              null,
-              i.a.createElement(
-                'thead',
-                null,
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('th', { align: 'center' }, '\u53c2\u6570'),
-                  i.a.createElement('th', { align: 'center' }, '\u8bf4\u660e'),
-                  i.a.createElement('th', { align: 'center' }, '\u7c7b\u578b'),
-                  i.a.createElement(
-                    'th',
-                    { align: 'center' },
-                    '\u9ed8\u8ba4\u503c',
-                  ),
-                ),
-              ),
-              i.a.createElement(
-                'tbody',
-                null,
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'x'),
-                  i.a.createElement('td', { align: 'center' }, '\u7ef4\u5ea6'),
-                  i.a.createElement('td', { align: 'center' }, 'array'),
-                  i.a.createElement('td', { align: 'center' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'y'),
-                  i.a.createElement('td', { align: 'center' }, '\u6307\u6807'),
-                  i.a.createElement('td', { align: 'center' }, 'array'),
-                  i.a.createElement('td', { align: 'center' }),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'yAxisName'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'y\u8f74\u540d\u79f0',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'array'),
-                  i.a.createElement('td', { align: 'center' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'rightAxisSite'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u6307\u6807\u5728y\u8f74left or right',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'Array'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u9ed8\u8ba4left',
-                  ),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'isRate'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u662f\u5426\u662f\u767e\u5206\u6bd4',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'boolean'),
-                  i.a.createElement('td', { align: 'center' }, 'false'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'dataZoom'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u662f\u5426\u5f00\u542f\u6a2a\u5411\u6eda\u52a8',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'boolean'),
-                  i.a.createElement('td', { align: 'center' }, 'false'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'rotate'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'x \u8f74 label \u5b57\u4f53 rotate',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'number'),
-                  i.a.createElement('td', { align: 'center' }, '0'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'interval'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u8bbe\u7f6e\u5750\u6807\u8f74\u5206\u5272\u95f4\u9694\uff08\u8bbe\u7f6e 0 \u5f3a\u5236\u663e\u793a\uff09',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'number|string'),
-                  i.a.createElement('td', { align: 'center' }, "'auto'"),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'showLabel'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u662f\u5426\u663e\u793a\u8282\u70b9\u5904 label',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'boolean'),
-                  i.a.createElement('td', { align: 'center' }, 'false'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'options'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'echarts \u56fe\u8868\u914d\u7f6e\u9879 (\u4f18\u5148\u7ea7\u9ad8\u4e8e\u4ee5\u4e0a\u914d\u7f6e)',
-                    i.a.createElement(
-                      a['Link'],
-                      { to: 'https://echarts.apache.org/zh/option.html#title' },
-                      'echarts',
-                    ),
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'object'),
-                  i.a.createElement('td', { align: 'center' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'showLoading'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u662f\u5426\u663e\u793a\u52a0\u8f7d\u72b6\u6001',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'boolean'),
-                  i.a.createElement('td', { align: 'center' }, 'false'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    'loadingOptions',
-                  ),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u56fe\u8868\u52a0\u8f7d\u6837\u5f0f',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'object'),
-                  i.a.createElement('td', { align: 'center' }, '-'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'theme'),
-                  i.a.createElement('td', { align: 'center' }, '\u4e3b\u9898'),
-                  i.a.createElement('td', { align: 'center' }, 'string|object'),
-                  i.a.createElement('td', { align: 'center' }, 'xm'),
-                ),
-                i.a.createElement(
-                  'tr',
-                  null,
-                  i.a.createElement('td', { align: 'center' }, 'initOptions'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '\u521d\u59cb\u5316\u65f6\u7684\u9644\u52a0\u53c2\u6570',
-                  ),
-                  i.a.createElement('td', { align: 'center' }, 'object'),
-                  i.a.createElement(
-                    'td',
-                    { align: 'center' },
-                    '{',
-                    "devicePixelRatio:window.devicePixelRatio,renderer:'canvas'",
-                    '}',
-                  ),
-                ),
-              ),
-            ),
-            i.a.createElement(
-              'p',
-              null,
-              '\u53ef\u4ee5\u901a\u8fc7\u5b9e\u4f8b\u7684 getEchartsInstance \u65b9\u6cd5\u83b7\u53d6\u56fe\u8868\u5b9e\u4f8b',
-            ),
-          ),
-        ),
-      );
-    };
-  },
   yuiD: function(e, t, n) {
     var r = n('Vw6a'),
       i = r.retrieveRawValue;
@@ -70642,8 +70642,8 @@
     var O = n('o2YK');
     t.IncrementalDisplayable = O;
     var T = n('afA4'),
-      C = Math.max,
-      A = Math.min,
+      A = Math.max,
+      C = Math.min,
       M = {},
       I = 1,
       P = {
@@ -71024,10 +71024,10 @@
     function Te(e, t, n, r, i) {
       Oe(!0, e, t, n, r, i);
     }
-    function Ce(e, t, n, r, i) {
+    function Ae(e, t, n, r, i) {
       Oe(!1, e, t, n, r, i);
     }
-    function Ae(e, t) {
+    function Ce(e, t) {
       var n = o.identity([]);
       while (e && e !== t) o.mul(n, e.getLocalTransform(), n), (e = e.parent);
       return n;
@@ -71093,16 +71093,16 @@
     function De(e, t) {
       return r.map(e, function(e) {
         var n = e[0];
-        (n = C(n, t.x)), (n = A(n, t.x + t.width));
+        (n = A(n, t.x)), (n = C(n, t.x + t.width));
         var r = e[1];
-        return (r = C(r, t.y)), (r = A(r, t.y + t.height)), [n, r];
+        return (r = A(r, t.y)), (r = C(r, t.y + t.height)), [n, r];
       });
     }
     function Re(e, t) {
-      var n = C(e.x, t.x),
-        r = A(e.x + e.width, t.x + t.width),
-        i = C(e.y, t.y),
-        a = A(e.y + e.height, t.y + t.height);
+      var n = A(e.x, t.x),
+        r = C(e.x + e.width, t.x + t.width),
+        i = A(e.y, t.y),
+        a = C(e.y + e.height, t.y + t.height);
       if (r >= n && a >= i) return { x: n, y: i, width: r - n, height: a - i };
     }
     function Le(e, t, n) {
@@ -71173,8 +71173,8 @@
       (t.setText = ye),
       (t.getFont = ke),
       (t.updateProps = Te),
-      (t.initProps = Ce),
-      (t.getTransform = Ae),
+      (t.initProps = Ae),
+      (t.getTransform = Ce),
       (t.applyTransform = Me),
       (t.transformDirection = Ie),
       (t.groupTransition = Pe),
