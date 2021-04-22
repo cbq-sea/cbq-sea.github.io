@@ -15513,10 +15513,10 @@
     window.routerBase && (i.basename = window.routerBase);
     var a = Object({ NODE_ENV: 'production' }).__IS_SERVER
         ? null
-        : Object(r['a'])(i),
+        : Object(r['b'])(i),
       o = function() {
         var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
-        return e || (a = Object(r['a'])(i)), a;
+        return e || (a = Object(r['b'])(i)), a;
       };
   },
   FiFR: function(e, t, n) {
