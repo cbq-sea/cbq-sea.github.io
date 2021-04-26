@@ -55558,7 +55558,7 @@
   },
   q3YX: function(e) {
     e.exports = JSON.parse(
-      '{"menus":{"en-US":{"/chart":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/chart/quick-learning","meta":{"order":0},"children":[{"path":"/chart/quick-learning","title":"\u5165\u95e8","meta":{}}]},{"title":"\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6","path":"/chart/components","meta":{"order":2},"children":[{"path":"/chart/components/area","title":"Area-\u9762\u79ef\u56fe","meta":{"order":1}},{"path":"/chart/components/bar","title":"Bar-\u67f1\u72b6\u56fe","meta":{"order":1}},{"path":"/chart/components/line","title":"Line-\u6298\u7ebf\u56fe","meta":{"order":1}},{"path":"/chart/components/word-cloud","title":"WordCloud-\u8bcd\u4e91","meta":{"order":1}},{"path":"/chart/components/pie","title":"Pie-\u997c\u56fe","meta":{"order":4}},{"path":"/chart/components/core","title":"Chart-\u5e95\u5c42\u7ec4\u4ef6","meta":{"order":18}}]}],"*":[{"path":"/","title":"Index","meta":{}}]}},"locales":[{"name":"en-US","label":"English"}],"navs":{"en-US":[{"title":"React\u56fe\u8868\u7ec4\u4ef6","path":"/chart"},{"title":"Xm Design Tv","path":"http://api.jituancaiyun.net/xm-design-tv/index.html"},{"title":"Xm Design","path":"http://api.jituancaiyun.net/xm-design-vue2/index.html"},{"title":"echarts","path":"https://echarts.apache.org/zh/index.html"}]},"title":"xm-charts","logo":"https://user-images.githubusercontent.com/9743418/104887549-680c1e80-59a6-11eb-8222-40e1d38a0fe2.png","mode":"site","repository":{"branch":"master"},"theme":{}}',
+      '{"menus":{"en-US":{"/chart":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/chart/quick-learning","meta":{"order":0},"children":[{"path":"/chart/quick-learning","title":"\u5165\u95e8","meta":{}}]},{"title":"\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6","path":"/chart/components","meta":{"order":2},"children":[{"path":"/chart/components/area","title":"Area-\u9762\u79ef\u56fe","meta":{"order":1}},{"path":"/chart/components/bar","title":"Bar-\u67f1\u72b6\u56fe","meta":{"order":1}},{"path":"/chart/components/line","title":"Line-\u6298\u7ebf\u56fe","meta":{"order":1}},{"path":"/chart/components/pie","title":"Pie-\u997c\u56fe","meta":{"order":4}},{"path":"/chart/components/word-cloud","title":"WordCloud-\u8bcd\u4e91","meta":{"order":5}},{"path":"/chart/components/core","title":"Chart-\u5e95\u5c42\u7ec4\u4ef6","meta":{"order":18}}]}],"*":[{"path":"/","title":"Index","meta":{}}]}},"locales":[{"name":"en-US","label":"English"}],"navs":{"en-US":[{"title":"React\u56fe\u8868\u7ec4\u4ef6","path":"/chart"},{"title":"Xm Design Tv","path":"http://api.jituancaiyun.net/xm-design-tv/index.html"},{"title":"Xm Design","path":"http://api.jituancaiyun.net/xm-design-vue2/index.html"},{"title":"echarts","path":"https://echarts.apache.org/zh/index.html"}]},"title":"xm-charts","logo":"https://user-images.githubusercontent.com/9743418/104887549-680c1e80-59a6-11eb-8222-40e1d38a0fe2.png","mode":"site","repository":{"branch":"master"},"theme":{}}',
     );
   },
   'q5+0': function(e, t, n) {
@@ -58503,7 +58503,7 @@
                   path: '/chart/components',
                 },
                 title: 'WordCloud-\u8bcd\u4e91',
-                order: 1,
+                order: 5,
                 slugs: [],
               },
               title: 'WordCloud-\u8bcd\u4e91',
