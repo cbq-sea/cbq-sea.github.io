@@ -28816,7 +28816,7 @@
             },
             dependencies: {
               react: { version: '>=16.0.0' },
-              '@xm/react-charts': { version: '1.0.2' },
+              '@xm/react-charts': { version: '1.0.3' },
               'react-dom': { version: '>=16.0.0' },
             },
             identifier: 'Area-demo',
@@ -28841,12 +28841,12 @@
             sources: {
               _: {
                 jsx:
-                  "import React from 'react'\nimport { Bar } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2'] \n\n// \u6307\u6807\nconst y = [\n   {\n      data: [200, 600],\n      name: '\u6307\u68071',\n    },\n     {\n      data: [200, 600],\n      name: '\u6307\u68072',\n    },\n]\n\nexport default () => <Bar x={x} y={y} />",
+                  "import React from 'react'\nimport { Bar } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u6307\u68071',\n  },\n  {\n    data: [200, 600],\n    name: '\u6307\u68072',\n  },\n]\n\nexport default () => <Bar x={x} y={y} />",
               },
             },
             dependencies: {
               react: { version: '>=16.0.0' },
-              '@xm/react-charts': { version: '1.0.2' },
+              '@xm/react-charts': { version: '1.0.3' },
               'react-dom': { version: '>=16.0.0' },
             },
             identifier: 'Bar-demo',
@@ -28877,12 +28877,12 @@
             sources: {
               _: {
                 jsx:
-                  "import React from 'react'\nimport { Bar } from '@xm/react-charts'\n\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2'] \n\n// \u6307\u6807\nconst y = [\n   {\n      data: [200, 600],\n      name: '\u6307\u68071',\n    },\n     {\n      data: [200, 600],\n      name: '\u6307\u68072',\n    },\n]\n\n// y\u8f74\u540d\u79f0\nconst yAxisName = ['\u5355\u4f4d: \u4e2a']\n\nexport default () => <Bar x={x} y={y} yAxisName={yAxisName} isStack/>",
+                  "import React from 'react'\nimport { Bar } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u6307\u68071',\n  },\n  {\n    data: [200, 600],\n    name: '\u6307\u68072',\n  },\n]\n\n// y\u8f74\u540d\u79f0\nconst yAxisName = ['\u5355\u4f4d: \u4e2a']\n\nexport default () => <Bar x={x} y={y} yAxisName={yAxisName} isStack />",
               },
             },
             dependencies: {
               react: { version: '>=16.0.0' },
-              '@xm/react-charts': { version: '1.0.2' },
+              '@xm/react-charts': { version: '1.0.3' },
               'react-dom': { version: '>=16.0.0' },
             },
             identifier: 'Bar-demo-1',
@@ -28911,12 +28911,12 @@
             sources: {
               _: {
                 jsx:
-                  "import React from 'react'\nimport { Bar } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2'] \n\n// \u6307\u6807\nconst y = [\n   {\n      data: [200, 600],\n      name: '\u67f1\u72b6\u56fe',\n    },\n     {\n      data: [200, 60000],\n      name: '\u67f1\u72b6\u56fe2',\n    },\n]\n\nexport default () => <Bar x={x} y={y} isHorizontal/>",
+                  "import React from 'react'\nimport { Bar } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u67f1\u72b6\u56fe',\n  },\n  {\n    data: [200, 60000],\n    name: '\u67f1\u72b6\u56fe2',\n  },\n]\n\nexport default () => <Bar x={x} y={y} isHorizontal />",
               },
             },
             dependencies: {
               react: { version: '>=16.0.0' },
-              '@xm/react-charts': { version: '1.0.2' },
+              '@xm/react-charts': { version: '1.0.3' },
               'react-dom': { version: '>=16.0.0' },
             },
             identifier: 'Bar-demo-2',
@@ -28957,7 +28957,7 @@
             },
             dependencies: {
               react: { version: '>=16.0.0' },
-              '@xm/react-charts': { version: '1.0.2' },
+              '@xm/react-charts': { version: '1.0.3' },
               'react-dom': { version: '>=16.0.0' },
             },
             identifier: 'Core-demo',
@@ -28987,12 +28987,12 @@
             sources: {
               _: {
                 jsx:
-                  "import React from 'react'\nimport { Line } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u6307\u68071',\n  },\n  {\n    data: [100, 900],\n    name: '\u6307\u68072',\n  },\n]\n\n// y\u8f74\u540d\u79f0\nconst yAxisName = ['\u5355\u4f4d: \u4e2a']\n\nexport default () => <Line x={x} y={y} yAxisName={yAxisName}/>",
+                  "import React from 'react'\nimport { Line } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u6307\u68071',\n  },\n  {\n    data: [100, 900],\n    name: '\u6307\u68072',\n  },\n]\n\n// y\u8f74\u540d\u79f0\nconst yAxisName = ['\u5355\u4f4d: \u4e2a']\n\nexport default () => <Line x={x} y={y} yAxisName={yAxisName} />",
               },
             },
             dependencies: {
               react: { version: '>=16.0.0' },
-              '@xm/react-charts': { version: '1.0.2' },
+              '@xm/react-charts': { version: '1.0.3' },
               'react-dom': { version: '>=16.0.0' },
             },
             identifier: 'Line-demo',
@@ -29024,12 +29024,12 @@
             sources: {
               _: {
                 jsx:
-                  "import React from 'react'\nimport { Line } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u6307\u68071',\n  },\n  {\n    data: [20, 40],\n    name: '\u6307\u68072',\n  },\n]\n\n// y\u8f74\u540d\u79f0\nconst yAxisName = ['\u5355\u4f4d: \u4e2a','\u5355\u4f4d\uff1a %']\nconst rightAxisSite = ['\u6307\u68072']\n\nexport default () => <Line x={x} y={y} yAxisName={yAxisName} rightAxisSite={rightAxisSite}/>",
+                  "import React from 'react'\nimport { Line } from '@xm/react-charts'\n\n// \u7ef4\u5ea6\nconst x = ['\u793a\u610f1', '\u793a\u610f2']\n\n// \u6307\u6807\nconst y = [\n  {\n    data: [200, 600],\n    name: '\u6307\u68071',\n  },\n  {\n    data: [20, 40],\n    name: '\u6307\u68072',\n  },\n]\n\n// y\u8f74\u540d\u79f0\nconst yAxisName = ['\u5355\u4f4d: \u4e2a', '\u5355\u4f4d\uff1a %']\nconst rightAxisSite = ['\u6307\u68072']\n\nexport default () => (\n  <Line x={x} y={y} yAxisName={yAxisName} rightAxisSite={rightAxisSite} />\n)",
               },
             },
             dependencies: {
               react: { version: '>=16.0.0' },
-              '@xm/react-charts': { version: '1.0.2' },
+              '@xm/react-charts': { version: '1.0.3' },
               'react-dom': { version: '>=16.0.0' },
             },
             identifier: 'Line-demo-1',
@@ -29058,7 +29058,7 @@
             },
             dependencies: {
               react: { version: '>=16.0.0' },
-              '@xm/react-charts': { version: '1.0.2' },
+              '@xm/react-charts': { version: '1.0.3' },
               'react-dom': { version: '>=16.0.0' },
             },
             identifier: 'Pie-demo',
@@ -29090,7 +29090,7 @@
             },
             dependencies: {
               react: { version: '>=16.0.0' },
-              '@xm/react-charts': { version: '1.0.2' },
+              '@xm/react-charts': { version: '1.0.3' },
               'react-dom': { version: '>=16.0.0' },
             },
             identifier: 'Pie-demo-1',
@@ -29126,7 +29126,7 @@
             },
             dependencies: {
               react: { version: '>=16.0.0' },
-              '@xm/react-charts': { version: '1.0.2' },
+              '@xm/react-charts': { version: '1.0.3' },
               'react-dom': { version: '>=16.0.0' },
             },
             identifier: 'WordCloud-demo',
@@ -29156,7 +29156,7 @@
             },
             dependencies: {
               react: { version: '>=16.0.0' },
-              '@xm/react-charts': { version: '1.0.2' },
+              '@xm/react-charts': { version: '1.0.3' },
               'react-dom': { version: '>=16.0.0' },
             },
             identifier: 'quickLearning-demo',
@@ -43192,13 +43192,13 @@
             { className: 'markdown' },
             i.a.createElement(
               'h4',
-              { id: '\u53ccy\u8f74' },
+              { id: '\u53cc-y-\u8f74' },
               i.a.createElement(
                 a['AnchorLink'],
-                { to: '#\u53ccy\u8f74', 'aria-hidden': 'true', tabIndex: -1 },
+                { to: '#\u53cc-y-\u8f74', 'aria-hidden': 'true', tabIndex: -1 },
                 i.a.createElement('span', { className: 'icon icon-link' }),
               ),
-              '\u53ccy\u8f74',
+              '\u53cc y \u8f74',
             ),
           ),
           i.a.createElement(
@@ -43264,7 +43264,7 @@
                   i.a.createElement(
                     'td',
                     { align: 'center' },
-                    'y\u8f74\u540d\u79f0',
+                    'y \u8f74\u540d\u79f0',
                   ),
                   i.a.createElement('td', { align: 'center' }, 'array'),
                   i.a.createElement('td', { align: 'center' }, '-'),
@@ -43276,13 +43276,13 @@
                   i.a.createElement(
                     'td',
                     { align: 'center' },
-                    '\u6307\u6807\u5728y\u8f74left or right',
+                    '\u6307\u6807\u5728 y \u8f74 left or right',
                   ),
                   i.a.createElement('td', { align: 'center' }, 'Array'),
                   i.a.createElement(
                     'td',
                     { align: 'center' },
-                    '\u9ed8\u8ba4left',
+                    '\u9ed8\u8ba4 left',
                   ),
                 ),
                 i.a.createElement(
@@ -55558,7 +55558,7 @@
   },
   q3YX: function(e) {
     e.exports = JSON.parse(
-      '{"menus":{"en-US":{"/chart":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/chart/quick-learning","meta":{"order":0},"children":[{"path":"/chart/quick-learning","title":"\u5165\u95e8","meta":{}}]},{"title":"\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6","path":"/chart/components","meta":{"order":5},"children":[{"path":"/chart/components/area","title":"Area-\u9762\u79ef\u56fe","meta":{}},{"path":"/chart/components/bar","title":"Bar-\u67f1\u72b6\u56fe","meta":{}},{"path":"/chart/components/core","title":"Chart-\u5e95\u5c42\u7ec4\u4ef6","meta":{}},{"path":"/chart/components/line","title":"Line-\u6298\u7ebf\u56fe","meta":{}},{"path":"/chart/components/pie","title":"Pie-\u997c\u56fe","meta":{}},{"path":"/chart/components/word-cloud","title":"WordCloud-\u8bcd\u4e91","meta":{}}]}],"*":[{"path":"/","title":"Index","meta":{}}]}},"locales":[{"name":"en-US","label":"English"}],"navs":{"en-US":[{"title":"React\u7ec4\u4ef6","path":"/chart"},{"title":"echarts","path":"https://echarts.apache.org/zh/index.html"}]},"title":"xm-charts","logo":"https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png","mode":"site","repository":{"branch":"master"},"theme":{}}',
+      '{"menus":{"en-US":{"/chart":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/chart/quick-learning","meta":{"order":0},"children":[{"path":"/chart/quick-learning","title":"\u5165\u95e8","meta":{}}]},{"title":"\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6","path":"/chart/components","meta":{"order":2},"children":[{"path":"/chart/components/area","title":"Area-\u9762\u79ef\u56fe","meta":{"order":1}},{"path":"/chart/components/bar","title":"Bar-\u67f1\u72b6\u56fe","meta":{"order":1}},{"path":"/chart/components/line","title":"Line-\u6298\u7ebf\u56fe","meta":{"order":1}},{"path":"/chart/components/word-cloud","title":"WordCloud-\u8bcd\u4e91","meta":{"order":1}},{"path":"/chart/components/pie","title":"Pie-\u997c\u56fe","meta":{"order":4}},{"path":"/chart/components/core","title":"Chart-\u5e95\u5c42\u7ec4\u4ef6","meta":{"order":18}}]}],"*":[{"path":"/","title":"Index","meta":{}}]}},"locales":[{"name":"en-US","label":"English"}],"navs":{"en-US":[{"title":"React\u56fe\u8868\u7ec4\u4ef6","path":"/chart"},{"title":"Xm Design Tv","path":"http://api.jituancaiyun.net/xm-design-tv/index.html"},{"title":"Xm Design","path":"http://api.jituancaiyun.net/xm-design-vue2/index.html"},{"title":"echarts","path":"https://echarts.apache.org/zh/index.html"}]},"title":"xm-charts","logo":"https://user-images.githubusercontent.com/9743418/104887549-680c1e80-59a6-11eb-8222-40e1d38a0fe2.png","mode":"site","repository":{"branch":"master"},"theme":{}}',
     );
   },
   'q5+0': function(e, t, n) {
@@ -58355,14 +58355,15 @@
               exact: !0,
               meta: {
                 filePath: 'src/components/Area/index.md',
-                updatedTime: 1619095575502,
-                nav: { title: 'React\u7ec4\u4ef6', path: '/chart' },
+                updatedTime: 1619419913e3,
+                nav: { title: 'React\u56fe\u8868\u7ec4\u4ef6', path: '/chart' },
                 group: {
                   title: '\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6',
                   order: 2,
                   path: '/chart/components',
                 },
                 title: 'Area-\u9762\u79ef\u56fe',
+                order: 1,
                 slugs: [
                   { depth: 3, value: '\u7528\u6cd5:', heading: '\u7528\u6cd5' },
                   { depth: 3, value: 'API', heading: 'api' },
@@ -58376,14 +58377,15 @@
               exact: !0,
               meta: {
                 filePath: 'src/components/Bar/index.md',
-                updatedTime: 1619094647989,
-                nav: { title: 'React\u7ec4\u4ef6', path: '/chart' },
+                updatedTime: 1619419913e3,
+                nav: { title: 'React\u56fe\u8868\u7ec4\u4ef6', path: '/chart' },
                 group: {
                   title: '\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6',
                   order: 2,
                   path: '/chart/components',
                 },
                 title: 'Bar-\u67f1\u72b6\u56fe',
+                order: 1,
                 slugs: [
                   { depth: 4, value: '\u7528\u6cd5:', heading: '\u7528\u6cd5' },
                   {
@@ -58412,14 +58414,15 @@
               exact: !0,
               meta: {
                 filePath: 'src/components/Core/index.md',
-                updatedTime: 1619057883e3,
-                nav: { title: 'React\u7ec4\u4ef6', path: '/chart' },
+                updatedTime: 1619419913e3,
+                nav: { title: 'React\u56fe\u8868\u7ec4\u4ef6', path: '/chart' },
                 group: {
                   title: '\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6',
-                  order: 0,
+                  order: 2,
                   path: '/chart/components',
                 },
                 title: 'Chart-\u5e95\u5c42\u7ec4\u4ef6',
+                order: 18,
                 slugs: [{ depth: 3, value: 'API', heading: 'api' }],
               },
               title: 'Chart-\u5e95\u5c42\u7ec4\u4ef6',
@@ -58430,14 +58433,15 @@
               exact: !0,
               meta: {
                 filePath: 'src/components/Line/index.md',
-                updatedTime: 1619095553132,
-                nav: { title: 'React\u7ec4\u4ef6', path: '/chart' },
+                updatedTime: 1619419913e3,
+                nav: { title: 'React\u56fe\u8868\u7ec4\u4ef6', path: '/chart' },
                 group: {
                   title: '\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6',
-                  order: 3,
+                  order: 2,
                   path: '/chart/components',
                 },
                 title: 'Line-\u6298\u7ebf\u56fe',
+                order: 1,
                 slugs: [
                   {
                     depth: 4,
@@ -58446,8 +58450,8 @@
                   },
                   {
                     depth: 4,
-                    value: '\u53ccy\u8f74',
-                    heading: '\u53ccy\u8f74',
+                    value: '\u53cc y \u8f74',
+                    heading: '\u53cc-y-\u8f74',
                   },
                   { depth: 3, value: 'API', heading: 'api' },
                 ],
@@ -58460,14 +58464,15 @@
               exact: !0,
               meta: {
                 filePath: 'src/components/Pie/index.md',
-                updatedTime: 1619095711578,
-                nav: { title: 'React\u7ec4\u4ef6', path: '/chart' },
+                updatedTime: 1619419913e3,
+                nav: { title: 'React\u56fe\u8868\u7ec4\u4ef6', path: '/chart' },
                 group: {
                   title: '\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6',
-                  order: 4,
+                  order: 2,
                   path: '/chart/components',
                 },
                 title: 'Pie-\u997c\u56fe',
+                order: 4,
                 slugs: [
                   {
                     depth: 4,
@@ -58490,14 +58495,15 @@
               exact: !0,
               meta: {
                 filePath: 'src/components/WordCloud/index.md',
-                updatedTime: 1619057883e3,
-                nav: { title: 'React\u7ec4\u4ef6', path: '/chart' },
+                updatedTime: 1619419913e3,
+                nav: { title: 'React\u56fe\u8868\u7ec4\u4ef6', path: '/chart' },
                 group: {
                   title: '\u4e1a\u52a1\u56fe\u8868\u7ec4\u4ef6',
-                  order: 5,
+                  order: 2,
                   path: '/chart/components',
                 },
                 title: 'WordCloud-\u8bcd\u4e91',
+                order: 1,
                 slugs: [],
               },
               title: 'WordCloud-\u8bcd\u4e91',
@@ -58508,8 +58514,8 @@
               exact: !0,
               meta: {
                 filePath: 'src/quickLearning/index.md',
-                updatedTime: 1619057883e3,
-                nav: { title: 'React\u7ec4\u4ef6', path: '/chart' },
+                updatedTime: 1619419913e3,
+                nav: { title: 'React\u56fe\u8868\u7ec4\u4ef6', path: '/chart' },
                 group: {
                   title: '\u5feb\u901f\u4e0a\u624b',
                   order: 0,
@@ -58540,9 +58546,9 @@
               exact: !0,
               meta: {
                 filePath: 'docs/index.md',
-                updatedTime: 1619057883e3,
+                updatedTime: 1619419913e3,
                 hero: {
-                  title: 'react-charts',
+                  title: 'xm-charts',
                   desc:
                     '<div class="markdown"><p>\u57fa\u4e8eecharts\u548creact\u5c01\u88c5\u7684\u7ec4\u4ef6</p></div>',
                   actions: [
@@ -58588,7 +58594,7 @@
               path: '/chart',
               meta: {},
               exact: !0,
-              redirect: '/chart/components',
+              redirect: '/chart/quick-learning',
             },
           ],
           title: 'xm-charts',
@@ -59293,19 +59299,31 @@
         return v;
       }),
       n.d(t, 'Bar', function() {
-        return k;
+        return S;
+      }),
+      n.d(t, 'BarChart', function() {
+        return S;
       }),
       n.d(t, 'Pie', function() {
-        return M;
-      }),
-      n.d(t, 'Line', function() {
         return A;
       }),
+      n.d(t, 'PieChart', function() {
+        return A;
+      }),
+      n.d(t, 'Line', function() {
+        return O;
+      }),
+      n.d(t, 'LineChart', function() {
+        return O;
+      }),
       n.d(t, 'Area', function() {
-        return P;
+        return M;
+      }),
+      n.d(t, 'AreaChart', function() {
+        return M;
       }),
       n.d(t, 'WordCloud', function() {
-        return R;
+        return P;
       }),
       n.d(t, 'registerTheme', function() {
         return r['registerTheme'];
@@ -59572,20 +59590,18 @@
       shouldSetOption: () => !0,
     };
     var y = { fontSize: 16, fontWeight: 500, color: 'rgba(0, 0, 0, 0.85)' },
-      b = {},
-      x = {},
-      w = [
+      b = [
         { realtime: !0, show: !0, start: 0, end: 60, height: 16 },
         { type: 'inside', realtime: !0, start: 0, end: 60 },
       ],
-      _ = { show: !0, position: 'top', textStyle: { color: '#000' } },
-      S = {
+      x = { show: !0, position: 'top', textStyle: { color: '#000' } },
+      w = {
         type: 'pie',
         radius: ['35%', '50%'],
         selectedMode: 'single',
         label: { formatter: '{b} \n\n {d}%', padding: [0, 0] },
       },
-      E = Object(c['forwardRef'])((e, t) => {
+      _ = Object(c['forwardRef'])((e, t) => {
         var n = e.options,
           r = n.title,
           i = n.legend,
@@ -59604,8 +59620,8 @@
           p = e.showTitle,
           m = e.rotate,
           y = e.showLabel,
-          b = e.interval,
-          x = e.x,
+          w = e.interval,
+          _ = e.x,
           S = e.y,
           E = e.dataZoom,
           k = e.yAxisName,
@@ -59632,20 +59648,20 @@
                 return Object(l['a'])(
                   {
                     axisLabel: Object(l['a'])(
-                      { interval: b ? 'auto' : 0, rotate: m || 0 },
+                      { interval: w ? 'auto' : 0, rotate: m || 0 },
                       t,
                     ),
-                    data: x,
+                    data: _,
                   },
                   n,
                 );
               })
             : Object(l['a'])(
-                Object(l['a'])({ data: x }, o),
+                Object(l['a'])({ data: _ }, o),
                 {},
                 {
                   axisLabel: Object(l['a'])(
-                    { interval: b ? 'auto' : 0, rotate: m || 0 },
+                    { interval: w ? 'auto' : 0, rotate: m || 0 },
                     null === o || void 0 === o ? void 0 : o.axisLabel,
                   ),
                 },
@@ -59661,7 +59677,7 @@
                 { icon: 'rect', itemWidth: 8, itemHeight: 8, type: 'scroll' },
                 i,
               ),
-              dataZoom: E ? w : [],
+              dataZoom: E ? b : [],
               grid: Object(l['a'])({}, a),
               xAxis: O ? I : M,
               yAxis: O ? M : I,
@@ -59673,7 +59689,7 @@
           P.series.forEach(e => {
             (y || (e.label && e.label.show)) &&
               (e.label = Object(l['a'])(
-                Object(l['a'])({}, _),
+                Object(l['a'])({}, x),
                 {},
                 {
                   formatter: function(e) {
@@ -59693,7 +59709,7 @@
           )
         );
       });
-    E.defaultProps = {
+    _.defaultProps = {
       style: {},
       className: '',
       theme: 'xm',
@@ -59704,15 +59720,15 @@
       dataZoom: !1,
       options: {},
     };
-    var k = E,
-      O = (e, t, n) =>
+    var S = _,
+      E = (e, t, n) =>
         ''
           .concat(0 === n ? e.name : '', '</br> ')
           .concat(e.marker, ' ')
           .concat(e.seriesName, ':')
           .concat(e.data)
           .concat(t ? '%' : ''),
-      T = Object(c['forwardRef'])((e, t) => {
+      k = Object(c['forwardRef'])((e, t) => {
         var n = e.options,
           r = n.title,
           i = n.legend,
@@ -59731,11 +59747,11 @@
           p = e.showTitle,
           m = e.rotate,
           y = e.showLabel,
-          b = e.interval,
-          x = e.isRate,
+          w = e.interval,
+          _ = e.isRate,
           S = e.x,
-          E = e.y,
-          k = e.dataZoom,
+          k = e.y,
+          O = e.dataZoom,
           T = e.yAxisName,
           A = e.rightAxisSite,
           C = Object(u['a'])(e, [
@@ -59757,10 +59773,10 @@
               title: Object(l['a'])({ show: p }, r),
               tooltip: {
                 trigger: 'axis',
-                formatter: e => e.map((e, t) => O(e, x, t)).join(''),
+                formatter: e => e.map((e, t) => E(e, _, t)).join(''),
               },
               legend: Object(l['a'])({ type: 'scroll' }, i),
-              dataZoom: k ? w : [],
+              dataZoom: O ? b : [],
               grid: Object(l['a'])({}, a),
               xAxis: M(o)
                 ? o.map(e => {
@@ -59769,7 +59785,7 @@
                     return Object(l['a'])(
                       {
                         axisLabel: Object(l['a'])(
-                          { interval: b ? 'auto' : 0, rotate: m || 0 },
+                          { interval: w ? 'auto' : 0, rotate: m || 0 },
                           t,
                         ),
                         data: S,
@@ -59782,7 +59798,7 @@
                     {},
                     {
                       axisLabel: Object(l['a'])(
-                        { interval: b ? 'auto' : 0, rotate: m || 0 },
+                        { interval: w ? 'auto' : 0, rotate: m || 0 },
                         null === o || void 0 === o ? void 0 : o.axisLabel,
                       ),
                     },
@@ -59796,7 +59812,7 @@
                 : M(T)
                 ? T.map((e, t) => ({ name: T[t] }))
                 : Object(l['a'])({ name: T }, c),
-              series: d || E,
+              series: d || k,
             },
             h,
           );
@@ -59805,10 +59821,10 @@
             var t = A.indexOf(e.name) > -1 ? 1 : 0;
             (y || (e.label && e.label.show)) &&
               (e.label = Object(l['a'])(
-                Object(l['a'])({}, _),
+                Object(l['a'])({}, x),
                 {},
                 {
-                  formatter: x
+                  formatter: _
                     ? '{c}%'
                     : function(e) {
                         var t = e.value;
@@ -59827,7 +59843,7 @@
           )
         );
       });
-    T.defaultProps = {
+    k.defaultProps = {
       style: {},
       className: '',
       theme: 'xm',
@@ -59840,8 +59856,8 @@
       options: {},
       rightAxisSite: [],
     };
-    var A = T;
-    class C extends c['PureComponent'] {
+    var O = k;
+    class T extends c['PureComponent'] {
       constructor() {
         super(...arguments),
           (this.saveRef = e => {
@@ -59886,7 +59902,7 @@
             series: o
               ? (o || []).map(e =>
                   Object(l['a'])(
-                    Object(l['a'])({}, S),
+                    Object(l['a'])({}, w),
                     {},
                     { type: 'pie', radius: c, center: f },
                     e,
@@ -59912,7 +59928,7 @@
         );
       }
     }
-    C.defaultProps = {
+    T.defaultProps = {
       style: {},
       className: '',
       theme: 'xm',
@@ -59921,8 +59937,8 @@
       center: ['50%', '50%'],
       options: {},
     };
-    var M = C,
-      I = Object(c['forwardRef'])((e, t) => {
+    var A = T,
+      C = Object(c['forwardRef'])((e, t) => {
         var n = e.options,
           r = n.title,
           i = n.legend,
@@ -59941,8 +59957,8 @@
           p = e.showTitle,
           m = e.showLabel,
           y = e.rotate,
-          b = e.interval,
-          x = e.boundaryGap,
+          w = e.interval,
+          _ = e.boundaryGap,
           S = e.x,
           E = e.y,
           k = e.dataZoom,
@@ -59966,7 +59982,7 @@
               tooltip: { trigger: 'axis' },
               legend: Object(l['a'])({ type: 'scroll' }, i),
               grid: Object(l['a'])({}, a),
-              dataZoom: k ? w : [],
+              dataZoom: k ? b : [],
               xAxis: A(o)
                 ? o.map(e => {
                     var t = e.axisLabel,
@@ -59974,21 +59990,21 @@
                     return Object(l['a'])(
                       {
                         axisLabel: Object(l['a'])(
-                          { interval: b ? 'auto' : 0, rotate: y || 0 },
+                          { interval: w ? 'auto' : 0, rotate: y || 0 },
                           t,
                         ),
-                        boundaryGap: x,
+                        boundaryGap: _,
                         data: S,
                       },
                       n,
                     );
                   })
                 : Object(l['a'])(
-                    Object(l['a'])({ boundaryGap: x, data: S }, o),
+                    Object(l['a'])({ boundaryGap: _, data: S }, o),
                     {},
                     {
                       axisLabel: Object(l['a'])(
-                        { interval: b ? 'auto' : 0, rotate: y || 0 },
+                        { interval: w ? 'auto' : 0, rotate: y || 0 },
                         null === o || void 0 === o ? void 0 : o.axisLabel,
                       ),
                     },
@@ -60004,7 +60020,7 @@
           C.series.forEach(e => {
             (m || (e.label && e.label.show)) &&
               (e.label = Object(l['a'])(
-                Object(l['a'])({}, _),
+                Object(l['a'])({}, x),
                 {},
                 {
                   formatter(e) {
@@ -60023,7 +60039,7 @@
           )
         );
       });
-    I.defaultProps = {
+    C.defaultProps = {
       style: {},
       className: '',
       theme: 'xm',
@@ -60034,8 +60050,8 @@
       boundaryGap: !0,
       options: {},
     };
-    var P = I,
-      D = Object(c['forwardRef'])((e, t) => {
+    var M = C,
+      I = Object(c['forwardRef'])((e, t) => {
         var n = e.options,
           r = n.title,
           i = n.legend,
@@ -60050,16 +60066,19 @@
             e.interval,
             e.boundaryGap,
             e.setColor),
-          p = Object(u['a'])(e, [
-            'options',
-            'showTitle',
-            'showLabel',
-            'rotate',
-            'cloudData',
-            'interval',
-            'boundaryGap',
-            'setColor',
-          ]),
+          p =
+            (e.y,
+            Object(u['a'])(e, [
+              'options',
+              'showTitle',
+              'showLabel',
+              'rotate',
+              'cloudData',
+              'interval',
+              'boundaryGap',
+              'setColor',
+              'y',
+            ])),
           g = Object(l['a'])(
             {
               title: Object(l['a'])(Object(l['a'])({}, y), {}, { show: d }, r),
@@ -60068,16 +60087,8 @@
                 padding: [10, 15],
                 textStyle: { fontSize: 20 },
               },
-              legend: Object(l['a'])(
-                Object(l['a'])({ top: d ? 27 : 'top' }, b),
-                i,
-              ),
-              grid: Object(l['a'])(
-                Object(l['a'])({ top: d ? 66 : 36 }, x),
-                {},
-                { right: '6%' },
-                o,
-              ),
+              legend: Object(l['a'])({}, i),
+              grid: Object(l['a'])({}, o),
               series: a.map(e =>
                 Object(l['a'])(
                   {
@@ -60117,7 +60128,7 @@
           Object(s['a'])({ notMerge: !0, options: g, ref: t }, p),
         );
       });
-    D.defaultProps = {
+    I.defaultProps = {
       style: {},
       className: '',
       theme: 'xm',
@@ -60126,9 +60137,10 @@
       interval: !1,
       showLabel: !1,
       boundaryGap: !0,
+      y: [],
       options: { title: {}, legend: {}, toolbox: {}, grid: {}, series: [] },
     };
-    var R = D;
+    var P = I;
   },
   tpE2: function(e, t, n) {
     var r = n('HIsA'),
@@ -60539,7 +60551,7 @@
                   i.a.createElement(
                     'td',
                     { align: 'center' },
-                    'y\u8f74\u540d\u79f0',
+                    'y \u8f74\u540d\u79f0',
                   ),
                   i.a.createElement('td', { align: 'center' }, 'array'),
                   i.a.createElement('td', { align: 'center' }, '-'),
