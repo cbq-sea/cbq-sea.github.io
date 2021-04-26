@@ -7,6 +7,7 @@ export default defineConfig({
   outputPath: 'blog',
   publicPath: '/blog/',
   base: '/blog',
+  hash: true,
   // logo: '/xrk.jpeg',
   // more config: https://d.umijs.org/config
 });
